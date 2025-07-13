@@ -1,0 +1,115 @@
+[gd_scene load_steps=14 format=3 uid="uid://ookb286rop8d"]
+
+[ext_resource type="Script" uid="uid://cvacpj5fa7rkd" path="res://tmp_interface.gd" id="1_a4l15"]
+[ext_resource type="PackedScene" uid="uid://c3f8ar8bsaift" path="res://Tmp player.tscn" id="1_aytfx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_svbmr"]
+sky_top_color = Color(0.310749, 0.451477, 0.664551, 1)
+sky_horizon_color = Color(0.615279, 0.659648, 0.74139, 1)
+ground_bottom_color = Color(0.131594, 0.168339, 0.282235, 1)
+ground_horizon_color = Color(0.615279, 0.659648, 0.74139, 1)
+
+[sub_resource type="Sky" id="Sky_aytfx"]
+sky_material = SubResource("ProceduralSkyMaterial_svbmr")
+
+[sub_resource type="Environment" id="Environment_a4l15"]
+background_mode = 2
+sky = SubResource("Sky_aytfx")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibfyg"]
+albedo_color = Color(0.448067, 0.448067, 0.448067, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dtch0"]
+material = SubResource("StandardMaterial3D_ibfyg")
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3crku"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5a76e"]
+albedo_color = Color(0.648498, 0.566235, 0.265759, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pm65b"]
+material = SubResource("StandardMaterial3D_5a76e")
+size = Vector3(0.2, 4, 6)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_aytfx"]
+points = PackedVector3Array(-0.1, -2, -3, 0.1, -2, -3, -0.1, -2, 3, -0.1, 2, -3, 0.1, 2, -3, 0.1, -2, 3, -0.1, 2, 3, 0.1, 2, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pdj1e"]
+size = Vector3(1.5, 2, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a4l15"]
+points = PackedVector3Array(-0.75, -1, -5, 0.75, -1, -5, -0.75, -1, 5, -0.75, 1, -5, 0.75, 1, -5, 0.75, -1, 5, -0.75, 1, 5, 0.75, 1, 5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a4l15")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Floor" type="StaticBody3D" parent="Map"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Floor"]
+mesh = SubResource("PlaneMesh_dtch0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_3crku")
+
+[node name="Wall" type="StaticBody3D" parent="Map"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76957, 0.830794, 0)
+mesh = SubResource("BoxMesh_pm65b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76957, 0.830794, 0)
+shape = SubResource("ConvexPolygonShape3D_aytfx")
+
+[node name="Ramp" type="StaticBody3D" parent="Map"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Ramp"]
+transform = Transform3D(1, 0, 0, 0, 0.979237, -0.202719, 0, 0.202719, 0.979237, 1.82211, -0.376005, -8.9543)
+mesh = SubResource("BoxMesh_pdj1e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ramp"]
+transform = Transform3D(1, 0, 0, 0, 0.979237, -0.202719, 0, 0.202719, 0.979237, 1.82211, -0.376005, -8.9543)
+shape = SubResource("ConvexPolygonShape3D_a4l15")
+
+[node name="Player" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_a4l15")
+player_scene = ExtResource("1_aytfx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Host" type="Button" parent="CanvasLayer"]
+offset_left = 471.0
+offset_top = 216.0
+offset_right = 658.0
+offset_bottom = 334.0
+theme_override_font_sizes/font_size = 80
+text = "Host"
+
+[node name="Join" type="Button" parent="CanvasLayer"]
+offset_left = 473.0
+offset_top = 342.0
+offset_right = 660.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 80
+text = "Join"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://c3f8ar8bsaift")
+spawn_path = NodePath("../Player")
+
+[connection signal="pressed" from="CanvasLayer/Host" to="Player" method="_on_host_pressed"]
+[connection signal="pressed" from="CanvasLayer/Join" to="Player" method="_on_join_pressed"]
