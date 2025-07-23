@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0hkvme8n1c5h"]
+
+[ext_resource type="Script" uid="uid://c4mye8odlioet" path="res://game preload.gd" id="1_gt3v6"]
+
+[node name="GamePreeload" type="Node"]
+script = ExtResource("1_gt3v6")

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bl7f7ipg81bfs"]
+
+[ext_resource type="FontFile" uid="uid://puun12xix6xd" path="res://Ui/Styling/Quicksand-SemiBold.ttf" id="1_lov3r"]
+
+[resource]
+default_font = ExtResource("1_lov3r")
+default_font_size = 20

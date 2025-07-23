@@ -4,7 +4,7 @@ var peer = ENetMultiplayerPeer.new()
 @export var player_scene : PackedScene
 
 func _on_host_pressed() -> void:
-	peer.create_server(1027)
+	peer.create_server(1027)  # randi_range(10000, 60000) (min-valid = 1025, max-valid = 65535)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(add_player)
 	add_player()
