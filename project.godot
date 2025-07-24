@@ -15,7 +15,6 @@ config/tags=PackedStringArray("3d", "menu", "multiplayer")
 run/main_scene="uid://ookb286rop8d"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
-config/git_sha="25061e82cf3219ebc55cffeb66425c054688d857"
 
 [autoload]
 
