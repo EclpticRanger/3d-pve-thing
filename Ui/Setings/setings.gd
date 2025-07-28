@@ -13,21 +13,24 @@ var keybinds: Dictionary = {
 	"right": "d",
 	"sprint": "ctrl",
 	"jump": "space"}
+#keybins settings
 
 func loadsettings():
 	var config = ConfigFile.new()
 	if config.load(save_path) == OK:
 		fullscreen = config.get_value("visual", "fullscreen")
-		master_volume = config.get_value("audio", "master_volume")
+		master_volume = config.get_value("audio", "master_volume") 
 		keybinds = config.get_value("controls", "keybinds")
+		GlobalVarables.mouse_sensitivity = config.get_value("controls", "mouse_sensitivity")
 		UpdateSettingsGame()
 	else:
 		# File doesn't exist or failed to load, create default config
 		config.set_value("visual", "fullscreen", true)
 		config.set_value("audio", "master_volume", 100)
 		config.set_value("controls", "keybinds", keybinds)
+		config.set_value("controls", "mouse_sensitivity", 100)
 		config.save(save_path)
-		print("new setings config file created")
+		print("New settings config file created")
 
 func save_data():
 	var config = ConfigFile.new()
@@ -38,12 +41,13 @@ func save_data():
 	config.set_value("visual", "fullscreen", fullscreen)
 	config.set_value("audio", "master_volume", master_volume)
 	config.set_value("controls", "keybinds", keybinds)
+	config.set_value("controls", "mouse_sensitivity", GlobalVarables.mouse_sensitivity)
 	
 	var err = config.save(save_path)
 	if err != OK:
 		print("Failed to save config:", error_string(err))
 	else:
-		print("Setings saved successfully.")
+		print("Settings saved successfully.")
 
 @export var master_bus_index: int = 0
 

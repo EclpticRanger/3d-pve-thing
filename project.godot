@@ -15,11 +15,13 @@ config/tags=PackedStringArray("3d", "menu", "multiplayer")
 run/main_scene="uid://ookb286rop8d"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+config/git_sha="9103c637cfd3ab1c61d15fc689dbe9841f1faba9"
 
 [autoload]
 
 ControlsMannger="*res://Ui/Setings/controls_mannger.gd"
 Setings="*res://Ui/Setings/setings.gd"
+GlobalVarables="*res://Global Varables.gd"
 
 [display]
 
@@ -39,6 +41,7 @@ enabled=PackedStringArray("res://addons/git_sha_project_setting/plugin.cfg")
 
 folder_colors={
 "res://Player/": "red",
+"res://Player/Charter Models/": "orange",
 "res://Ui/": "green",
 "res://Ui/Pause Menue/": "orange",
 "res://Ui/Start Menue/": "purple",

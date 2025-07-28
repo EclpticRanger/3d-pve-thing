@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bdd6o8b3km7me" path="res://tmp_player.gd" id="1_gd3gx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_722hj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gd3gx"]
 albedo_color = Color(0.247059, 0.74902, 0.423529, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gd3gx"]
-material = SubResource("StandardMaterial3D_722hj")
+material = SubResource("StandardMaterial3D_gd3gx")
 
 [sub_resource type="SphereMesh" id="SphereMesh_722hj"]
 radius = 0.15

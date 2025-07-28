@@ -1,7 +1,7 @@
 extends Button
 
 @export var action_name: String
-@onready var setings_mannager = $"../../../../../../../"
+@onready var setings_root_node = $"../../../../../../../"
 
 func _ready() -> void:
 	pressed.connect(self.on_button_clicked)  # add 'self.' or use 'self.pressed.connect'
