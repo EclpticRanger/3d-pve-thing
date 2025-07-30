@@ -28,7 +28,7 @@ func loadsettings():
 		config.set_value("visual", "fullscreen", true)
 		config.set_value("audio", "master_volume", 100)
 		config.set_value("controls", "keybinds", keybinds)
-		config.set_value("controls", "mouse_sensitivity", 100)
+		config.set_value("controls", "mouse_sensitivity", 50)
 		config.save(save_path)
 		print("New settings config file created")
 
@@ -53,6 +53,7 @@ func save_data():
 
 func _ready() -> void:
 	loadsettings()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
