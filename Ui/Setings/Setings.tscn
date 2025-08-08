@@ -1,9 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://v5mxs27akhn4"]
+[gd_scene load_steps=23 format=3 uid="uid://v5mxs27akhn4"]
 
 [ext_resource type="FontFile" uid="uid://puun12xix6xd" path="res://Ui/Styling/Quicksand-SemiBold.ttf" id="1_fifht"]
 [ext_resource type="Script" uid="uid://dqiijtjcr1b4h" path="res://Ui/Setings/setings.gd" id="1_q0don"]
 [ext_resource type="Theme" uid="uid://bl7f7ipg81bfs" path="res://Ui/Styling/Theam.tres" id="4_rg2i1"]
 [ext_resource type="Script" uid="uid://c250gr3c0s2jx" path="res://Ui/Setings/forward_button.gd" id="4_y0ntw"]
+[ext_resource type="PackedScene" uid="uid://bv5sjkyn30e3u" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_cracked.gltf" id="5_3b62w"]
+[ext_resource type="Script" uid="uid://b50jy3easr7xr" path="res://Ui/Setings/camera_3d.gd" id="5_skbde"]
+[ext_resource type="PackedScene" uid="uid://dp4hphl5ngddy" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/stairs_long.gltf" id="6_skbde"]
+[ext_resource type="PackedScene" uid="uid://wjicqpp7jqh2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_large_decorated.gltf" id="7_ajtpu"]
+[ext_resource type="PackedScene" uid="uid://cdyx4svuv1x2m" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/chest_gold.gltf" id="8_rydfs"]
+[ext_resource type="PackedScene" uid="uid://r25ctj0lbed5" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small_weeds_B.gltf" id="9_km1am"]
+[ext_resource type="PackedScene" uid="uid://o6stxy7sjkg6" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small_weeds_A.gltf" id="10_ounr8"]
+[ext_resource type="PackedScene" uid="uid://gm7b7qwlneaj" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_large.gltf" id="11_a2ur3"]
+[ext_resource type="PackedScene" uid="uid://c44mxxdsrynre" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_broken.gltf" id="13_rydfs"]
+[ext_resource type="PackedScene" uid="uid://c0wi70nu65e0i" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_dirt_large.gltf" id="14_km1am"]
+[ext_resource type="PackedScene" uid="uid://gvi4b7tn2xw5" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin_stack_small.gltf" id="15_km1am"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3b62w"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_skbde"]
+sky_material = SubResource("ProceduralSkyMaterial_3b62w")
+
+[sub_resource type="Environment" id="Environment_ajtpu"]
+background_mode = 2
+sky = SubResource("Sky_skbde")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_q0don"]
 color = Color(1, 1, 1, 1)
@@ -29,6 +53,9 @@ offset_right = -17.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q0don")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ajtpu")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -335,6 +362,143 @@ grow_vertical = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 60
 text = "Back"
+
+[node name="BG" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="BG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.06206, 2.56525)
+light_color = Color(0.990403, 0.730322, 0.55202, 1)
+light_energy = 6.01
+omni_range = 33.3
+
+[node name="Camera3D" type="Camera3D" parent="BG"]
+transform = Transform3D(1, 0, 0, 0, 0.84597, 0.533231, 0, -0.533231, 0.84597, -1.60487, 2.42132, 1.70055)
+script = ExtResource("5_skbde")
+
+[node name="wall_cracked2" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+
+[node name="wall_cracked5" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -6)
+
+[node name="wall_cracked6" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -6)
+
+[node name="wall_cracked7" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 0, -4)
+
+[node name="wall_cracked8" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -14, 0, 0)
+
+[node name="wall_cracked9" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -14, 0, 8)
+
+[node name="wall_cracked3" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="wall_cracked4" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, 0, -6)
+
+[node name="wall_cracked10" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 10)
+
+[node name="wall_cracked11" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 10)
+
+[node name="wall_cracked12" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 10)
+
+[node name="wall_cracked13" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="wall_cracked14" parent="BG" instance=ExtResource("5_3b62w")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, 0, 10)
+
+[node name="stairs_long2" parent="BG" instance=ExtResource("6_skbde")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, -3.50092)
+
+[node name="barrel_large_decorated2" parent="BG" instance=ExtResource("7_ajtpu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -5)
+
+[node name="chest_gold2" parent="BG" instance=ExtResource("8_rydfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="floor_tile_small_weeds_B2" parent="BG" instance=ExtResource("9_km1am")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
+
+[node name="floor_tile_small_weeds_A2" parent="BG" instance=ExtResource("10_ounr8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9, 0, -3)
+
+[node name="floor_tile_large2" parent="." instance=ExtResource("11_a2ur3")]
+
+[node name="floor_tile_large3" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="floor_tile_large15" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="floor_tile_large4" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="floor_tile_large5" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="floor_tile_large11" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4)
+
+[node name="floor_tile_large12" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -4)
+
+[node name="floor_tile_large13" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="floor_tile_large14" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9838, 0, 4)
+
+[node name="floor_tile_large6" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="floor_tile_large16" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
+
+[node name="floor_tile_large7" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="floor_tile_large8" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="floor_tile_large9" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="floor_tile_large10" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="floor_tile_large17" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9838, 0, 8)
+
+[node name="floor_tile_large18" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="floor_tile_large19" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+
+[node name="floor_tile_large20" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="floor_tile_large21" parent="." instance=ExtResource("11_a2ur3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="wall_broken2" parent="." instance=ExtResource("13_rydfs")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 0, 4)
+
+[node name="floor_dirt_large2" parent="." instance=ExtResource("14_km1am")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -16, 1, 4)
+
+[node name="chest_gold2" parent="." instance=ExtResource("8_rydfs")]
+transform = Transform3D(0.0350216, 0, 0.999387, 0, 1, 0, -0.999387, 0, 0.0350216, -14.7164, 1.11389, 3.94986)
+
+[node name="coin_stack_small2" parent="." instance=ExtResource("15_km1am")]
+transform = Transform3D(0.524566, 0, -0.85137, 0, 1, 0, 0.85137, 0, 0.524566, -14.0476, 1.04113, 3.38158)
 
 [connection signal="value_changed" from="Main/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="toggled" from="Main/fullscreen_button" to="." method="_on_fullscreen_button_toggled"]
