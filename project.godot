@@ -12,10 +12,9 @@ config_version=5
 
 config/name="Coop3d battle game"
 config/tags=PackedStringArray("3d", "menu", "multiplayer")
-run/main_scene="uid://ookb286rop8d"
+run/main_scene="uid://c2k1ml48dldnv"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
-config/git_sha="5852be957a475abf26df4315973b7009eb3341f6"
 
 [autoload]
 

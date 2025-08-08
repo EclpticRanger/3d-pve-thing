@@ -46,5 +46,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_7d5t6")
 text = "Quit"
 
+[connection signal="pressed" from="VBoxContainer/singleplayer_button" to="." method="_on_singleplayer_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

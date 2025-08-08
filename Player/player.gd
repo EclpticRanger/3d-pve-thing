@@ -39,7 +39,6 @@ extends CharacterBody3D
 
 @onready var Camera_pivot: Node3D = $Camera_pivot
 @onready var Camera: Camera3D = $Camera_pivot/Camera3D
-@onready var temp_moddle: MeshInstance3D = $MeshInstance3D
 
 var speed_modifier: float = 1
 var acceloration_modifier: float = 1
@@ -52,7 +51,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * 1))
 		Camera_pivot.rotate_x(deg_to_rad(-event.relative.y * 1))
-		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
+		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x, deg_to_rad(-45), deg_to_rad(90))
 
 func _physics_process(delta: float) -> void:
 	speed_modifier = Knight_speed_modifier

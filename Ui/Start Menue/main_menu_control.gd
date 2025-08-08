@@ -10,3 +10,7 @@ func _on_settings_button_pressed() -> void:
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+func _on_singleplayer_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://tmp map.tscn")
