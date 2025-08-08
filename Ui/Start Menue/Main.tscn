@@ -1,7 +1,62 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2k1ml48dldnv"]
+[gd_scene load_steps=22 format=3 uid="uid://c2k1ml48dldnv"]
 
 [ext_resource type="Script" uid="uid://dci8b2yalyndy" path="res://Ui/Start Menue/main_menu_control.gd" id="1_g7w1i"]
 [ext_resource type="FontFile" uid="uid://puun12xix6xd" path="res://Ui/Styling/Quicksand-SemiBold.ttf" id="2_7d5t6"]
+[ext_resource type="Script" uid="uid://cac087javqkyw" path="res://Ui/Start Menue/camera_3d.gd" id="3_7d5t6"]
+[ext_resource type="Shader" uid="uid://dmfub6rm7d77j" path="res://Ui/Start Menue/Water Shader.gdshader" id="4_fa8o7"]
+[ext_resource type="PackedScene" uid="uid://qffbqm22ldmv" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small.gltf" id="5_6c4or"]
+[ext_resource type="PackedScene" uid="uid://dws7hkj3qyis3" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_grate.gltf" id="6_1dlgx"]
+[ext_resource type="PackedScene" uid="uid://bv5sjkyn30e3u" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_cracked.gltf" id="7_6c4or"]
+[ext_resource type="PackedScene" uid="uid://cja76e6o3pxec" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_window_closed.gltf" id="8_g2hda"]
+[ext_resource type="PackedScene" uid="uid://dcixhi3x04c66" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_corner.gltf" id="9_js3u7"]
+[ext_resource type="PackedScene" uid="uid://dou0vwxyhohm8" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_large_rocks.gltf" id="10_y0bcn"]
+[ext_resource type="PackedScene" uid="uid://drgmqbo1vl208" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_small.gltf" id="11_6vk4l"]
+[ext_resource type="PackedScene" uid="uid://wjicqpp7jqh2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_large_decorated.gltf" id="12_iq0ai"]
+[ext_resource type="PackedScene" uid="uid://bpiwmkm2k80cl" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/table_medium.gltf" id="13_08lfx"]
+[ext_resource type="PackedScene" uid="uid://l6erq83nl0r2" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Textiles_Stack_Large.gltf" id="14_gy0rt"]
+[ext_resource type="PackedScene" uid="uid://dybsken3kmo05" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/torch_mounted.gltf" id="15_js3u7"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_susn8"]
+emission_shape = 3
+emission_box_extents = Vector3(0.7, 0.01, 0.1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6sc2q"]
+render_priority = 0
+shader = ExtResource("4_fa8o7")
+shader_parameter/time_speed = 1.0
+shader_parameter/surface_speed = 1.0
+shader_parameter/spin = 0.0
+shader_parameter/brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.6
+shader_parameter/wave_height = 0.5
+shader_parameter/texture_height = 0.5
+shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
+shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
+shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
+shader_parameter/color4 = Color(0, 0.267, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_5g7es"]
+material = SubResource("ShaderMaterial_6sc2q")
+radius = 0.001
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fa8o7"]
+sky_top_color = Color(0.310749, 0.451477, 0.664551, 1)
+sky_horizon_color = Color(0.615279, 0.659647, 0.74139, 1)
+ground_bottom_color = Color(0.131594, 0.168339, 0.282235, 1)
+ground_horizon_color = Color(0.615279, 0.659647, 0.74139, 1)
+
+[sub_resource type="Sky" id="Sky_6c4or"]
+sky_material = SubResource("ProceduralSkyMaterial_fa8o7")
+
+[sub_resource type="Environment" id="Environment_1dlgx"]
+background_mode = 2
+sky = SubResource("Sky_6c4or")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -45,6 +100,93 @@ text = "Settings"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_7d5t6")
 text = "Quit"
+
+[node name="Backround" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Backround"]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 2, 0)
+script = ExtResource("3_7d5t6")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Backround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8262, -2.91162)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_susn8")
+draw_pass_1 = SubResource("SphereMesh_5g7es")
+
+[node name="moddles" type="Node3D" parent="Backround"]
+
+[node name="floor_tile_small2" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="floor_tile_small3" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="floor_tile_small4" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="floor_tile_small5" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="floor_tile_grate2" parent="Backround/moddles" instance=ExtResource("6_1dlgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="wall_cracked2" parent="Backround/moddles" instance=ExtResource("7_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_window_closed2" parent="Backround/moddles" instance=ExtResource("8_g2hda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="wall_corner2" parent="Backround/moddles" instance=ExtResource("9_js3u7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, -4)
+
+[node name="floor_tile_large_rocks2" parent="Backround/moddles" instance=ExtResource("10_y0bcn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
+
+[node name="floor_tile_small6" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
+
+[node name="floor_tile_small7" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
+
+[node name="floor_tile_small8" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
+
+[node name="floor_tile_small9" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1)
+
+[node name="floor_tile_small10" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 1)
+
+[node name="barrel_small2" parent="Backround/moddles" instance=ExtResource("11_6vk4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -1)
+
+[node name="barrel_small3" parent="Backround/moddles" instance=ExtResource("11_6vk4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.64471, -4.76837e-07, -0.455732)
+
+[node name="barrel_small4" parent="Backround/moddles" instance=ExtResource("11_6vk4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16593, 0, 0.0408559)
+
+[node name="barrel_large_decorated2" parent="Backround/moddles" instance=ExtResource("12_iq0ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98744, 0, 0.955656)
+
+[node name="table_medium2" parent="Backround/moddles" instance=ExtResource("13_08lfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3)
+
+[node name="Textiles_Stack_Large2" parent="Backround/moddles" instance=ExtResource("14_gy0rt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91993, 0, 1.3133)
+
+[node name="torch_mounted2" parent="Backround/moddles" instance=ExtResource("15_js3u7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.32619, -3.82683)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backround/moddles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.94934, 1.91455, -3.4504)
+light_color = Color(0.853919, 0.431899, 5.77569e-07, 1)
+light_energy = 10.0
+light_indirect_energy = 2.113
+omni_range = 10.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1dlgx")
 
 [connection signal="pressed" from="VBoxContainer/singleplayer_button" to="." method="_on_singleplayer_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
