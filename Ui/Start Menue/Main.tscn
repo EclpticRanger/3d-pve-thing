@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c2k1ml48dldnv"]
+[gd_scene load_steps=39 format=3 uid="uid://c2k1ml48dldnv"]
 
 [ext_resource type="Script" uid="uid://dci8b2yalyndy" path="res://Ui/Start Menue/main_menu_control.gd" id="1_g7w1i"]
 [ext_resource type="FontFile" uid="uid://puun12xix6xd" path="res://Ui/Styling/Quicksand-SemiBold.ttf" id="2_7d5t6"]
@@ -13,8 +13,25 @@
 [ext_resource type="PackedScene" uid="uid://drgmqbo1vl208" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_small.gltf" id="11_6vk4l"]
 [ext_resource type="PackedScene" uid="uid://wjicqpp7jqh2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_large_decorated.gltf" id="12_iq0ai"]
 [ext_resource type="PackedScene" uid="uid://bpiwmkm2k80cl" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/table_medium.gltf" id="13_08lfx"]
-[ext_resource type="PackedScene" uid="uid://l6erq83nl0r2" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Textiles_Stack_Large.gltf" id="14_gy0rt"]
+[ext_resource type="Script" uid="uid://ca2vyiaj8fgr1" path="res://Ui/Start Menue/Lights flicer.gd" id="15_5aoha"]
 [ext_resource type="PackedScene" uid="uid://dybsken3kmo05" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/torch_mounted.gltf" id="15_js3u7"]
+[ext_resource type="PackedScene" uid="uid://dwx6lbwcrm6rg" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Parts_Pile_Medium.gltf" id="15_y0bcn"]
+[ext_resource type="PackedScene" uid="uid://bg2iw34bykcjw" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Wood_Log_Stack.gltf" id="16_6vk4l"]
+[ext_resource type="PackedScene" uid="uid://cly81tf27arky" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/table_long_tablecloth.gltf" id="17_6vk4l"]
+[ext_resource type="PackedScene" uid="uid://co1bc2ryi2jha" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Stone_Bricks_Stack_Large.gltf" id="18_rkyu0"]
+[ext_resource type="PackedScene" uid="uid://du7mg8ro12p3e" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Stone_Bricks_Stack_Small.gltf" id="19_5aoha"]
+[ext_resource type="PackedScene" uid="uid://er7xmcuyuhqc" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/stool.gltf" id="20_hd86c"]
+[ext_resource type="PackedScene" uid="uid://qocj2nuho3yf" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/rubble_half.gltf" id="21_yguif"]
+[ext_resource type="PackedScene" uid="uid://c4o5vb827xprt" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/rubble_large.gltf" id="22_56jjg"]
+[ext_resource type="AudioStream" uid="uid://b2k7dienm12xu" path="res://Ui/Start Menue/waterfall-176958.mp3" id="24_hd86c"]
+[ext_resource type="Script" uid="uid://sdhpf58b5tg2" path="res://Ui/Start Menue/waterfall.gd" id="25_yguif"]
+[ext_resource type="PackedScene" uid="uid://bp4hwvdfddqq2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_archedwindow_open.gltf" id="26_etw6h"]
+[ext_resource type="PackedScene" uid="uid://bpt1g0i1ysg8t" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_doorway.gltf" id="27_r35dp"]
+[ext_resource type="PackedScene" uid="uid://0x4xvjfm23ag" path="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/blue/building_castle_blue.gltf" id="28_vdggh"]
+[ext_resource type="PackedScene" uid="uid://pblv3cedxmio" path="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/nature/trees_A_large.gltf" id="29_r35dp"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_rkyu0"]
+exposure_multiplier = 0.5
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_susn8"]
 emission_shape = 3
@@ -43,20 +60,25 @@ shader_parameter/color4 = Color(0, 0.267, 1, 1)
 material = SubResource("ShaderMaterial_6sc2q")
 radius = 0.001
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fa8o7"]
-sky_top_color = Color(0.310749, 0.451477, 0.664551, 1)
-sky_horizon_color = Color(0.615279, 0.659647, 0.74139, 1)
-ground_bottom_color = Color(0.131594, 0.168339, 0.282235, 1)
-ground_horizon_color = Color(0.615279, 0.659647, 0.74139, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yguif"]
+albedo_color = Color(0.282407, 0.282407, 0.282407, 1)
 
-[sub_resource type="Sky" id="Sky_6c4or"]
-sky_material = SubResource("ProceduralSkyMaterial_fa8o7")
+[sub_resource type="BoxMesh" id="BoxMesh_rkyu0"]
+material = SubResource("StandardMaterial3D_yguif")
+size = Vector3(100, 1, 100)
 
-[sub_resource type="Environment" id="Environment_1dlgx"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r35dp"]
+sky_top_color = Color(0.143664, 0.328019, 0.361745, 1)
+sky_horizon_color = Color(0.582054, 0.662154, 0.629593, 1)
+ground_bottom_color = Color(0.20683, 0.342878, 0.178905, 1)
+ground_horizon_color = Color(0.582054, 0.662154, 0.629593, 1)
+
+[sub_resource type="Sky" id="Sky_vdggh"]
+sky_material = SubResource("ProceduralSkyMaterial_r35dp")
+
+[sub_resource type="Environment" id="Environment_iabph"]
 background_mode = 2
-sky = SubResource("Sky_6c4or")
-tonemap_mode = 2
-glow_enabled = true
+sky = SubResource("Sky_vdggh")
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -104,89 +126,398 @@ text = "Quit"
 [node name="Backround" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Backround"]
-transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 2, 0)
+transform = Transform3D(-0.185667, 0.0856404, -0.978873, 0, 0.996195, 0.0871557, 0.982613, 0.0161819, -0.18496, 0, 2, 0)
+attributes = SubResource("CameraAttributesPractical_rkyu0")
 script = ExtResource("3_7d5t6")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Backround"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8262, -2.91162)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.44717, -2.91162)
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_susn8")
 draw_pass_1 = SubResource("SphereMesh_5g7es")
 
 [node name="moddles" type="Node3D" parent="Backround"]
 
-[node name="floor_tile_small2" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+[node name="Floor" type="Node" parent="Backround/moddles"]
+
+[node name="floor_tile_small2" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 
-[node name="floor_tile_small3" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+[node name="floor_tile_small3" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 
-[node name="floor_tile_small4" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+[node name="floor_tile_small4" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
 
-[node name="floor_tile_small5" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+[node name="floor_tile_small5" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
 
-[node name="floor_tile_grate2" parent="Backround/moddles" instance=ExtResource("6_1dlgx")]
+[node name="floor_tile_grate2" parent="Backround/moddles/Floor" instance=ExtResource("6_1dlgx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="wall_cracked2" parent="Backround/moddles" instance=ExtResource("7_6c4or")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-
-[node name="wall_window_closed2" parent="Backround/moddles" instance=ExtResource("8_g2hda")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
-
-[node name="wall_corner2" parent="Backround/moddles" instance=ExtResource("9_js3u7")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, -4)
-
-[node name="floor_tile_large_rocks2" parent="Backround/moddles" instance=ExtResource("10_y0bcn")]
+[node name="floor_tile_large_rocks2" parent="Backround/moddles/Floor" instance=ExtResource("10_y0bcn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
 
-[node name="floor_tile_small6" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+[node name="floor_tile_small6" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
 
-[node name="floor_tile_small7" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+[node name="floor_tile_small7" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
 
-[node name="floor_tile_small8" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+[node name="floor_tile_small8" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
 
-[node name="floor_tile_small9" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+[node name="floor_tile_small9" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1)
 
-[node name="floor_tile_small10" parent="Backround/moddles" instance=ExtResource("5_6c4or")]
+[node name="floor_tile_small11" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 3)
+
+[node name="floor_tile_small12" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 3)
+
+[node name="floor_tile_small13" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 5)
+
+[node name="floor_tile_small14" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
+
+[node name="floor_tile_small15" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="floor_tile_small16" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="floor_tile_small17" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 5)
+
+[node name="floor_tile_small18" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
+
+[node name="floor_tile_small20" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="floor_tile_small31" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+
+[node name="floor_tile_small32" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+
+[node name="floor_tile_small33" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="floor_tile_small34" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+
+[node name="floor_tile_small35" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -3)
+
+[node name="floor_tile_small36" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3)
+
+[node name="floor_tile_small37" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1)
+
+[node name="floor_tile_small38" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1)
+
+[node name="floor_tile_small39" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+
+[node name="floor_tile_small40" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+
+[node name="floor_tile_small41" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)
+
+[node name="floor_tile_small42" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7)
+
+[node name="floor_tile_small43" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 9)
+
+[node name="floor_tile_small44" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 9)
+
+[node name="floor_tile_small45" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 11)
+
+[node name="floor_tile_small46" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 11)
+
+[node name="floor_tile_small21" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+
+[node name="floor_tile_small19" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 7)
+
+[node name="floor_tile_small22" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 7)
+
+[node name="floor_tile_small23" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 7)
+
+[node name="floor_tile_small24" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 7)
+
+[node name="floor_tile_small25" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7)
+
+[node name="floor_tile_small26" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 9)
+
+[node name="floor_tile_small27" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 9)
+
+[node name="floor_tile_small28" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 9)
+
+[node name="floor_tile_small29" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 9)
+
+[node name="floor_tile_small30" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="floor_tile_small47" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 11)
+
+[node name="floor_tile_small48" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 11)
+
+[node name="floor_tile_small10" parent="Backround/moddles/Floor" instance=ExtResource("5_6c4or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 1)
 
-[node name="barrel_small2" parent="Backround/moddles" instance=ExtResource("11_6vk4l")]
+[node name="wall" type="Node" parent="Backround/moddles"]
+
+[node name="wall_cracked2" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_cracked16" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="wall_cracked3" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, 0)
+
+[node name="wall_cracked5" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 4, 0)
+
+[node name="wall_cracked6" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 4, 4)
+
+[node name="wall_cracked9" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 4, 11)
+
+[node name="wall_cracked10" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.76837e-07, 4, 11)
+
+[node name="wall_cracked13" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 4, -4)
+
+[node name="wall_cracked11" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.76837e-07, 0, 11)
+
+[node name="wall_cracked14" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 4, 11)
+
+[node name="wall_cracked15" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, 11)
+
+[node name="wall_cracked17" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 4, 9)
+
+[node name="wall_cracked19" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 4, 5)
+
+[node name="wall_cracked20" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 4, 1)
+
+[node name="wall_cracked21" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 4, -2)
+
+[node name="wall_cracked22" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 4, 4, -4)
+
+[node name="wall_cracked23" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4.76837e-07, 4, -4)
+
+[node name="wall_cracked18" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, 9)
+
+[node name="wall_cracked12" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 0, 11)
+
+[node name="wall_cracked7" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 4, 8)
+
+[node name="wall_cracked8" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, 8)
+
+[node name="wall_cracked4" parent="Backround/moddles/wall" instance=ExtResource("7_6c4or")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, 4)
+
+[node name="wall_window_closed2" parent="Backround/moddles/wall" instance=ExtResource("8_g2hda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="wall_corner2" parent="Backround/moddles/wall" instance=ExtResource("9_js3u7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, -4)
+
+[node name="wall_corner3" parent="Backround/moddles/wall" instance=ExtResource("9_js3u7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 4, -4)
+
+[node name="wall_corner4" parent="Backround/moddles/wall" instance=ExtResource("9_js3u7")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 0, 11)
+
+[node name="wall_corner5" parent="Backround/moddles/wall" instance=ExtResource("9_js3u7")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 4, 11)
+
+[node name="wall_archedwindow_open2" parent="Backround/moddles/wall" instance=ExtResource("26_etw6h")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 2)
+
+[node name="wall_archedwindow_open3" parent="Backround/moddles/wall" instance=ExtResource("26_etw6h")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 5)
+
+[node name="wall_doorway2" parent="Backround/moddles/wall" instance=ExtResource("27_r35dp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, -2)
+
+[node name="decorations" type="Node" parent="Backround/moddles"]
+
+[node name="barrel_small2" parent="Backround/moddles/decorations" instance=ExtResource("11_6vk4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -1)
 
-[node name="barrel_small3" parent="Backround/moddles" instance=ExtResource("11_6vk4l")]
+[node name="barrel_small3" parent="Backround/moddles/decorations" instance=ExtResource("11_6vk4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.64471, -4.76837e-07, -0.455732)
 
-[node name="barrel_small4" parent="Backround/moddles" instance=ExtResource("11_6vk4l")]
+[node name="barrel_small4" parent="Backround/moddles/decorations" instance=ExtResource("11_6vk4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16593, 0, 0.0408559)
 
-[node name="barrel_large_decorated2" parent="Backround/moddles" instance=ExtResource("12_iq0ai")]
+[node name="barrel_large_decorated2" parent="Backround/moddles/decorations" instance=ExtResource("12_iq0ai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98744, 0, 0.955656)
 
-[node name="table_medium2" parent="Backround/moddles" instance=ExtResource("13_08lfx")]
+[node name="Parts_Pile_Medium2" parent="Backround/moddles/decorations" instance=ExtResource("15_y0bcn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 2)
+
+[node name="Parts_Pile_Medium3" parent="Backround/moddles/decorations" instance=ExtResource("15_y0bcn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.57515, 0, 2.65239)
+
+[node name="Parts_Pile_Medium4" parent="Backround/moddles/decorations" instance=ExtResource("15_y0bcn")]
+transform = Transform3D(0.750238, 0, 0.661168, 0, 1, 0, -0.661168, 0, 0.750238, -7.14643, 0, 3.18155)
+
+[node name="Wood_Log_Stack2" parent="Backround/moddles/decorations" instance=ExtResource("16_6vk4l")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -7, 0, 4)
+
+[node name="Wood_Log_Stack3" parent="Backround/moddles/decorations" instance=ExtResource("16_6vk4l")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -7, 0, 5.86449)
+
+[node name="table_long_tablecloth2" parent="Backround/moddles/decorations" instance=ExtResource("17_6vk4l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.42502, -0.0490069, 4.21573)
+
+[node name="Stone_Bricks_Stack_Large2" parent="Backround/moddles/decorations" instance=ExtResource("18_rkyu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.126724, 7.93627)
+
+[node name="Stone_Bricks_Stack_Small2" parent="Backround/moddles/decorations" instance=ExtResource("19_5aoha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.26541, -0.126724, 7.34967)
+
+[node name="stool2" parent="Backround/moddles/decorations" instance=ExtResource("20_hd86c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32413, 0, 5.61692)
+
+[node name="stool3" parent="Backround/moddles/decorations" instance=ExtResource("20_hd86c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.815147, 0, 5.61692)
+
+[node name="stool4" parent="Backround/moddles/decorations" instance=ExtResource("20_hd86c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32413, 0, 2.77012)
+
+[node name="stool5" parent="Backround/moddles/decorations" instance=ExtResource("20_hd86c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.815147, 0, 2.77012)
+
+[node name="table_medium2" parent="Backround/moddles/decorations" instance=ExtResource("13_08lfx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3)
 
-[node name="Textiles_Stack_Large2" parent="Backround/moddles" instance=ExtResource("14_gy0rt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91993, 0, 1.3133)
+[node name="building_castle_blue2" parent="Backround/moddles/decorations" instance=ExtResource("28_vdggh")]
+transform = Transform3D(-2.74899, 0, -9.61473, 0, 10, 0, 9.61473, 0, -2.74899, 121.637, -19.3946, 34.1387)
 
-[node name="torch_mounted2" parent="Backround/moddles" instance=ExtResource("15_js3u7")]
+[node name="trees_A_large2" parent="Backround/moddles/decorations" instance=ExtResource("29_r35dp")]
+transform = Transform3D(4.96197, 0.615496, 3.13453e-09, -0.614669, 4.95531, -0.259065, -0.0318907, 0.257095, 4.99328, 12.1947, -2.87262, 5.18177)
+
+[node name="trees_A_large3" parent="Backround/moddles/decorations" instance=ExtResource("29_r35dp")]
+transform = Transform3D(4.96197, 0.615496, 3.13453e-09, -0.614669, 4.95531, -0.259065, -0.0318907, 0.257095, 4.99328, 18.5241, -6.83272, 3.74957)
+
+[node name="trees_A_large4" parent="Backround/moddles/decorations" instance=ExtResource("29_r35dp")]
+transform = Transform3D(4.96197, 0.615496, 3.13453e-09, -0.614669, 4.95531, -0.259065, -0.0318907, 0.257095, 4.99328, 17.4609, -6.83272, 11.0571)
+
+[node name="trees_A_large5" parent="Backround/moddles/decorations" instance=ExtResource("29_r35dp")]
+transform = Transform3D(4.96197, 0.615496, 3.13453e-09, -0.614669, 4.95531, -0.259065, -0.0318907, 0.257095, 4.99328, 15.2686, -4.32715, 14.5976)
+
+[node name="trees_A_large6" parent="Backround/moddles/decorations" instance=ExtResource("29_r35dp")]
+transform = Transform3D(4.87992, 0.650973, 0.873254, -0.614669, 4.95531, -0.259065, -0.899176, 0.145492, 4.91633, 9.73701, -2.06597, 12.0764)
+
+[node name="rubble" type="Node" parent="Backround/moddles"]
+
+[node name="rubble_half2" parent="Backround/moddles/rubble" instance=ExtResource("21_yguif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21341, 4.4719, 10.0748)
+
+[node name="rubble_half3" parent="Backround/moddles/rubble" instance=ExtResource("21_yguif")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -7.85904, 4.4719, 9.38589)
+
+[node name="rubble_half4" parent="Backround/moddles/rubble" instance=ExtResource("21_yguif")]
+transform = Transform3D(-4.37114e-08, 1, 0, -0.959717, -4.19506e-08, -0.280968, -0.280968, -1.22815e-08, 0.959717, -5.401, 5.20391, 11.1119)
+
+[node name="rubble_large2" parent="Backround/moddles/rubble" instance=ExtResource("22_56jjg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75104, 0.0233252, 10.2053)
+
+[node name="rubble_large3" parent="Backround/moddles/rubble" instance=ExtResource("22_56jjg")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -5.02148, 8.37389, 10.2053)
+
+[node name="rubble_large4" parent="Backround/moddles/rubble" instance=ExtResource("22_56jjg")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -6.95577, 8.37389, 8.53351)
+
+[node name="rubble_large5" parent="Backround/moddles/rubble" instance=ExtResource("22_56jjg")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -8.09331, 8.37389, 6.68186)
+
+[node name="Torches" type="Node" parent="Backround/moddles"]
+
+[node name="torch_mounted2" parent="Backround/moddles/Torches" instance=ExtResource("15_js3u7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.32619, -3.82683)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Backround/moddles"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Backround/moddles/Torches"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.94934, 1.91455, -3.4504)
 light_color = Color(0.853919, 0.431899, 5.77569e-07, 1)
 light_energy = 10.0
 light_indirect_energy = 2.113
-omni_range = 10.0
+omni_range = 20.0
+script = ExtResource("15_5aoha")
+
+[node name="torch_mounted3" parent="Backround/moddles/Torches" instance=ExtResource("15_js3u7")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -7.79905, 2.00508, 3.38671)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Backround/moddles/Torches"]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -7.42262, 2.59344, 3.33605)
+light_color = Color(0.853919, 0.431899, 5.77569e-07, 1)
+light_energy = 10.0
+light_indirect_energy = 2.113
+omni_range = 20.0
+script = ExtResource("15_5aoha")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Backround"]
+transform = Transform3D(0.165797, 0, 0, 0, 1, 0, 0, 0, 0.167606, -1.03989, 8.42774, 3.11056)
+mesh = SubResource("BoxMesh_rkyu0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_hd86c")
+autoplay = true
+mix_target = 2
+bus = &"Sound Effects"
+parameters/looping = true
+script = ExtResource("25_yguif")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.338738, -0.0983488, 0.935727, 0, 0.994522, 0.104528, -0.940881, -0.0354078, 0.336882, 0, 0, 0)
+light_color = Color(0.814312, 0.522818, 0.113732, 1)
+light_energy = 15.0
+shadow_enabled = true
+directional_shadow_max_distance = 1020.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_1dlgx")
+environment = SubResource("Environment_iabph")
 
 [connection signal="pressed" from="VBoxContainer/singleplayer_button" to="." method="_on_singleplayer_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]

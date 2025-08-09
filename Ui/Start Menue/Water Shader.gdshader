@@ -4,11 +4,11 @@ uniform float time_speed = 1.0;
 //time specifically for the wave noise texture
 uniform float surface_speed = 1.0;
 uniform float spin = 0.0; //Twisting motion of the water
-uniform float brightness = 0.6;
+uniform float brightness = 0;
 uniform float color_intensity = 0.0;
 //Tiling frequency of the noise accross the mesh
 uniform float horizontal_frequency = 2.0;
-uniform float vertical_frequency = 2.0;
+uniform float vertical_frequency = 0.1;
 //overall size muliplier
 uniform float size = 0.01;
 //affects total size
@@ -17,7 +17,7 @@ uniform float banding_bias = 0.6;
 uniform sampler2D wave_texture;
 uniform sampler2D noise_texture;
 //wave height, use for ocean waves
-uniform float wave_height = 0.1;
+uniform float wave_height = 0.01;
 //water surface height variation based on the noise texture
 uniform float texture_height = 0.01;
 //preset band colors
@@ -58,5 +58,5 @@ void fragment() {
 		band_color = color4;
 	}
 	//Final color adjestment
-	ALBEDO = clamp(brightness * (vec3(1.0, 1.0, 1.0) - (band_color.xyz * -color_intensity)) * band_color.xyz, vec3(0.0, 0.0, 0.0), vec3(brightness, brightness, brightness));
+	ALBEDO = clamp(vec3(0.05, 0.02, 0.01) * (vec3(1.0, 1.0, 1.0) - (band_color.xyz * -color_intensity)) * band_color.xyz, vec3(0.0, 0.0, 0.0), vec3(brightness, brightness, brightness));
 }
