@@ -33,6 +33,13 @@ sky = SubResource("Sky_skbde")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfu3l"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.0862745, 0.0862745, 0.0862745, 0.592157)
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_q0don"]
 color = Color(1, 1, 1, 1)
 thickness = 8
@@ -45,15 +52,13 @@ thickness = 9
 color = Color(0.368627, 0.564706, 0.992157, 1)
 thickness = 9
 
-[sub_resource type="Theme" id="Theme_q0don"]
-
 [node name="Setings" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -17.0
-offset_right = -17.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q0don")
@@ -66,33 +71,71 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -96.5
-offset_top = 47.0
-offset_right = 96.5
-offset_bottom = 116.0
+offset_left = -116.0
+offset_top = -235.0
+offset_right = 116.0
+offset_bottom = -160.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_fifht")
 theme_override_font_sizes/font_size = 60
 text = "Settings"
 
 [node name="Main" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="master_volume_slider" type="HSlider" parent="Main"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 428.5
-offset_top = 136.0
-offset_right = 683.5
-offset_bottom = 328.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Go to Control setings" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.5
+offset_top = 169.0
+offset_right = 123.5
+offset_bottom = 252.0
+grow_horizontal = 2
+scale = Vector2(1.00203, 1)
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 40
+text = "Keybinds"
+
+[node name="PanelContainer" type="PanelContainer" parent="Main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -35.0
+offset_right = 98.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cfu3l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/PanelContainer"]
+layout_mode = 2
+
+[node name="Master_volume" type="Label" parent="Main/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="master_volume_slider" type="HSlider" parent="Main/PanelContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
@@ -100,42 +143,30 @@ max_value = 1.0
 step = 0.005
 value = 1.0
 
-[node name="fullscreen_button" type="CheckButton" parent="Main"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 458.0
-offset_top = 277.0
-offset_right = 654.0
-offset_bottom = 327.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_q0don")
+[node name="Sound_effect_volume" type="Label" parent="Main/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 20
+text = "Sound Effects"
+horizontal_alignment = 1
+
+[node name="sound_effect_volume_slider2" type="HSlider" parent="Main/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
+max_value = 1.0
+step = 0.005
+value = 1.0
+
+[node name="fullscreen_button" type="CheckButton" parent="Main/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 button_pressed = true
 text = "Fullscreen"
 
-[node name="Go to Control setings" type="Button" parent="Main"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 425.0
-offset_top = 452.0
-offset_right = 672.0
-offset_bottom = 535.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 60
-text = "Controls"
-
-[node name="Controls" type="Control" parent="."]
+[node name="Keybinds" type="Control" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -150,7 +181,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Controls"]
+[node name="PanelContainer" type="PanelContainer" parent="Keybinds"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -164,193 +195,193 @@ offset_bottom = 131.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Controls/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Left" type="VBoxContainer" parent="Controls/PanelContainer/HBoxContainer"]
+[node name="Left" type="VBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Forward" type="PanelContainer" parent="Controls/PanelContainer/HBoxContainer/Left"]
+[node name="Forward" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Controls/PanelContainer/HBoxContainer/Left/Forward"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left/Forward"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Controls/PanelContainer/HBoxContainer/Left/Forward/VBoxContainer"]
+[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Left/Forward/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Forward:      "
 
-[node name="Button" type="Button" parent="Controls/PanelContainer/HBoxContainer/Left/Forward/VBoxContainer"]
+[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Left/Forward/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "W"
 script = ExtResource("4_y0ntw")
 action_name = "forward"
 
-[node name="Back" type="PanelContainer" parent="Controls/PanelContainer/HBoxContainer/Left"]
+[node name="Back" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Controls/PanelContainer/HBoxContainer/Left/Back"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left/Back"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Controls/PanelContainer/HBoxContainer/Left/Back/VBoxContainer"]
+[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Left/Back/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Backwords:  "
 
-[node name="Button" type="Button" parent="Controls/PanelContainer/HBoxContainer/Left/Back/VBoxContainer"]
+[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Left/Back/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "S"
 script = ExtResource("4_y0ntw")
 action_name = "back"
 
-[node name="Left" type="PanelContainer" parent="Controls/PanelContainer/HBoxContainer/Left"]
+[node name="Left" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Controls/PanelContainer/HBoxContainer/Left/Left"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left/Left"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Controls/PanelContainer/HBoxContainer/Left/Left/VBoxContainer"]
+[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Left/Left/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Left:              "
 
-[node name="Button" type="Button" parent="Controls/PanelContainer/HBoxContainer/Left/Left/VBoxContainer"]
+[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Left/Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "A"
 script = ExtResource("4_y0ntw")
 action_name = "left"
 
-[node name="Right" type="PanelContainer" parent="Controls/PanelContainer/HBoxContainer/Left"]
+[node name="Right" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Controls/PanelContainer/HBoxContainer/Left/Right"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left/Right"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Controls/PanelContainer/HBoxContainer/Left/Right/VBoxContainer"]
+[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Left/Right/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Right:            "
 
-[node name="Button" type="Button" parent="Controls/PanelContainer/HBoxContainer/Left/Right/VBoxContainer"]
+[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Left/Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "D"
 script = ExtResource("4_y0ntw")
 action_name = "right"
 
-[node name="Junp" type="PanelContainer" parent="Controls/PanelContainer/HBoxContainer/Left"]
+[node name="Junp" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Controls/PanelContainer/HBoxContainer/Left/Junp"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left/Junp"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Controls/PanelContainer/HBoxContainer/Left/Junp/VBoxContainer"]
+[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Left/Junp/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Jump:           "
 
-[node name="Button" type="Button" parent="Controls/PanelContainer/HBoxContainer/Left/Junp/VBoxContainer"]
+[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Left/Junp/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Space"
 script = ExtResource("4_y0ntw")
 action_name = "jump"
 
-[node name="Right" type="VBoxContainer" parent="Controls/PanelContainer/HBoxContainer"]
+[node name="Right" type="VBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Sprint" type="PanelContainer" parent="Controls/PanelContainer/HBoxContainer/Right"]
+[node name="Sprint" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Controls/PanelContainer/HBoxContainer/Right/Sprint"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right/Sprint"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Controls/PanelContainer/HBoxContainer/Right/Sprint/VBoxContainer"]
+[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Right/Sprint/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Sprint:    "
 
-[node name="Button" type="Button" parent="Controls/PanelContainer/HBoxContainer/Right/Sprint/VBoxContainer"]
+[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Right/Sprint/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Ctrl"
 script = ExtResource("4_y0ntw")
 action_name = "sprint"
 
-[node name="abilty 1" type="PanelContainer" parent="Controls/PanelContainer/HBoxContainer/Right"]
+[node name="abilty 1" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Controls/PanelContainer/HBoxContainer/Right/abilty 1"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 1"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Controls/PanelContainer/HBoxContainer/Right/abilty 1/VBoxContainer"]
+[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 1/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Abilty 1:  "
 
-[node name="Button" type="Button" parent="Controls/PanelContainer/HBoxContainer/Right/abilty 1/VBoxContainer"]
+[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 1/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "1"
 script = ExtResource("4_y0ntw")
 action_name = "abilty 1"
 
-[node name="abilty 2" type="PanelContainer" parent="Controls/PanelContainer/HBoxContainer/Right"]
+[node name="abilty 2" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Controls/PanelContainer/HBoxContainer/Right/abilty 2"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 2"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Controls/PanelContainer/HBoxContainer/Right/abilty 2/VBoxContainer"]
+[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 2/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Abilty 2: "
 
-[node name="Button" type="Button" parent="Controls/PanelContainer/HBoxContainer/Right/abilty 2/VBoxContainer"]
+[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 2/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "2"
 script = ExtResource("4_y0ntw")
 action_name = "abilty 2"
 
-[node name="abilty 3" type="PanelContainer" parent="Controls/PanelContainer/HBoxContainer/Right"]
+[node name="abilty 3" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Controls/PanelContainer/HBoxContainer/Right/abilty 3"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 3"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Controls/PanelContainer/HBoxContainer/Right/abilty 3/VBoxContainer"]
+[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 3/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Abilty 3: "
 
-[node name="Button" type="Button" parent="Controls/PanelContainer/HBoxContainer/Right/abilty 3/VBoxContainer"]
+[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 3/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "3"
 script = ExtResource("4_y0ntw")
 action_name = "abilty 3"
 
-[node name="Go to main setings" type="Button" parent="Controls"]
+[node name="Go to main setings" type="Button" parent="Keybinds"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -529,7 +560,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 9)
 [node name="table_long_decorated_C2" parent="." instance=ExtResource("19_j62b6")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, 8.5604)
 
-[connection signal="value_changed" from="Main/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
-[connection signal="toggled" from="Main/fullscreen_button" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="Main/Go to Control setings" to="." method="_on_go_to_control_setings_pressed"]
-[connection signal="pressed" from="Controls/Go to main setings" to="." method="_on_go_to_main_setings_pressed"]
+[connection signal="value_changed" from="Main/PanelContainer/VBoxContainer/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="Main/PanelContainer/VBoxContainer/sound_effect_volume_slider2" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="toggled" from="Main/PanelContainer/VBoxContainer/fullscreen_button" to="." method="_on_fullscreen_button_toggled"]
+[connection signal="pressed" from="Keybinds/Go to main setings" to="." method="_on_go_to_main_setings_pressed"]
