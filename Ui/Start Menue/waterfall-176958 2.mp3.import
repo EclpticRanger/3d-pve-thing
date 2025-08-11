@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bedwed76ikwdx"
+path="res://.godot/imported/waterfall-176958 2.mp3-ffa496ac2610f94f935f15d972272505.mp3str"
+
+[deps]
+
+source_file="res://Ui/Start Menue/waterfall-176958 2.mp3"
+dest_files=["res://.godot/imported/waterfall-176958 2.mp3-ffa496ac2610f94f935f15d972272505.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
