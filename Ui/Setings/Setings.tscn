@@ -546,10 +546,13 @@ transform = Transform3D(0.524566, 0, -0.85137, 0, 1, 0, 0.85137, 0, 0.524566, -1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [connection signal="toggled" from="Main/PanelContainer/VBoxContainer/fullscreen_button" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="value_changed" from="Main/PanelContainer/VBoxContainer/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="value_changed" from="Main/PanelContainer/VBoxContainer/sound_effect_volume_slider" to="." method="_on_sound_effect_volume_slider_value_changed"]
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
