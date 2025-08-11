@@ -517,20 +517,6 @@ transform = Transform3D(0.0350216, 0, 0.999387, 0, 1, 0, -0.999387, 0, 0.0350216
 [node name="coin_stack_small2" parent="." instance=ExtResource("15_km1am")]
 transform = Transform3D(0.524566, 0, -0.85137, 0, 1, 0, 0.85137, 0, 0.524566, -14.0476, 1.04113, 3.38158)
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[connection signal="toggled" from="Main/PanelContainer/VBoxContainer/fullscreen_button" to="." method="_on_fullscreen_button_toggled"]
-[connection signal="value_changed" from="Main/PanelContainer/VBoxContainer/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
-[connection signal="value_changed" from="Main/PanelContainer/VBoxContainer/sound_effect_volume_slider" to="." method="_on_sound_effect_volume_slider_value_changed"]
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 [node name="wall_shelves2" parent="." instance=ExtResource("16_cfu3l")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, 4)
 
@@ -545,10 +531,5 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0,
 
 [connection signal="value_changed" from="Main/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="toggled" from="Main/fullscreen_button" to="." method="_on_fullscreen_button_toggled"]
->>>>>>> Stashed changes
-=======
-[connection signal="value_changed" from="Main/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
-[connection signal="toggled" from="Main/fullscreen_button" to="." method="_on_fullscreen_button_toggled"]
-
 [connection signal="pressed" from="Main/Go to Control setings" to="." method="_on_go_to_control_setings_pressed"]
 [connection signal="pressed" from="Controls/Go to main setings" to="." method="_on_go_to_main_setings_pressed"]
