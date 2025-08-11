@@ -14,20 +14,18 @@ config/name="Coop3d battle game"
 config/tags=PackedStringArray("3d", "menu", "multiplayer")
 run/main_scene="uid://c2k1ml48dldnv"
 config/features=PackedStringArray("4.4", "Forward Plus")
-boot_splash/bg_color=Color(0.0840914, 0.1783, 0.201304, 1)
 config/icon="res://icon.svg"
 
 [autoload]
 
 ControlsMannger="*res://Ui/Setings/controls_mannger.gd"
+Setings="*res://Ui/Setings/setings.gd"
 GlobalVarables="*res://Global Varables.gd"
 
 [display]
 
-window/size/viewport_width=2048
-window/size/viewport_height=1080
 window/size/mode=3
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [editor]
 
@@ -36,7 +34,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/git_sha_project_setting/plugin.cfg")
 
 [file_customization]
 

@@ -2,7 +2,6 @@ extends Control
 
 var fullscreen = false
 var master_volume = 100
-var sound_effect_volume = 100
 var save_path = "user://settings.cfg"
 var keybinds: Dictionary = {
 	"abilty 1": InputEvent,
@@ -21,7 +20,6 @@ func loadsettings():
 	if config.load(save_path) == OK:
 		fullscreen = config.get_value("visual", "fullscreen")
 		master_volume = config.get_value("audio", "master_volume") 
-		sound_effect_volume = config.get_value("audio", "sound_effect_volume")
 		keybinds = config.get_value("controls", "keybinds")
 		GlobalVarables.mouse_sensitivity = config.get_value("controls", "mouse_sensitivity")
 		UpdateSettingsGame()
@@ -29,7 +27,6 @@ func loadsettings():
 		# File doesn't exist or failed to load, create default config
 		config.set_value("visual", "fullscreen", true)
 		config.set_value("audio", "master_volume", 100)
-		config.set_value("audio", "sound_effect_volume", 100)
 		config.set_value("controls", "keybinds", keybinds)
 		config.set_value("controls", "mouse_sensitivity", 50)
 		config.save(save_path)
@@ -43,7 +40,6 @@ func save_data():
 	# Set new values (overrides old values)
 	config.set_value("visual", "fullscreen", fullscreen)
 	config.set_value("audio", "master_volume", master_volume)
-	config.set_value("audio", "sound_effect_volume", sound_effect_volume)
 	config.set_value("controls", "keybinds", keybinds)
 	config.set_value("controls", "mouse_sensitivity", GlobalVarables.mouse_sensitivity)
 	
@@ -109,8 +105,3 @@ func _on_go_to_main_setings_pressed() -> void:
 func _on_go_to_control_setings_pressed() -> void:
 	$Controls.show()
 	$Main.hide()
-
-
-func _on_sound_effect_volume_slider_value_changed(value: float) -> void:
-	sound_effect_volume = linear_to_db(value)
-	UpdateSettingsGame()
