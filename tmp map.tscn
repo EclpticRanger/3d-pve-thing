@@ -1,6 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwr3b22l66e8y"]
+[gd_scene load_steps=16 format=3 uid="uid://bwr3b22l66e8y"]
 
 [ext_resource type="PackedScene" uid="uid://deoyx8l1km3di" path="res://Player/Player.tscn" id="1_35834"]
+[ext_resource type="PackedScene" uid="uid://c3f51gp3qml6o" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Fuel_C_Barrel_Dirty.gltf" id="2_v423h"]
+[ext_resource type="PackedScene" uid="uid://b6kppq322rf63" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Fuel_B_Barrel_Dirty.gltf" id="3_5tfvi"]
+[ext_resource type="PackedScene" uid="uid://b8i0sb57yyc6u" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Fuel_A_Barrels.gltf" id="4_jhfgb"]
+[ext_resource type="PackedScene" uid="uid://c3ih8kyam5n64" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Fuel_B_Barrels.gltf" id="5_6jdx8"]
+[ext_resource type="PackedScene" uid="uid://dxiqaoo3sbjow" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Fuel_C_Barrels.gltf" id="6_kbl6t"]
+[ext_resource type="PackedScene" uid="uid://cxrgobs2ctbgq" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Fuel_C_Barrel.gltf" id="7_yggdk"]
+[ext_resource type="PackedScene" uid="uid://dgh7ko5gqgloi" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Fuel_B_Barrel.gltf" id="8_l0exv"]
+[ext_resource type="PackedScene" uid="uid://btipsyr4uxch6" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Fuel_A_Barrel_Dirty.gltf" id="9_t3dqc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_35834"]
 sky_top_color = Color(0.310749, 0.451477, 0.664551, 1)
@@ -46,3 +54,33 @@ shape = SubResource("ConcavePolygonShape3D_35834")
 
 [node name="Player" parent="." instance=ExtResource("1_35834")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Fuel_C_Barrel_Dirty2" parent="." instance=ExtResource("2_v423h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.44584, 0.0999985, -4.61916)
+
+[node name="Fuel_B_Barrel_Dirty2" parent="." instance=ExtResource("3_5tfvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.90735, 0.0999994, 4.25912)
+
+[node name="Fuel_A_Barrels2" parent="." instance=ExtResource("4_jhfgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.20618, 0.0999985, 0.435034)
+
+[node name="Fuel_B_Barrels2" parent="." instance=ExtResource("5_6jdx8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09152, 0.0999985, -6.22616)
+
+[node name="Fuel_C_Barrels2" parent="." instance=ExtResource("6_kbl6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0125618, 0.0999975, 4.90942)
+
+[node name="Fuel_C_Barrel2" parent="." instance=ExtResource("7_yggdk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5501, 0.0999985, -5.59748)
+
+[node name="Fuel_B_Barrel2" parent="." instance=ExtResource("8_l0exv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4642, 0.1, 6.68022)
+
+[node name="Fuel_A_Barrel_Dirty2" parent="." instance=ExtResource("9_t3dqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74669, 0.0999994, -5.78348)
+
+[node name="Fuel_B_Barrel_Dirty3" parent="." instance=ExtResource("3_5tfvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5783, 0.0999994, 0.908386)
+
+[node name="Fuel_C_Barrel3" parent="." instance=ExtResource("7_yggdk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.31792, 0.0999994, 10.6437)
