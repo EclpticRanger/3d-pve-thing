@@ -98,10 +98,10 @@ func UpdateSettingsGame():
 	#InputMap.action_add_event("sprint" , keybinds["sprint"])
 
 func _on_go_to_main_setings_pressed() -> void:
-	$Controls.hide()
+	$Keybinds.hide()
 	$Main.show()
 
 
 func _on_go_to_control_setings_pressed() -> void:
-	$Controls.show()
+	$Keybinds.show()
 	$Main.hide()
