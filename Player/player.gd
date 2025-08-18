@@ -52,6 +52,11 @@ func _input(event: InputEvent) -> void:
 		rotate_y(deg_to_rad(-event.relative.x * 1))
 		Camera_pivot.rotate_x(deg_to_rad(-event.relative.y * 1))
 		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x, deg_to_rad(-45), deg_to_rad(90))
+		
+	if event is InputEventMouseMotion:
+		var sensitivity = Setings.mouse_sensitivity
+		rotate_y(-event.relative.x * sensitivity * 0.01)
+
 
 func _physics_process(delta: float) -> void:
 	speed_modifier = Knight_speed_modifier
@@ -74,5 +79,4 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, (BACE_MOVE_SPEED * speed_modifier))
 
 	move_and_slide()
-	
 	
