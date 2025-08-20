@@ -1,7 +1,8 @@
-[gd_scene load_steps=43 format=4 uid="uid://bwr3b22l66e8y"]
+[gd_scene load_steps=44 format=4 uid="uid://bwr3b22l66e8y"]
 
 [ext_resource type="PackedScene" uid="uid://deoyx8l1km3di" path="res://Player/Player.tscn" id="1_35834"]
 [ext_resource type="Texture2D" uid="uid://dvi0qamwce2e5" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/resource_bits_texture.png" id="2_5sd4n"]
+[ext_resource type="PackedScene" uid="uid://c0wi70nu65e0i" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_dirt_large.gltf" id="3_sgcor"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_35834"]
 sky_top_color = Color(0.310749, 0.451477, 0.664551, 1)
@@ -489,3 +490,189 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Fuel_C_Barrel2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_6jdx8")
+
+[node name="floor_dirt_large2" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.0013, 0.08015, 1.99669)
+
+[node name="floor_dirt_large3" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0013, 0.08015, 5.99669)
+
+[node name="floor_dirt_large4" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.0013, 0.08015, 1.99669)
+
+[node name="floor_dirt_large5" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.0013, 0.08015, 5.99669)
+
+[node name="floor_dirt_large6" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.0013, 0.08015, 9.99669)
+
+[node name="floor_dirt_large7" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.0013, 0.08015, 13.9967)
+
+[node name="floor_dirt_large10" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10.0013, 0.08015, 9.99669)
+
+[node name="floor_dirt_large11" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0013, 0.08015, 13.9967)
+
+[node name="floor_dirt_large12" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.0013, 0.08015, 9.99669)
+
+[node name="floor_dirt_large13" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.0013, 0.08015, 13.9967)
+
+[node name="floor_dirt_large14" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10.0013, 0.08015, 1.99669)
+
+[node name="floor_dirt_large15" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0013, 0.08015, 5.99669)
+
+[node name="floor_dirt_large16" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.0013, 0.08015, 1.99669)
+
+[node name="floor_dirt_large17" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.0013, 0.08015, 5.99669)
+
+[node name="floor_dirt_large18" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.9987, 0.08015, 1.99669)
+
+[node name="floor_dirt_large19" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9987, 0.08015, 5.99669)
+
+[node name="floor_dirt_large20" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.9987, 0.08015, 1.99669)
+
+[node name="floor_dirt_large21" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.9987, 0.08015, 5.99669)
+
+[node name="floor_dirt_large22" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.9987, 0.08015, 9.99669)
+
+[node name="floor_dirt_large23" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9987, 0.08015, 13.9967)
+
+[node name="floor_dirt_large24" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.9987, 0.08015, 9.99669)
+
+[node name="floor_dirt_large25" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.9987, 0.08015, 13.9967)
+
+[node name="floor_dirt_large26" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5.9987, 0.08015, 9.99669)
+
+[node name="floor_dirt_large27" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9987, 0.08015, 13.9967)
+
+[node name="floor_dirt_large28" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.9987, 0.08015, 9.99669)
+
+[node name="floor_dirt_large29" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.9987, 0.08015, 13.9967)
+
+[node name="floor_dirt_large30" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5.9987, 0.08015, 1.99669)
+
+[node name="floor_dirt_large31" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9987, 0.08015, 5.99669)
+
+[node name="floor_dirt_large32" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.9987, 0.08015, 1.99669)
+
+[node name="floor_dirt_large33" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.9987, 0.08015, 5.99669)
+
+[node name="floor_dirt_large34" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.9987, 0.08015, -14.0033)
+
+[node name="floor_dirt_large35" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9987, 0.08015, -10.0033)
+
+[node name="floor_dirt_large36" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.9987, 0.08015, -14.0033)
+
+[node name="floor_dirt_large37" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.9987, 0.08015, -10.0033)
+
+[node name="floor_dirt_large38" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.9987, 0.08015, -6.00331)
+
+[node name="floor_dirt_large39" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9987, 0.08015, -2.00331)
+
+[node name="floor_dirt_large40" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.9987, 0.08015, -6.00331)
+
+[node name="floor_dirt_large41" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.9987, 0.08015, -2.00331)
+
+[node name="floor_dirt_large42" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5.9987, 0.08015, -6.00331)
+
+[node name="floor_dirt_large43" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9987, 0.08015, -2.00331)
+
+[node name="floor_dirt_large44" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.9987, 0.08015, -6.00331)
+
+[node name="floor_dirt_large45" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.9987, 0.08015, -2.00331)
+
+[node name="floor_dirt_large46" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5.9987, 0.08015, -14.0033)
+
+[node name="floor_dirt_large47" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9987, 0.08015, -10.0033)
+
+[node name="floor_dirt_large48" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.9987, 0.08015, -14.0033)
+
+[node name="floor_dirt_large49" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.9987, 0.08015, -10.0033)
+
+[node name="floor_dirt_large50" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.0013, 0.08015, -14.0033)
+
+[node name="floor_dirt_large51" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0013, 0.08015, -10.0033)
+
+[node name="floor_dirt_large52" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.0013, 0.08015, -14.0033)
+
+[node name="floor_dirt_large53" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.0013, 0.08015, -10.0033)
+
+[node name="floor_dirt_large54" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.0013, 0.08015, -6.00331)
+
+[node name="floor_dirt_large55" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0013, 0.08015, -2.00331)
+
+[node name="floor_dirt_large56" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.0013, 0.08015, -6.00331)
+
+[node name="floor_dirt_large57" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.0013, 0.08015, -2.00331)
+
+[node name="floor_dirt_large58" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10.0013, 0.08015, -6.00331)
+
+[node name="floor_dirt_large59" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0013, 0.08015, -2.00331)
+
+[node name="floor_dirt_large60" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.0013, 0.08015, -6.00331)
+
+[node name="floor_dirt_large61" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.0013, 0.08015, -2.00331)
+
+[node name="floor_dirt_large62" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10.0013, 0.08015, -14.0033)
+
+[node name="floor_dirt_large63" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0013, 0.08015, -10.0033)
+
+[node name="floor_dirt_large64" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.0013, 0.08015, -14.0033)
+
+[node name="floor_dirt_large65" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.0013, 0.08015, -10.0033)
