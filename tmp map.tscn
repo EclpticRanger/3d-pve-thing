@@ -507,6 +507,12 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.001
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.0013, 0.08015, 9.99669)
 
 [node name="floor_dirt_large7" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0013, 0.08015, 13.9967)
+
+[node name="floor_dirt_large8" parent="." instance=ExtResource("3_sgcor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.0013, 0.08015, 9.99669)
+
+[node name="floor_dirt_large9" parent="." instance=ExtResource("3_sgcor")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.0013, 0.08015, 13.9967)
 
 [node name="floor_dirt_large10" parent="." instance=ExtResource("3_sgcor")]
