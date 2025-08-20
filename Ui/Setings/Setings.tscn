@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://v5mxs27akhn4"]
+[gd_scene load_steps=46 format=3 uid="uid://v5mxs27akhn4"]
 
 [ext_resource type="FontFile" uid="uid://puun12xix6xd" path="res://Ui/Styling/Quicksand-SemiBold.ttf" id="1_fifht"]
 [ext_resource type="Script" uid="uid://dqiijtjcr1b4h" path="res://Ui/Setings/setings.gd" id="1_q0don"]
@@ -34,6 +34,10 @@
 [ext_resource type="PackedScene" uid="uid://bv05nilhun7tk" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/candle_lit.gltf" id="32_6y8kd"]
 [ext_resource type="PackedScene" uid="uid://bl3l6pgordey8" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/candle_thin_lit.gltf" id="33_7r4hc"]
 [ext_resource type="PackedScene" uid="uid://cbschygyw2dl2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/plate_stack.gltf" id="34_ul68p"]
+[ext_resource type="PackedScene" uid="uid://l6erq83nl0r2" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Textiles_Stack_Large.gltf" id="35_uxpbq"]
+[ext_resource type="PackedScene" uid="uid://c4lxvxi2iyuj8" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Textiles_A.gltf" id="36_moifq"]
+[ext_resource type="PackedScene" uid="uid://b8dwyl6csqxxs" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Textiles_B.gltf" id="37_357h0"]
+[ext_resource type="PackedScene" uid="uid://ckcm6pm1sl7ob" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Textiles_C.gltf" id="38_7kxku"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3b62w"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -768,6 +772,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11463, 2.12135, 2.11169)
 
 [node name="plate_stack2" parent="." instance=ExtResource("34_ul68p")]
 transform = Transform3D(0.644802, 0, 0, 0, 0.788607, 0, 0, 0, 0.597064, 5.03335, 2.62193, 2.88603)
+
+[node name="Textiles_Stack_Large2" parent="." instance=ExtResource("35_uxpbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5173, 0, -4.68037)
+
+[node name="Textiles_Stack_Large6" parent="." instance=ExtResource("35_uxpbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5173, 0.832398, -4.68037)
+
+[node name="Textiles_Stack_Large3" parent="." instance=ExtResource("35_uxpbq")]
+transform = Transform3D(-0.0736385, 0, -0.997285, 0, 1, 0, 0.997285, 0, -0.0736385, -12.5173, 0, -3.04484)
+
+[node name="Textiles_Stack_Large4" parent="." instance=ExtResource("35_uxpbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9251, 0, -3.04484)
+
+[node name="Textiles_Stack_Large5" parent="." instance=ExtResource("35_uxpbq")]
+transform = Transform3D(0.028602, 0, 0.999591, 0, 1, 0, -0.999591, 0, 0.028602, -10.9251, 0, -4.62166)
+
+[node name="Textiles_A2" parent="." instance=ExtResource("36_moifq")]
+transform = Transform3D(0.47478, 0, -0.880105, 0, 1, 0, 0.880105, 0, 0.47478, -10.8673, 0.837792, -3.50884)
+
+[node name="Textiles_B2" parent="." instance=ExtResource("37_357h0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9641, 0.391892, -2.70818)
+
+[node name="Textiles_C2" parent="." instance=ExtResource("38_7kxku")]
+transform = Transform3D(0.716631, 0, -0.697453, 0, 1, 0, 0.697453, 0, 0.716631, -12.6193, 1.68743, -4.88697)
+
+[node name="Textiles_C3" parent="." instance=ExtResource("38_7kxku")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.7352, 0, -1.98867)
 
 [connection signal="value_changed" from="Main/PanelContainer/VBoxContainer/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="value_changed" from="Main/PanelContainer/VBoxContainer/sound_effect_volume_slider2" to="." method="_on_master_volume_slider_value_changed"]
