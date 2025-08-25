@@ -86,6 +86,7 @@ shadow_enabled = true
 environment = SubResource("Environment_ajtpu")
 
 [node name="Main" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -124,56 +125,15 @@ theme_override_font_sizes/font_size = 60
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="Master_volume" type="Label" parent="Main/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 30
-text = "Master Volume"
-horizontal_alignment = 1
-
-[node name="master_volume_slider" type="HSlider" parent="Main/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
-max_value = 1.0
-step = 0.005
-value = 1.0
-
-[node name="Sound_effect_volume" type="Label" parent="Main/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 30
-text = "Sound Effects"
-horizontal_alignment = 1
-
-[node name="sound_effect_volume_slider2" type="HSlider" parent="Main/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
-max_value = 1.0
-step = 0.005
-value = 1.0
-
-[node name="fullscreen_button" type="CheckButton" parent="Main/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_fonts/font = ExtResource("1_fifht")
-theme_override_font_sizes/font_size = 30
-button_pressed = true
-text = "Fullscreen"
-alignment = 1
-
 [node name="Go to Control setings" type="Button" parent="Main"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.506
-offset_left = -123.5
-offset_top = 150.0
-offset_right = 123.26
-offset_bottom = 233.0
+offset_left = -128.0
+offset_top = 290.0
+offset_right = 118.76
+offset_bottom = 373.0
 grow_horizontal = 2
 scale = Vector2(1.00203, 1)
 theme = ExtResource("4_rg2i1")
@@ -209,204 +169,6 @@ offset_right = 258.0
 offset_bottom = 131.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Left" type="VBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Forward" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left/Forward"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Left/Forward/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 30
-text = "Forward:      "
-
-[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Left/Forward/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "W"
-script = ExtResource("4_y0ntw")
-action_name = "forward"
-
-[node name="Back" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left/Back"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Left/Back/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 30
-text = "Backwards:  "
-
-[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Left/Back/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "S"
-script = ExtResource("4_y0ntw")
-action_name = "back"
-
-[node name="Left" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left/Left"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Left/Left/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 30
-text = "Left:              "
-
-[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Left/Left/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "A"
-script = ExtResource("4_y0ntw")
-action_name = "left"
-
-[node name="Right" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left/Right"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Left/Right/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 30
-text = "Right:            "
-
-[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Left/Right/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "D"
-script = ExtResource("4_y0ntw")
-action_name = "right"
-
-[node name="Junp" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Left/Junp"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Left/Junp/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 30
-text = "Jump:           "
-
-[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Left/Junp/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Space"
-script = ExtResource("4_y0ntw")
-action_name = "jump"
-
-[node name="Right" type="VBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Sprint" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right/Sprint"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Right/Sprint/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 30
-text = "Sprint:    "
-
-[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Right/Sprint/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Ctrl"
-script = ExtResource("4_y0ntw")
-action_name = "sprint"
-
-[node name="abilty 1" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 1"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 1/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 30
-text = "Abilty 1:  "
-
-[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 1/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "1"
-script = ExtResource("4_y0ntw")
-action_name = "abilty 1"
-
-[node name="abilty 2" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 2/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 30
-text = "Abilty 2: "
-
-[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 2/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "2"
-script = ExtResource("4_y0ntw")
-action_name = "abilty 2"
-
-[node name="abilty 3" type="PanelContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 3"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 3/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_rg2i1")
-theme_override_font_sizes/font_size = 30
-text = "Abilty 3: "
-
-[node name="Button" type="Button" parent="Keybinds/PanelContainer/HBoxContainer/Right/abilty 3/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "3"
-script = ExtResource("4_y0ntw")
-action_name = "abilty 3"
-
-[node name="Gold_Bars_Stack_Large2" parent="Keybinds/PanelContainer/HBoxContainer/Right" instance=ExtResource("5_s064r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76051, 0, 8.64864)
-
-[node name="Gold_Bars2" parent="Keybinds/PanelContainer/HBoxContainer/Right" instance=ExtResource("6_1ec25")]
-transform = Transform3D(0.849405, 0, 0.527742, 0, 1, 0, -0.527742, 0, 0.849405, 4.80044, 1.49015, 8.72967)
-
-[node name="Gold_Bars_Stack_Medium2" parent="Keybinds/PanelContainer/HBoxContainer/Right" instance=ExtResource("7_gxx5v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21505, 0, 7.50991)
-
-[node name="Gold_Bars_Stack_Small2" parent="Keybinds/PanelContainer/HBoxContainer/Right" instance=ExtResource("8_ri52p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41306, 0, 7.50846)
 
 [node name="Go to main setings" type="Button" parent="Keybinds"]
 layout_mode = 1
@@ -449,328 +211,736 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -5)
 [node name="chest_gold2" parent="BG" instance=ExtResource("8_rydfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
 
-[node name="floor_tile_large2" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large2" parent="BG" instance=ExtResource("11_a2ur3")]
 
-[node name="floor_tile_large3" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large3" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
-[node name="floor_tile_large15" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large15" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
-[node name="floor_tile_large5" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large5" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
 
-[node name="floor_tile_large26" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large26" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4)
 
-[node name="floor_tile_large4" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large4" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
-[node name="floor_tile_large12" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large12" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -4)
 
-[node name="floor_tile_large13" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large13" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
 
-[node name="floor_tile_large14" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large14" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9838, 0, 4)
 
-[node name="floor_tile_large6" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large6" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
 
-[node name="floor_tile_large16" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large16" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
 
-[node name="floor_tile_large7" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large7" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
-[node name="floor_tile_large8" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large8" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
 
-[node name="floor_tile_large9" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large9" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
-[node name="floor_tile_large10" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large10" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
 
-[node name="floor_tile_large17" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large17" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9838, 0, 8)
 
-[node name="floor_tile_large18" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large18" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
 
-[node name="floor_tile_large19" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large19" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
 
-[node name="floor_tile_large20" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large20" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
 
-[node name="floor_tile_large21" parent="." instance=ExtResource("11_a2ur3")]
+[node name="floor_tile_large21" parent="BG" instance=ExtResource("11_a2ur3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
 
-[node name="trunk_large_A2" parent="." instance=ExtResource("18_lss58")]
+[node name="trunk_large_A2" parent="BG" instance=ExtResource("18_lss58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 9)
 
-[node name="table_long_decorated_C2" parent="." instance=ExtResource("19_j62b6")]
+[node name="table_long_decorated_C2" parent="BG" instance=ExtResource("19_j62b6")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, 8.5604)
 
-[node name="stairs_wood_decorated2" parent="." instance=ExtResource("18_j62b6")]
+[node name="stairs_wood_decorated2" parent="BG" instance=ExtResource("18_j62b6")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.50862, 0, -1.98616)
 
-[node name="wall_scaffold2" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold2" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
 
-[node name="wall_scaffold3" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold3" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 10)
 
-[node name="wall_scaffold4" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold4" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10)
 
-[node name="wall_scaffold5" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold5" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 10)
 
-[node name="wall_scaffold6" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold6" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 6)
 
-[node name="wall_scaffold7" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold7" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 2)
 
-[node name="wall_scaffold8" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold8" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, -2)
 
-[node name="wall_scaffold13" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold13" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 0, 6)
 
-[node name="wall_scaffold14" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold14" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 0, 2)
 
-[node name="wall_scaffold15" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold15" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 0, -2)
 
-[node name="wall_corner_scaffold2" parent="." instance=ExtResource("20_otcmy")]
+[node name="wall_corner_scaffold2" parent="BG" instance=ExtResource("20_otcmy")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14, 0, 10)
 
-[node name="wall_corner_scaffold3" parent="." instance=ExtResource("20_otcmy")]
+[node name="wall_corner_scaffold3" parent="BG" instance=ExtResource("20_otcmy")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, 10)
 
-[node name="wall_scaffold9" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold9" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2, 0, -6)
 
-[node name="wall_scaffold10" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold10" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, -6)
 
-[node name="wall_scaffold11" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold11" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6, 0, -6)
 
-[node name="wall_scaffold12" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold12" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10, 0, -6)
 
-[node name="wall_corner_scaffold5" parent="." instance=ExtResource("20_otcmy")]
+[node name="wall_corner_scaffold5" parent="BG" instance=ExtResource("20_otcmy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 0, -6)
 
-[node name="wall_corner_scaffold4" parent="." instance=ExtResource("20_otcmy")]
+[node name="wall_corner_scaffold4" parent="BG" instance=ExtResource("20_otcmy")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 6, 0, -6)
 
-[node name="wall_scaffold16" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold16" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, 10)
 
-[node name="wall_scaffold17" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold17" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 4, 10)
 
-[node name="wall_scaffold18" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold18" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 10)
 
-[node name="wall_scaffold19" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold19" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 10)
 
-[node name="wall_scaffold20" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold20" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 4, 6)
 
-[node name="wall_scaffold21" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold21" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 4, 2)
 
-[node name="wall_scaffold23" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold23" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 4, 6)
 
-[node name="wall_scaffold24" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold24" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 4, 2)
 
-[node name="wall_scaffold25" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold25" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 4, -2)
 
-[node name="wall_corner_scaffold6" parent="." instance=ExtResource("20_otcmy")]
+[node name="wall_corner_scaffold6" parent="BG" instance=ExtResource("20_otcmy")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14, 4, 10)
 
-[node name="wall_corner_scaffold7" parent="." instance=ExtResource("20_otcmy")]
+[node name="wall_corner_scaffold7" parent="BG" instance=ExtResource("20_otcmy")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 4, 10)
 
-[node name="wall_scaffold26" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold26" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2, 4, -6)
 
-[node name="wall_scaffold27" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold27" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 4, -6)
 
-[node name="wall_scaffold28" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold28" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6, 4, -6)
 
-[node name="wall_scaffold29" parent="." instance=ExtResource("19_ixo4k")]
+[node name="wall_scaffold29" parent="BG" instance=ExtResource("19_ixo4k")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10, 4, -6)
 
-[node name="wall_corner_scaffold8" parent="." instance=ExtResource("20_otcmy")]
+[node name="wall_corner_scaffold8" parent="BG" instance=ExtResource("20_otcmy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 4, -6)
 
-[node name="wall_corner_scaffold9" parent="." instance=ExtResource("20_otcmy")]
+[node name="wall_corner_scaffold9" parent="BG" instance=ExtResource("20_otcmy")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 6, 4, -6)
 
-[node name="wall_doorway_scaffold2" parent="." instance=ExtResource("17_a2ur3")]
+[node name="wall_doorway_scaffold2" parent="BG" instance=ExtResource("17_a2ur3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 4, -2)
 
-[node name="floor_wood_large2" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large2" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 4, 8, -4)
 
-[node name="floor_wood_large3" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large3" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 4, 8, 0)
 
-[node name="floor_wood_large4" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large4" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 4, 8, 4)
 
-[node name="floor_wood_large5" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large5" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 4, 8, 8)
 
-[node name="floor_wood_large6" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large6" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 8, -4)
 
-[node name="floor_wood_large7" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large7" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 8, 0)
 
-[node name="floor_wood_large17" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large17" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -4, 8, 0)
 
-[node name="floor_wood_large8" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large8" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 8, 4)
 
-[node name="floor_wood_large9" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large9" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 8, 8)
 
-[node name="floor_wood_large10" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large10" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -4, 8, -4)
 
-[node name="floor_wood_large11" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large11" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -4, 8, 4)
 
-[node name="floor_wood_large12" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large12" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -4, 8, 8)
 
-[node name="floor_wood_large13" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large13" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -8, 8, -4)
 
-[node name="floor_wood_large14" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large14" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -8, 8, 0)
 
-[node name="floor_wood_large15" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large15" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -8, 8, 4)
 
-[node name="floor_wood_large16" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large16" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -8, 8, 8)
 
-[node name="floor_wood_large18" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large18" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -12, 8, -4)
 
-[node name="floor_wood_large19" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large19" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -12, 8, 0)
 
-[node name="floor_wood_large20" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large20" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -12, 8, 4)
 
-[node name="floor_wood_large21" parent="." instance=ExtResource("16_ounr8")]
+[node name="floor_wood_large21" parent="BG" instance=ExtResource("16_ounr8")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -12, 8, 8)
 
-[node name="banner_shield_red2" parent="." instance=ExtResource("17_nxdfb")]
+[node name="banner_shield_red2" parent="BG" instance=ExtResource("17_nxdfb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 4, 10)
 
-[node name="banner_shield_red3" parent="." instance=ExtResource("17_nxdfb")]
+[node name="banner_shield_red3" parent="BG" instance=ExtResource("17_nxdfb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 4, 10)
 
-[node name="banner_shield_red4" parent="." instance=ExtResource("17_nxdfb")]
+[node name="banner_shield_red4" parent="BG" instance=ExtResource("17_nxdfb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6, 4, 10)
 
-[node name="banner_shield_red5" parent="." instance=ExtResource("17_nxdfb")]
+[node name="banner_shield_red5" parent="BG" instance=ExtResource("17_nxdfb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10, 4, 10)
 
-[node name="banner_shield_red6" parent="." instance=ExtResource("17_nxdfb")]
+[node name="banner_shield_red6" parent="BG" instance=ExtResource("17_nxdfb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, -6)
 
-[node name="banner_shield_red7" parent="." instance=ExtResource("17_nxdfb")]
+[node name="banner_shield_red7" parent="BG" instance=ExtResource("17_nxdfb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 4, -6)
 
-[node name="banner_shield_red8" parent="." instance=ExtResource("17_nxdfb")]
+[node name="banner_shield_red8" parent="BG" instance=ExtResource("17_nxdfb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, -6)
 
-[node name="banner_shield_red9" parent="." instance=ExtResource("17_nxdfb")]
+[node name="banner_shield_red9" parent="BG" instance=ExtResource("17_nxdfb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, -6)
 
-[node name="Gold_Nugget_Large2" parent="." instance=ExtResource("22_uxpbq")]
+[node name="Gold_Nugget_Large2" parent="BG" instance=ExtResource("22_uxpbq")]
 transform = Transform3D(0.336306, 0, 0.941753, 0, 1, 0, -0.941753, 0, 0.336306, 4.50384, 0.910836, 7.62309)
 
-[node name="Gold_Bars_Stack_Small2" parent="." instance=ExtResource("8_ri52p")]
+[node name="Gold_Bars_Stack_Small2" parent="BG" instance=ExtResource("8_ri52p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67413, 0, 9.06118)
 
-[node name="coin_stack_large2" parent="." instance=ExtResource("23_moifq")]
+[node name="coin_stack_large2" parent="BG" instance=ExtResource("23_moifq")]
 transform = Transform3D(0.974358, 0, 0.225002, 0, 1, 0, -0.225002, 0, 0.974358, 3.65954, 0, 8.28462)
 
-[node name="coin_stack_medium2" parent="." instance=ExtResource("24_357h0")]
+[node name="coin_stack_medium2" parent="BG" instance=ExtResource("24_357h0")]
 transform = Transform3D(0.618998, 0, -0.785393, 0, 1, 0, 0.785393, 0, 0.618998, 5.06444, 0, 6.74105)
 
-[node name="coin_stack_small2" parent="." instance=ExtResource("15_km1am")]
+[node name="coin_stack_small2" parent="BG" instance=ExtResource("15_km1am")]
 transform = Transform3D(0.77764, 0, -0.62871, 0, 1, 0, 0.62871, 0, 0.77764, 5.23001, 1.45862, 7.73915)
 
-[node name="coin2" parent="." instance=ExtResource("26_7kxku")]
+[node name="coin2" parent="BG" instance=ExtResource("26_7kxku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24058, 1.54207, 9.22286)
 
-[node name="coin3" parent="." instance=ExtResource("26_7kxku")]
+[node name="coin3" parent="BG" instance=ExtResource("26_7kxku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55411, 0.802361, 7.28375)
 
-[node name="coin5" parent="." instance=ExtResource("26_7kxku")]
+[node name="coin5" parent="BG" instance=ExtResource("26_7kxku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20937, 0.802361, 7.6539)
 
-[node name="coin6" parent="." instance=ExtResource("26_7kxku")]
+[node name="coin6" parent="BG" instance=ExtResource("26_7kxku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08086, 0.940076, 0.928188)
 
-[node name="coin4" parent="." instance=ExtResource("26_7kxku")]
+[node name="coin4" parent="BG" instance=ExtResource("26_7kxku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55411, 0.931007, 7.28375)
 
-[node name="barrel_small_stack2" parent="." instance=ExtResource("27_5m2cb")]
+[node name="barrel_small_stack2" parent="BG" instance=ExtResource("27_5m2cb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.14836, 0, 1.54048)
 
-[node name="barrel_small_stack3" parent="." instance=ExtResource("27_5m2cb")]
+[node name="barrel_small_stack3" parent="BG" instance=ExtResource("27_5m2cb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.14836, 0, 3.39146)
 
-[node name="barrel_small_stack4" parent="." instance=ExtResource("27_5m2cb")]
+[node name="barrel_small_stack4" parent="BG" instance=ExtResource("27_5m2cb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, 5.14836, 2.61845, 2.46578)
 
-[node name="bottle_A_green2" parent="." instance=ExtResource("28_ps1j3")]
+[node name="bottle_A_green2" parent="BG" instance=ExtResource("28_ps1j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1418, 0.856382, 4.03253)
 
-[node name="bottle_A_brown2" parent="." instance=ExtResource("29_cn770")]
+[node name="bottle_A_brown2" parent="BG" instance=ExtResource("29_cn770")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.67759, 0.174686, 1.08661)
 
-[node name="bottle_A_labeled_brown2" parent="." instance=ExtResource("30_7nbxd")]
+[node name="bottle_A_labeled_brown2" parent="BG" instance=ExtResource("30_7nbxd")]
 transform = Transform3D(-0.0653509, 5.13169e-09, -0.997863, -0.205065, 0.978656, 0.0134299, 0.976564, 0.205504, -0.0639561, 5.3035, 1.73146, 1.3294)
 
-[node name="box_stacked2" parent="." instance=ExtResource("31_muj25")]
+[node name="box_stacked2" parent="BG" instance=ExtResource("31_muj25")]
 transform = Transform3D(-0.90845, 0, 0.417994, 0, 1, 0, -0.417994, 0, -0.90845, -12.0203, 0, 8.03857)
 
-[node name="candle_lit2" parent="." instance=ExtResource("32_6y8kd")]
+[node name="candle_lit2" parent="BG" instance=ExtResource("32_6y8kd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.276, 2.29262, 1.96899)
 
-[node name="candle_thin_lit2" parent="." instance=ExtResource("33_7r4hc")]
+[node name="candle_thin_lit2" parent="BG" instance=ExtResource("33_7r4hc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11463, 2.12135, 2.11169)
 
-[node name="plate_stack2" parent="." instance=ExtResource("34_ul68p")]
+[node name="plate_stack2" parent="BG" instance=ExtResource("34_ul68p")]
 transform = Transform3D(0.644802, 0, 0, 0, 0.788607, 0, 0, 0, 0.597064, 5.03335, 2.62193, 2.88603)
 
-[connection signal="value_changed" from="Main/PanelContainer/VBoxContainer/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
-[connection signal="value_changed" from="Main/PanelContainer/VBoxContainer/sound_effect_volume_slider2" to="." method="_on_master_volume_slider_value_changed"]
-[connection signal="toggled" from="Main/PanelContainer/VBoxContainer/fullscreen_button" to="." method="_on_fullscreen_button_toggled"]
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -552.0
+offset_top = -35.0
+offset_right = 545.0
+offset_bottom = 43.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+current_tab = 1
+scrolling_enabled = false
+tab_count = 3
+tab_0/title = "Video Settings"
+tab_0/tooltip = "1"
+tab_1/title = "Audio Settings"
+tab_1/tooltip = "2"
+tab_2/title = "Keybinds"
+tab_2/tooltip = "3"
+
+[node name="1" type="Control" parent="TabBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fullscreen_button" type="CheckButton" parent="TabBar/1"]
+layout_mode = 2
+offset_left = 495.0
+offset_top = 546.0
+offset_right = 849.0
+offset_bottom = 592.0
+theme = ExtResource("4_rg2i1")
+theme_override_fonts/font = ExtResource("1_fifht")
+theme_override_font_sizes/font_size = 30
+button_pressed = true
+text = "Fullscreen"
+alignment = 1
+
+[node name="Vsync" type="CheckButton" parent="TabBar/1"]
+layout_mode = 2
+offset_left = 495.0
+offset_top = 596.0
+offset_right = 849.0
+offset_bottom = 642.0
+theme = ExtResource("4_rg2i1")
+theme_override_fonts/font = ExtResource("1_fifht")
+theme_override_font_sizes/font_size = 30
+button_pressed = true
+text = "Vsync
+"
+alignment = 1
+
+[node name="2" type="Control" parent="TabBar"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Master_volume" type="Label" parent="TabBar/2"]
+layout_mode = 2
+offset_left = 495.0
+offset_top = 298.0
+offset_right = 849.0
+offset_bottom = 336.0
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="master_volume_slider" type="HSlider" parent="TabBar/2"]
+layout_mode = 2
+offset_left = 495.0
+offset_top = 340.0
+offset_right = 849.0
+offset_bottom = 356.0
+theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
+max_value = 1.0
+step = 0.005
+value = 1.0
+
+[node name="Sound_effect_volume" type="Label" parent="TabBar/2"]
+layout_mode = 2
+offset_left = 495.0
+offset_top = 360.0
+offset_right = 849.0
+offset_bottom = 398.0
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Sound Effects"
+horizontal_alignment = 1
+
+[node name="sound_effect_volume_slider2" type="HSlider" parent="TabBar/2"]
+layout_mode = 2
+offset_left = 495.0
+offset_top = 402.0
+offset_right = 849.0
+offset_bottom = 418.0
+theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
+max_value = 1.0
+step = 0.005
+value = 1.0
+
+[node name="music_volume" type="Label" parent="TabBar/2"]
+layout_mode = 2
+offset_left = 495.0
+offset_top = 422.0
+offset_right = 849.0
+offset_bottom = 460.0
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Music"
+horizontal_alignment = 1
+
+[node name="music_volume_slider" type="HSlider" parent="TabBar/2"]
+layout_mode = 2
+offset_left = 495.0
+offset_top = 464.0
+offset_right = 849.0
+offset_bottom = 480.0
+theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
+max_value = 1.0
+step = 0.005
+value = 1.0
+
+[node name="player_volume" type="Label" parent="TabBar/2"]
+layout_mode = 2
+offset_left = 495.0
+offset_top = 484.0
+offset_right = 849.0
+offset_bottom = 522.0
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Player"
+horizontal_alignment = 1
+
+[node name="sound_effect_volume_slider4" type="HSlider" parent="TabBar/2"]
+layout_mode = 2
+offset_left = 495.0
+offset_top = 526.0
+offset_right = 849.0
+offset_bottom = 542.0
+theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
+max_value = 1.0
+step = 0.005
+value = 1.0
+
+[node name="3" type="Control" parent="TabBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabBar/3"]
+visible = false
+layout_mode = 2
+offset_left = 414.0
+offset_top = 302.5
+offset_right = 883.0
+offset_bottom = 533.5
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Left" type="VBoxContainer" parent="TabBar/3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Forward" type="PanelContainer" parent="TabBar/3/HBoxContainer/Left"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Left/Forward"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Left/Forward/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Forward:      "
+
+[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Left/Forward/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "W"
+script = ExtResource("4_y0ntw")
+action_name = "forward"
+
+[node name="Back" type="PanelContainer" parent="TabBar/3/HBoxContainer/Left"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Left/Back"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Left/Back/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Backwards:  "
+
+[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Left/Back/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "S"
+script = ExtResource("4_y0ntw")
+action_name = "back"
+
+[node name="Left" type="PanelContainer" parent="TabBar/3/HBoxContainer/Left"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Left/Left"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Left/Left/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Left:              "
+
+[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Left/Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "A"
+script = ExtResource("4_y0ntw")
+action_name = "left"
+
+[node name="Right" type="PanelContainer" parent="TabBar/3/HBoxContainer/Left"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Left/Right"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Left/Right/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Right:            "
+
+[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Left/Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "D"
+script = ExtResource("4_y0ntw")
+action_name = "right"
+
+[node name="Junp" type="PanelContainer" parent="TabBar/3/HBoxContainer/Left"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Left/Junp"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Left/Junp/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Jump:           "
+
+[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Left/Junp/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Space"
+script = ExtResource("4_y0ntw")
+action_name = "jump"
+
+[node name="Right" type="VBoxContainer" parent="TabBar/3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprint" type="PanelContainer" parent="TabBar/3/HBoxContainer/Right"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Right/Sprint"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Right/Sprint/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Sprint:    "
+
+[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Right/Sprint/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Ctrl"
+script = ExtResource("4_y0ntw")
+action_name = "sprint"
+
+[node name="Crouch" type="PanelContainer" parent="TabBar/3/HBoxContainer/Right"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Right/Crouch"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Right/Crouch/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Crouch:  "
+
+[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Right/Crouch/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Shift"
+script = ExtResource("4_y0ntw")
+action_name = "crouch"
+
+[node name="abilty 1" type="PanelContainer" parent="TabBar/3/HBoxContainer/Right"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Right/abilty 1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Right/abilty 1/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Abilty 1:  "
+
+[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Right/abilty 1/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "1"
+script = ExtResource("4_y0ntw")
+action_name = "abilty 1"
+
+[node name="abilty 2" type="PanelContainer" parent="TabBar/3/HBoxContainer/Right"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Right/abilty 2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Right/abilty 2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Abilty 2: "
+
+[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Right/abilty 2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "2"
+script = ExtResource("4_y0ntw")
+action_name = "abilty 2"
+
+[node name="abilty 3" type="PanelContainer" parent="TabBar/3/HBoxContainer/Right"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Right/abilty 3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Right/abilty 3/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 30
+text = "Abilty 3: "
+
+[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Right/abilty 3/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "3"
+script = ExtResource("4_y0ntw")
+action_name = "abilty 3"
+
+[node name="Gold_Bars_Stack_Large2" parent="TabBar/3/HBoxContainer/Right" instance=ExtResource("5_s064r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76051, 0, 8.64864)
+
+[node name="Gold_Bars2" parent="TabBar/3/HBoxContainer/Right" instance=ExtResource("6_1ec25")]
+transform = Transform3D(0.849405, 0, 0.527742, 0, 1, 0, -0.527742, 0, 0.849405, 4.80044, 1.49015, 8.72967)
+
+[node name="Gold_Bars_Stack_Medium2" parent="TabBar/3/HBoxContainer/Right" instance=ExtResource("7_gxx5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21505, 0, 7.50991)
+
+[node name="Gold_Bars_Stack_Small2" parent="TabBar/3/HBoxContainer/Right" instance=ExtResource("8_ri52p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41306, 0, 7.50846)
+
 [connection signal="pressed" from="Main/Go to Control setings" to="." method="_on_go_to_control_setings_pressed"]
 [connection signal="pressed" from="Keybinds/Go to main setings" to="." method="_on_go_to_main_setings_pressed"]
+[connection signal="tab_changed" from="TabBar" to="." method="_on_tab_bar_tab_changed"]
+[connection signal="toggled" from="TabBar/1/fullscreen_button" to="." method="_on_fullscreen_button_toggled"]
+[connection signal="toggled" from="TabBar/1/Vsync" to="." method="_on_vsync_toggled"]
+[connection signal="value_changed" from="TabBar/2/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="TabBar/2/sound_effect_volume_slider2" to="." method="_on_sound_effect_volume_slider_2_value_changed"]
+[connection signal="value_changed" from="TabBar/2/music_volume_slider" to="." method="_on_sound_effect_volume_slider_2_value_changed"]
+[connection signal="value_changed" from="TabBar/2/sound_effect_volume_slider4" to="." method="_on_sound_effect_volume_slider_2_value_changed"]

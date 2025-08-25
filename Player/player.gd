@@ -31,7 +31,7 @@ extends CharacterBody3D
 @export_subgroup("Warlock")
 @export var Warlock_speed_modifier: float = 1
 @export var Warlock_stealth_modifier: float = 1.2
-@export var Warlock_defence_modifier: float = 0.85
+@export var Warlock_defence_modifier: float = 0.852
 @export_subgroup("Mage")
 @export var Mage_speed_modifier: float = 1.1
 @export var Mage_stealth_modifier: float = 1.1

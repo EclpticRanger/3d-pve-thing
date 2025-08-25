@@ -2,6 +2,7 @@ extends Control
 
 var fullscreen = false
 var master_volume = 100
+var sound_effect_volume = 100
 var save_path = "user://settings.cfg"
 var keybinds: Dictionary = {
 	"abilty 1": InputEvent,
@@ -12,14 +13,16 @@ var keybinds: Dictionary = {
 	"left": InputEvent,
 	"right": InputEvent,
 	"sprint": InputEvent,
-	"jump": InputEvent}
+	"jump": InputEvent,
+	"crouch": InputEvent}
 #keybins settings
 
 func loadsettings():
 	var config = ConfigFile.new()
 	if config.load(save_path) == OK:
 		fullscreen = config.get_value("visual", "fullscreen")
-		master_volume = config.get_value("audio", "master_volume") 
+		master_volume = config.get_value("audio", "master_volume")
+		sound_effect_volume = config.get_value("audio", "sound_effect_volume") 
 		keybinds = config.get_value("controls", "keybinds")
 		GlobalVarables.mouse_sensitivity = config.get_value("controls", "mouse_sensitivity")
 		UpdateSettingsGame()
@@ -27,6 +30,7 @@ func loadsettings():
 		# File doesn't exist or failed to load, create default config
 		config.set_value("visual", "fullscreen", true)
 		config.set_value("audio", "master_volume", 100)
+		config.set_value("audio", "sound_effect_volume", 100)
 		config.set_value("controls", "keybinds", keybinds)
 		config.set_value("controls", "mouse_sensitivity", 50)
 		config.save(save_path)
@@ -40,6 +44,7 @@ func save_data():
 	# Set new values (overrides old values)
 	config.set_value("visual", "fullscreen", fullscreen)
 	config.set_value("audio", "master_volume", master_volume)
+	config.set_value("audio", "sound_effect_volume", sound_effect_volume)
 	config.set_value("controls", "keybinds", keybinds)
 	config.set_value("controls", "mouse_sensitivity", GlobalVarables.mouse_sensitivity)
 	
@@ -50,6 +55,7 @@ func save_data():
 		print("Settings saved successfully.")
 
 @export var master_bus_index: int = 0
+@onready var tabbar = $"TabBar"
 
 func _ready() -> void:
 	loadsettings()
@@ -76,6 +82,9 @@ func UpdateSettingsGame():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	
 	AudioServer.set_bus_volume_db(0 , master_volume)
+	AudioServer.set_bus_volume_db(1 , sound_effect_volume)
+	AudioServer.set_bus_volume_db(2 , master_volume)
+	AudioServer.set_bus_volume_db(3 , sound_effect_volume)
 	
 	#InputMap.action_erase_events("abilty 1")
 	#InputMap.action_erase_events("abilty 2")
@@ -97,11 +106,23 @@ func UpdateSettingsGame():
 	#InputMap.action_add_event("jump" , keybinds["jump"])
 	#InputMap.action_add_event("sprint" , keybinds["sprint"])
 
-func _on_go_to_main_setings_pressed() -> void:
-	$Keybinds.hide()
-	$Main.show()
+func _on_sound_effect_volume_slider_2_value_changed(value: float) -> void:
+	master_volume = linear_to_db(value)
+	UpdateSettingsGame()
 
 
-func _on_go_to_control_setings_pressed() -> void:
-	$Keybinds.show()
-	$Main.hide()
+func _on_vsync_toggled(toggled_on: bool) -> void:
+	UpdateSettingsGame()
+		
+
+
+func _on_tab_bar_tab_changed(tab: int) -> void:
+	$"TabBar/1".hide()
+	$"TabBar/2".hide()
+	$"TabBar/3".hide()
+	if tab == 1:
+		$"TabBar/1".show()
+	elif tab == 2:
+		$"TabBar/2".show()
+	elif tab == 3:
+			$"TabBar/3".show()
