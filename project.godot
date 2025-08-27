@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 ControlsMannger="*res://Ui/Setings/controls_mannger.gd"
 Setings="*res://Ui/Setings/setings.gd"
 GlobalVarables="*res://Global Varables.gd"
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 
 [display]
 
@@ -37,7 +38,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg")
 
 [file_customization]
 

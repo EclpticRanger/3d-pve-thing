@@ -1,7 +1,43 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bl7f7ipg81bfs"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bl7f7ipg81bfs"]
 
 [ext_resource type="FontFile" uid="uid://puun12xix6xd" path="res://Ui/Styling/Quicksand-SemiBold.ttf" id="1_lov3r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tp6vy"]
+bg_color = Color(1.92523e-07, 0.171951, 0.287816, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aob44"]
+bg_color = Color(0.0503973, 0.279701, 0.504996, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_au18m"]
+bg_color = Color(0, 0.218422, 0.376915, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bn84s"]
+bg_color = Color(0, 0.115293, 0.257491, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ksyr"]
+bg_color = Color(0, 0.170811, 0.387157, 0.678431)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lov3r"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ifxt"]
+bg_color = Color(0, 0, 0.239216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpvyu"]
+bg_color = Color(0.00392157, 0, 0.584314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_338tu"]
+bg_color = Color(0.0313726, 0, 0.443137, 1)
 
 [resource]
 default_font = ExtResource("1_lov3r")
 default_font_size = 20
+Button/styles/disabled = SubResource("StyleBoxFlat_tp6vy")
+Button/styles/hover = SubResource("StyleBoxFlat_aob44")
+Button/styles/normal = SubResource("StyleBoxFlat_au18m")
+Button/styles/pressed = SubResource("StyleBoxFlat_bn84s")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_8ksyr")
+TabBar/styles/button_highlight = SubResource("StyleBoxFlat_lov3r")
+TabBar/styles/tab_hovered = SubResource("StyleBoxFlat_8ifxt")
+TabBar/styles/tab_selected = SubResource("StyleBoxFlat_jpvyu")
+TabBar/styles/tab_unselected = SubResource("StyleBoxFlat_338tu")

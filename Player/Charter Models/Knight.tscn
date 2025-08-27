@@ -1,6 +1,6 @@
 [gd_scene load_steps=105 format=4 uid="uid://b7nq1ncndqk7"]
 
-[ext_resource type="Texture2D" uid="uid://bjr4cyf1ljbt8" path="res://Assets/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Knight_knight_texture.png" id="1_4p7nj"]
+[ext_resource type="Texture2D" uid="uid://bjr4cyf1ljbt8" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Knight_knight_texture.png" id="1_4p7nj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqu34"]
 resource_name = "knight_texture"

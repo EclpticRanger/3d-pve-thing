@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dmv0o7lwxtuow" path="res://Player/player.gd" id="1_3qydi"]
 [ext_resource type="Script" uid="uid://givcmflu00c1" path="res://Player/Anamation.gd" id="2_tok1r"]
-[ext_resource type="Texture2D" uid="uid://bjr4cyf1ljbt8" path="res://Assets/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Knight_knight_texture.png" id="3_tok1r"]
+[ext_resource type="Texture2D" uid="uid://bjr4cyf1ljbt8" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Knight_knight_texture.png" id="3_tok1r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
 height = 2.30211

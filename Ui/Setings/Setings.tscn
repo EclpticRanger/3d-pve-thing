@@ -1,39 +1,39 @@
-[gd_scene load_steps=42 format=3 uid="uid://v5mxs27akhn4"]
+[gd_scene load_steps=41 format=3 uid="uid://v5mxs27akhn4"]
 
 [ext_resource type="FontFile" uid="uid://puun12xix6xd" path="res://Ui/Styling/Quicksand-SemiBold.ttf" id="1_fifht"]
 [ext_resource type="Script" uid="uid://dqiijtjcr1b4h" path="res://Ui/Setings/setings.gd" id="1_q0don"]
 [ext_resource type="Theme" uid="uid://bl7f7ipg81bfs" path="res://Ui/Styling/Theam.tres" id="4_rg2i1"]
 [ext_resource type="Script" uid="uid://c250gr3c0s2jx" path="res://Ui/Setings/forward_button.gd" id="4_y0ntw"]
-[ext_resource type="PackedScene" uid="uid://bv5sjkyn30e3u" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_cracked.gltf" id="5_3b62w"]
-[ext_resource type="PackedScene" uid="uid://salte4n4qhrb" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Bars_Stack_Large.gltf" id="5_s064r"]
+[ext_resource type="PackedScene" uid="uid://bv5sjkyn30e3u" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_cracked.gltf" id="5_3b62w"]
+[ext_resource type="PackedScene" uid="uid://salte4n4qhrb" path="res://Assets/3d modles/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Bars_Stack_Large.gltf" id="5_s064r"]
 [ext_resource type="Script" uid="uid://b50jy3easr7xr" path="res://Ui/Setings/camera_3d.gd" id="5_skbde"]
-[ext_resource type="PackedScene" uid="uid://cspn368ydepe3" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Bars.gltf" id="6_1ec25"]
-[ext_resource type="PackedScene" uid="uid://wjicqpp7jqh2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_large_decorated.gltf" id="7_ajtpu"]
-[ext_resource type="PackedScene" uid="uid://bq0gla0ix6nhi" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Bars_Stack_Medium.gltf" id="7_gxx5v"]
-[ext_resource type="PackedScene" uid="uid://by2r047st2nuv" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Bars_Stack_Small.gltf" id="8_ri52p"]
-[ext_resource type="PackedScene" uid="uid://cdyx4svuv1x2m" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/chest_gold.gltf" id="8_rydfs"]
-[ext_resource type="PackedScene" uid="uid://gm7b7qwlneaj" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_large.gltf" id="11_a2ur3"]
-[ext_resource type="PackedScene" uid="uid://gvi4b7tn2xw5" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin_stack_small.gltf" id="15_km1am"]
-[ext_resource type="PackedScene" uid="uid://cl5f2mex74omk" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_large.gltf" id="16_ounr8"]
-[ext_resource type="PackedScene" uid="uid://cngpgh8nsbj00" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_doorway_scaffold.gltf" id="17_a2ur3"]
-[ext_resource type="PackedScene" uid="uid://bpwkod26m2ovm" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/banner_shield_red.gltf" id="17_nxdfb"]
-[ext_resource type="PackedScene" uid="uid://iu28noxk6clr" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/stairs_wood_decorated.gltf" id="18_j62b6"]
-[ext_resource type="PackedScene" uid="uid://bxtw3ypk7s35v" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/trunk_large_A.gltf" id="18_lss58"]
-[ext_resource type="PackedScene" uid="uid://cf00acly6v8i5" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_scaffold.gltf" id="19_ixo4k"]
-[ext_resource type="PackedScene" uid="uid://xtqq7coagxjc" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/table_long_decorated_C.gltf" id="19_j62b6"]
-[ext_resource type="PackedScene" uid="uid://6wftw4meo8eu" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_corner_scaffold.gltf" id="20_otcmy"]
-[ext_resource type="PackedScene" uid="uid://cjhmy8u1q4tah" path="res://Assets/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Nugget_Large.gltf" id="22_uxpbq"]
-[ext_resource type="PackedScene" uid="uid://dbpxufljpxemh" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin_stack_large.gltf" id="23_moifq"]
-[ext_resource type="PackedScene" uid="uid://bwwhyq6kcdr56" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin_stack_medium.gltf" id="24_357h0"]
-[ext_resource type="PackedScene" uid="uid://d13bh2ftp6ei4" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin.gltf" id="26_7kxku"]
-[ext_resource type="PackedScene" uid="uid://cdktw8doc55gm" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_small_stack.gltf" id="27_5m2cb"]
-[ext_resource type="PackedScene" uid="uid://d2d8quik2i6og" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/bottle_A_green.gltf" id="28_ps1j3"]
-[ext_resource type="PackedScene" uid="uid://b4vd8a32cpmcc" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/bottle_A_brown.gltf" id="29_cn770"]
-[ext_resource type="PackedScene" uid="uid://dbsemmc55iqy6" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/bottle_A_labeled_brown.gltf" id="30_7nbxd"]
-[ext_resource type="PackedScene" uid="uid://1stpcbe56dou" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/box_stacked.gltf" id="31_muj25"]
-[ext_resource type="PackedScene" uid="uid://bv05nilhun7tk" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/candle_lit.gltf" id="32_6y8kd"]
-[ext_resource type="PackedScene" uid="uid://bl3l6pgordey8" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/candle_thin_lit.gltf" id="33_7r4hc"]
-[ext_resource type="PackedScene" uid="uid://cbschygyw2dl2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/plate_stack.gltf" id="34_ul68p"]
+[ext_resource type="PackedScene" uid="uid://cspn368ydepe3" path="res://Assets/3d modles/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Bars.gltf" id="6_1ec25"]
+[ext_resource type="PackedScene" uid="uid://wjicqpp7jqh2" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_large_decorated.gltf" id="7_ajtpu"]
+[ext_resource type="PackedScene" uid="uid://bq0gla0ix6nhi" path="res://Assets/3d modles/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Bars_Stack_Medium.gltf" id="7_gxx5v"]
+[ext_resource type="PackedScene" uid="uid://by2r047st2nuv" path="res://Assets/3d modles/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Bars_Stack_Small.gltf" id="8_ri52p"]
+[ext_resource type="PackedScene" uid="uid://cdyx4svuv1x2m" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/chest_gold.gltf" id="8_rydfs"]
+[ext_resource type="PackedScene" uid="uid://gm7b7qwlneaj" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_large.gltf" id="11_a2ur3"]
+[ext_resource type="PackedScene" uid="uid://gvi4b7tn2xw5" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin_stack_small.gltf" id="15_km1am"]
+[ext_resource type="PackedScene" uid="uid://cl5f2mex74omk" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_large.gltf" id="16_ounr8"]
+[ext_resource type="PackedScene" uid="uid://cngpgh8nsbj00" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_doorway_scaffold.gltf" id="17_a2ur3"]
+[ext_resource type="PackedScene" uid="uid://bpwkod26m2ovm" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/banner_shield_red.gltf" id="17_nxdfb"]
+[ext_resource type="PackedScene" uid="uid://iu28noxk6clr" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/stairs_wood_decorated.gltf" id="18_j62b6"]
+[ext_resource type="PackedScene" uid="uid://bxtw3ypk7s35v" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/trunk_large_A.gltf" id="18_lss58"]
+[ext_resource type="PackedScene" uid="uid://cf00acly6v8i5" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_scaffold.gltf" id="19_ixo4k"]
+[ext_resource type="PackedScene" uid="uid://xtqq7coagxjc" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/table_long_decorated_C.gltf" id="19_j62b6"]
+[ext_resource type="PackedScene" uid="uid://6wftw4meo8eu" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_corner_scaffold.gltf" id="20_otcmy"]
+[ext_resource type="PackedScene" uid="uid://cjhmy8u1q4tah" path="res://Assets/3d modles/KayKit_ResourceBits_1.0_FREE/Assets/gltf/Gold_Nugget_Large.gltf" id="22_uxpbq"]
+[ext_resource type="PackedScene" uid="uid://dbpxufljpxemh" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin_stack_large.gltf" id="23_moifq"]
+[ext_resource type="PackedScene" uid="uid://bwwhyq6kcdr56" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin_stack_medium.gltf" id="24_357h0"]
+[ext_resource type="PackedScene" uid="uid://d13bh2ftp6ei4" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin.gltf" id="26_7kxku"]
+[ext_resource type="PackedScene" uid="uid://cdktw8doc55gm" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrel_small_stack.gltf" id="27_5m2cb"]
+[ext_resource type="PackedScene" uid="uid://d2d8quik2i6og" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/bottle_A_green.gltf" id="28_ps1j3"]
+[ext_resource type="PackedScene" uid="uid://b4vd8a32cpmcc" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/bottle_A_brown.gltf" id="29_cn770"]
+[ext_resource type="PackedScene" uid="uid://dbsemmc55iqy6" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/bottle_A_labeled_brown.gltf" id="30_7nbxd"]
+[ext_resource type="PackedScene" uid="uid://1stpcbe56dou" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/box_stacked.gltf" id="31_muj25"]
+[ext_resource type="PackedScene" uid="uid://bv05nilhun7tk" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/candle_lit.gltf" id="32_6y8kd"]
+[ext_resource type="PackedScene" uid="uid://bl3l6pgordey8" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/candle_thin_lit.gltf" id="33_7r4hc"]
+[ext_resource type="PackedScene" uid="uid://cbschygyw2dl2" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/plate_stack.gltf" id="34_ul68p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3b62w"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -47,13 +47,6 @@ background_mode = 2
 sky = SubResource("Sky_skbde")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfu3l"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-bg_color = Color(0.0862745, 0.0862745, 0.0862745, 0.592157)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_q0don"]
 color = Color(1, 1, 1, 1)
@@ -86,7 +79,6 @@ shadow_enabled = true
 environment = SubResource("Environment_ajtpu")
 
 [node name="Main" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -99,47 +91,6 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="Main"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -187.0
-offset_top = -225.0
-offset_right = 187.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_cfu3l")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Main/PanelContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Main/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_fifht")
-theme_override_font_sizes/font_size = 60
-text = "Settings"
-horizontal_alignment = 1
-
-[node name="Go to Control setings" type="Button" parent="Main"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.506
-offset_left = -128.0
-offset_top = 290.0
-offset_right = 118.76
-offset_bottom = 373.0
-grow_horizontal = 2
-scale = Vector2(1.00203, 1)
-theme = ExtResource("4_rg2i1")
-theme_override_fonts/font = ExtResource("1_fifht")
-theme_override_font_sizes/font_size = 40
-text = "Keybinds"
 
 [node name="Keybinds" type="Control" parent="."]
 visible = false
@@ -531,94 +482,80 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11463, 2.12135, 2.11169)
 [node name="plate_stack2" parent="BG" instance=ExtResource("34_ul68p")]
 transform = Transform3D(0.644802, 0, 0, 0, 0.788607, 0, 0, 0, 0.597064, 5.03335, 2.62193, 2.88603)
 
-[node name="TabBar" type="TabBar" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -552.0
-offset_top = -35.0
-offset_right = 545.0
-offset_bottom = 43.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 50
-current_tab = 1
-scrolling_enabled = false
-tab_count = 3
-tab_0/title = "Video Settings"
-tab_0/tooltip = "1"
-tab_1/title = "Audio Settings"
-tab_1/tooltip = "2"
-tab_2/title = "Keybinds"
-tab_2/tooltip = "3"
-
-[node name="1" type="Control" parent="TabBar"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -684.5
+offset_top = -364.0
+offset_right = 684.5
+offset_bottom = 364.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_rg2i1")
 
-[node name="fullscreen_button" type="CheckButton" parent="TabBar/1"]
+[node name="TabBar" type="TabBar" parent="PanelContainer"]
 layout_mode = 2
-offset_left = 495.0
-offset_top = 546.0
-offset_right = 849.0
-offset_bottom = 592.0
+size_flags_vertical = 0
+theme = ExtResource("4_rg2i1")
+theme_override_font_sizes/font_size = 50
+current_tab = 3
+scrolling_enabled = false
+tab_count = 4
+tab_0/title = " General "
+tab_1/title = " Video "
+tab_2/title = " Audio "
+tab_3/title = " Keybinds "
+
+[node name="0" type="VBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+
+[node name="1" type="VBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+
+[node name="fullscreen_button" type="CheckButton" parent="PanelContainer/1"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("4_rg2i1")
 theme_override_fonts/font = ExtResource("1_fifht")
-theme_override_font_sizes/font_size = 30
-button_pressed = true
-text = "Fullscreen"
+theme_override_font_sizes/font_size = 50
+text = " Fullscreen "
 alignment = 1
 
-[node name="Vsync" type="CheckButton" parent="TabBar/1"]
+[node name="Vsync" type="CheckButton" parent="PanelContainer/1"]
 layout_mode = 2
-offset_left = 495.0
-offset_top = 596.0
-offset_right = 849.0
-offset_bottom = 642.0
+size_flags_horizontal = 4
 theme = ExtResource("4_rg2i1")
 theme_override_fonts/font = ExtResource("1_fifht")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 button_pressed = true
-text = "Vsync
+text = " Vsync  
 "
 alignment = 1
 
-[node name="2" type="Control" parent="TabBar"]
+[node name="2" type="VBoxContainer" parent="PanelContainer"]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Master_volume" type="Label" parent="TabBar/2"]
 layout_mode = 2
-offset_left = 495.0
-offset_top = 298.0
-offset_right = 849.0
-offset_bottom = 336.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Master_volume" type="Label" parent="PanelContainer/2"]
+layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Master Volume"
 horizontal_alignment = 1
 
-[node name="master_volume_slider" type="HSlider" parent="TabBar/2"]
+[node name="master_volume_slider" type="HSlider" parent="PanelContainer/2"]
 layout_mode = 2
-offset_left = 495.0
-offset_top = 340.0
-offset_right = 849.0
-offset_bottom = 356.0
 theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
@@ -626,23 +563,15 @@ max_value = 1.0
 step = 0.005
 value = 1.0
 
-[node name="Sound_effect_volume" type="Label" parent="TabBar/2"]
+[node name="Sound_effect_volume" type="Label" parent="PanelContainer/2"]
 layout_mode = 2
-offset_left = 495.0
-offset_top = 360.0
-offset_right = 849.0
-offset_bottom = 398.0
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Sound Effects"
 horizontal_alignment = 1
 
-[node name="sound_effect_volume_slider2" type="HSlider" parent="TabBar/2"]
+[node name="sound_effect_volume_slider2" type="HSlider" parent="PanelContainer/2"]
 layout_mode = 2
-offset_left = 495.0
-offset_top = 402.0
-offset_right = 849.0
-offset_bottom = 418.0
 theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
@@ -650,23 +579,15 @@ max_value = 1.0
 step = 0.005
 value = 1.0
 
-[node name="music_volume" type="Label" parent="TabBar/2"]
+[node name="music_volume" type="Label" parent="PanelContainer/2"]
 layout_mode = 2
-offset_left = 495.0
-offset_top = 422.0
-offset_right = 849.0
-offset_bottom = 460.0
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Music"
 horizontal_alignment = 1
 
-[node name="music_volume_slider" type="HSlider" parent="TabBar/2"]
+[node name="music_volume_slider" type="HSlider" parent="PanelContainer/2"]
 layout_mode = 2
-offset_left = 495.0
-offset_top = 464.0
-offset_right = 849.0
-offset_bottom = 480.0
 theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
@@ -674,23 +595,15 @@ max_value = 1.0
 step = 0.005
 value = 1.0
 
-[node name="player_volume" type="Label" parent="TabBar/2"]
+[node name="player_volume" type="Label" parent="PanelContainer/2"]
 layout_mode = 2
-offset_left = 495.0
-offset_top = 484.0
-offset_right = 849.0
-offset_bottom = 522.0
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Player"
 horizontal_alignment = 1
 
-[node name="sound_effect_volume_slider4" type="HSlider" parent="TabBar/2"]
+[node name="player_volume_slider" type="HSlider" parent="PanelContainer/2"]
 layout_mode = 2
-offset_left = 495.0
-offset_top = 526.0
-offset_right = 849.0
-offset_bottom = 542.0
 theme_override_styles/slider = SubResource("StyleBoxLine_q0don")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_wi3jf")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_y0ntw")
@@ -698,249 +611,253 @@ max_value = 1.0
 step = 0.005
 value = 1.0
 
-[node name="3" type="Control" parent="TabBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="TabBar/3"]
-visible = false
+[node name="3" type="Control" parent="PanelContainer"]
 layout_mode = 2
-offset_left = 414.0
-offset_top = 302.5
-offset_right = 883.0
-offset_bottom = 533.5
+
+[node name="3" type="HBoxContainer" parent="PanelContainer/3"]
+layout_mode = 2
+offset_left = 457.0
+offset_top = 261.0
+offset_right = 912.0
+offset_bottom = 467.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="Left" type="VBoxContainer" parent="TabBar/3/HBoxContainer"]
+[node name="Left" type="VBoxContainer" parent="PanelContainer/3/3"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Forward" type="PanelContainer" parent="TabBar/3/HBoxContainer/Left"]
+[node name="Forward" type="PanelContainer" parent="PanelContainer/3/3/Left"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Left/Forward"]
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/3/3/Left/Forward"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Left/Forward/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/3/3/Left/Forward/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Forward:      "
 
-[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Left/Forward/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/3/3/Left/Forward/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "W"
 script = ExtResource("4_y0ntw")
 action_name = "forward"
 
-[node name="Back" type="PanelContainer" parent="TabBar/3/HBoxContainer/Left"]
+[node name="Back" type="PanelContainer" parent="PanelContainer/3/3/Left"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Left/Back"]
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/3/3/Left/Back"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Left/Back/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/3/3/Left/Back/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Backwards:  "
 
-[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Left/Back/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/3/3/Left/Back/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "S"
 script = ExtResource("4_y0ntw")
 action_name = "back"
 
-[node name="Left" type="PanelContainer" parent="TabBar/3/HBoxContainer/Left"]
+[node name="Left" type="PanelContainer" parent="PanelContainer/3/3/Left"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Left/Left"]
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/3/3/Left/Left"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Left/Left/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/3/3/Left/Left/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Left:              "
 
-[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Left/Left/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/3/3/Left/Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "A"
 script = ExtResource("4_y0ntw")
 action_name = "left"
 
-[node name="Right" type="PanelContainer" parent="TabBar/3/HBoxContainer/Left"]
+[node name="Right" type="PanelContainer" parent="PanelContainer/3/3/Left"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Left/Right"]
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/3/3/Left/Right"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Left/Right/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/3/3/Left/Right/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Right:            "
 
-[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Left/Right/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/3/3/Left/Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "D"
 script = ExtResource("4_y0ntw")
 action_name = "right"
 
-[node name="Junp" type="PanelContainer" parent="TabBar/3/HBoxContainer/Left"]
+[node name="Junp" type="PanelContainer" parent="PanelContainer/3/3/Left"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Left/Junp"]
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/3/3/Left/Junp"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Left/Junp/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/3/3/Left/Junp/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Jump:           "
 
-[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Left/Junp/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/3/3/Left/Junp/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Space"
 script = ExtResource("4_y0ntw")
 action_name = "jump"
 
-[node name="Right" type="VBoxContainer" parent="TabBar/3/HBoxContainer"]
+[node name="Right" type="VBoxContainer" parent="PanelContainer/3/3"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Sprint" type="PanelContainer" parent="TabBar/3/HBoxContainer/Right"]
+[node name="Sprint" type="PanelContainer" parent="PanelContainer/3/3/Right"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Right/Sprint"]
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/3/3/Right/Sprint"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Right/Sprint/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/3/3/Right/Sprint/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Sprint:    "
 
-[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Right/Sprint/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/3/3/Right/Sprint/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Ctrl"
 script = ExtResource("4_y0ntw")
 action_name = "sprint"
 
-[node name="Crouch" type="PanelContainer" parent="TabBar/3/HBoxContainer/Right"]
+[node name="Crouch" type="PanelContainer" parent="PanelContainer/3/3/Right"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Right/Crouch"]
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/3/3/Right/Crouch"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Right/Crouch/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/3/3/Right/Crouch/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Crouch:  "
 
-[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Right/Crouch/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/3/3/Right/Crouch/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Shift"
 script = ExtResource("4_y0ntw")
 action_name = "crouch"
 
-[node name="abilty 1" type="PanelContainer" parent="TabBar/3/HBoxContainer/Right"]
+[node name="abilty 1" type="PanelContainer" parent="PanelContainer/3/3/Right"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Right/abilty 1"]
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/3/3/Right/abilty 1"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Right/abilty 1/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/3/3/Right/abilty 1/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Abilty 1:  "
 
-[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Right/abilty 1/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/3/3/Right/abilty 1/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "1"
 script = ExtResource("4_y0ntw")
 action_name = "abilty 1"
 
-[node name="abilty 2" type="PanelContainer" parent="TabBar/3/HBoxContainer/Right"]
+[node name="abilty 2" type="PanelContainer" parent="PanelContainer/3/3/Right"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Right/abilty 2"]
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/3/3/Right/abilty 2"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Right/abilty 2/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/3/3/Right/abilty 2/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Abilty 2: "
 
-[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Right/abilty 2/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/3/3/Right/abilty 2/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "2"
 script = ExtResource("4_y0ntw")
 action_name = "abilty 2"
 
-[node name="abilty 3" type="PanelContainer" parent="TabBar/3/HBoxContainer/Right"]
+[node name="abilty 3" type="PanelContainer" parent="PanelContainer/3/3/Right"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="TabBar/3/HBoxContainer/Right/abilty 3"]
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/3/3/Right/abilty 3"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabBar/3/HBoxContainer/Right/abilty 3/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/3/3/Right/abilty 3/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
 text = "Abilty 3: "
 
-[node name="Button" type="Button" parent="TabBar/3/HBoxContainer/Right/abilty 3/VBoxContainer"]
+[node name="Button" type="Button" parent="PanelContainer/3/3/Right/abilty 3/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "3"
 script = ExtResource("4_y0ntw")
 action_name = "abilty 3"
 
-[node name="Gold_Bars_Stack_Large2" parent="TabBar/3/HBoxContainer/Right" instance=ExtResource("5_s064r")]
+[node name="Gold_Bars_Stack_Large2" parent="PanelContainer/3/3/Right" instance=ExtResource("5_s064r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76051, 0, 8.64864)
 
-[node name="Gold_Bars2" parent="TabBar/3/HBoxContainer/Right" instance=ExtResource("6_1ec25")]
+[node name="Gold_Bars2" parent="PanelContainer/3/3/Right" instance=ExtResource("6_1ec25")]
 transform = Transform3D(0.849405, 0, 0.527742, 0, 1, 0, -0.527742, 0, 0.849405, 4.80044, 1.49015, 8.72967)
 
-[node name="Gold_Bars_Stack_Medium2" parent="TabBar/3/HBoxContainer/Right" instance=ExtResource("7_gxx5v")]
+[node name="Gold_Bars_Stack_Medium2" parent="PanelContainer/3/3/Right" instance=ExtResource("7_gxx5v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21505, 0, 7.50991)
 
-[node name="Gold_Bars_Stack_Small2" parent="TabBar/3/HBoxContainer/Right" instance=ExtResource("8_ri52p")]
+[node name="Gold_Bars_Stack_Small2" parent="PanelContainer/3/3/Right" instance=ExtResource("8_ri52p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41306, 0, 7.50846)
 
-[connection signal="pressed" from="Main/Go to Control setings" to="." method="_on_go_to_control_setings_pressed"]
+[node name="Controler Mode" type="CheckButton" parent="PanelContainer/3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = 138.0
+offset_right = 195.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 43
+text = " Controller Mode  "
+
 [connection signal="pressed" from="Keybinds/Go to main setings" to="." method="_on_go_to_main_setings_pressed"]
-[connection signal="tab_changed" from="TabBar" to="." method="_on_tab_bar_tab_changed"]
-[connection signal="toggled" from="TabBar/1/fullscreen_button" to="." method="_on_fullscreen_button_toggled"]
-[connection signal="toggled" from="TabBar/1/Vsync" to="." method="_on_vsync_toggled"]
-[connection signal="value_changed" from="TabBar/2/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
-[connection signal="value_changed" from="TabBar/2/sound_effect_volume_slider2" to="." method="_on_sound_effect_volume_slider_2_value_changed"]
-[connection signal="value_changed" from="TabBar/2/music_volume_slider" to="." method="_on_sound_effect_volume_slider_2_value_changed"]
-[connection signal="value_changed" from="TabBar/2/sound_effect_volume_slider4" to="." method="_on_sound_effect_volume_slider_2_value_changed"]
+[connection signal="tab_changed" from="PanelContainer/TabBar" to="." method="_on_tab_bar_tab_changed"]
+[connection signal="toggled" from="PanelContainer/1/fullscreen_button" to="." method="_on_fullscreen_button_toggled"]
+[connection signal="toggled" from="PanelContainer/1/Vsync" to="." method="_on_vsync_toggled"]
+[connection signal="value_changed" from="PanelContainer/2/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/2/sound_effect_volume_slider2" to="." method="_on_sound_effect_volume_slider_2_value_changed"]
+[connection signal="value_changed" from="PanelContainer/2/music_volume_slider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/2/player_volume_slider" to="." method="_on_player_volume_slider_value_changed"]
+[connection signal="toggled" from="PanelContainer/3/Controler Mode" to="." method="_on_controler_mode_toggled"]

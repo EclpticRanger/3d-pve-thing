@@ -43,6 +43,7 @@ extends CharacterBody3D
 var speed_modifier: float = 1
 var acceloration_modifier: float = 1
 var jump_inmpulse_modifier: float = 1
+var input_dir: Vector2
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -63,8 +64,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y = (BACE_JUMP_INPULSE * jump_inmpulse_modifier)
 	
 	
-	
-	var input_dir := Input.get_vector("left", "right", "forward", "back")
+	if GlobalVarables.controler_mode:
+		input_dir = Vector2(Input.get_joy_axis(0, JOY_AXIS_LEFT_X), Input.get_joy_axis(0, JOY_AXIS_LEFT_Y))
+	else:
+		input_dir = Input.get_vector("left", "right", "forward", "back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * (BACE_MOVE_SPEED * speed_modifier) + (1/3 * velocity.x)
