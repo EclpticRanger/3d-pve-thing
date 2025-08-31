@@ -4,11 +4,15 @@ extends Control
 
 var fullscreen = false
 var vsync = false
+var resolution = 1080
+var aspect_ratio = 1.777777777777778 #16:9
+var resolution_tabel = [0, 720, 1080, 1440, 2160, 4320]
+var aspets_ratio_table = [0, 1.333333333333333, 1.777777777777778, 1.6, 2.333333333333333, 3.555555555555556]
 var master_volume = 100
 var sound_effect_volume = 100
 var music_volume = 100
 var player_volume = 100
-var save_path = "res://settings.cfg"
+var save_path = "user://settings.cfg"
 var keybinds: Dictionary = {
 	"abilty 1": InputMap.action_get_events("abilty 1")[0],
 	"abilty 2": InputMap.action_get_events("abilty 2")[0],
@@ -33,6 +37,7 @@ func loadsettings():
 		player_volume = config.get_value("audio" , "player_volume")
 		keybinds = config.get_value("controls", "keybinds")
 		GlobalVarables.mouse_sensitivity = config.get_value("controls", "mouse_sensitivity")
+		GlobalVarables.controler_mode = config.get_value("controls", "controler mode")
 		UpdateSettingsGame()
 	else:
 		# File doesn't exist or failed to load, create default config
@@ -43,7 +48,8 @@ func loadsettings():
 		config.set_value("audio", "music_volume", 100)
 		config.set_value("audio", "player_volume", 100)
 		config.set_value("controls", "keybinds", keybinds)
-		config.set_value("controls", "mouse_sensitivity", 50)
+		config.set_value("controls", "mouse_sensitivity", 100)
+		config.set_value("controls", "controler mode", false)
 		config.save(save_path)
 		print("New settings config file created")
 
@@ -61,6 +67,7 @@ func save_data():
 	config.set_value("audio", "player_volume", player_volume)
 	config.set_value("controls", "keybinds", keybinds)
 	config.set_value("controls", "mouse_sensitivity", GlobalVarables.mouse_sensitivity)
+	config.set_value("controls", "controler mode", GlobalVarables.controler_mode)
 	
 	var err = config.save(save_path)
 	if err != OK:
@@ -80,7 +87,6 @@ func _input(event: InputEvent) -> void:
 func _on_master_volume_slider_value_changed(value: float) -> void:
 	master_volume = linear_to_db(value)
 	update_audio_settings()
-
 func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 	fullscreen = toggled_on
 	UpdateSettingsGame()
@@ -136,18 +142,18 @@ func update_video_settings():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	
 	if vsync:
-		DisplayServer.VSYNC_ENABLED
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else:
-		DisplayServer.VSYNC_DISABLED
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+func update_genral_settings():
+	pass
 
 func _on_sound_effect_volume_slider_2_value_changed(value: float) -> void:
 	master_volume = linear_to_db(value)
 	update_audio_settings()
-
 func _on_vsync_toggled(toggled_on: bool) -> void:
 	vsync = toggled_on
 	UpdateSettingsGame()
-
 func _on_tab_bar_tab_changed(tab: int) -> void:
 	$"PanelContainer/0".hide()
 	$"PanelContainer/1".hide()
@@ -161,16 +167,19 @@ func _on_tab_bar_tab_changed(tab: int) -> void:
 		$"PanelContainer/2".show()
 	elif tab == 3:
 		$"PanelContainer/3".show()
-
 func _on_music_volume_slider_value_changed(value: float) -> void:
 	music_volume = linear_to_db(value)
 	update_audio_settings()
-
 func _on_player_volume_slider_value_changed(value: float) -> void:
 	player_volume = linear_to_db(value)
 	update_audio_settings()
-
-
 func _on_controler_mode_toggled(toggled_on: bool) -> void:
 	GlobalVarables.controler_mode = toggled_on
-	
+func _on_mouse_sensativity_value_changed(value: float) -> void:
+	GlobalVarables.mouse_sensitivity = value
+func _on_resolution_item_selected(index: int) -> void:
+	resolution = resolution_tabel[index]
+	get_window().size = Vector2(resolution * aspect_ratio, resolution)
+func _on_aspect_ratio_item_selected(index: int) -> void:
+	aspect_ratio = aspets_ratio_table[index]
+	get_window().size = Vector2(resolution * aspect_ratio, resolution)

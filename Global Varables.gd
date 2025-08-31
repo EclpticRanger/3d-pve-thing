@@ -1,4 +1,4 @@
 extends Node
 
-var mouse_sensitivity: float = 0.00001
+var mouse_sensitivity: float = 100
 var controler_mode = false

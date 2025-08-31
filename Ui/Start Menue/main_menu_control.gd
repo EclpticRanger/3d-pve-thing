@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_quit_button_pressed() -> void:
-	get_tree().quit()
+	get_tree().quit(0)
 
 
 func _on_settings_button_pressed() -> void:

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bl7f7ipg81bfs"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://bl7f7ipg81bfs"]
 
 [ext_resource type="FontFile" uid="uid://puun12xix6xd" path="res://Ui/Styling/Quicksand-SemiBold.ttf" id="1_lov3r"]
 
@@ -13,6 +13,20 @@ bg_color = Color(0, 0.218422, 0.376915, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bn84s"]
 bg_color = Color(0, 0.115293, 0.257491, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7vyf"]
+bg_color = Color(0.0282682, 0.319833, 0.466078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yy4ue"]
+bg_color = Color(0, 0.418702, 0.710016, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_x52l8"]
+color = Color(0, 0.213015, 0.396033, 1)
+thickness = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ksyr"]
 bg_color = Color(0, 0.170811, 0.387157, 0.678431)
@@ -36,6 +50,9 @@ Button/styles/disabled = SubResource("StyleBoxFlat_tp6vy")
 Button/styles/hover = SubResource("StyleBoxFlat_aob44")
 Button/styles/normal = SubResource("StyleBoxFlat_au18m")
 Button/styles/pressed = SubResource("StyleBoxFlat_bn84s")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_f7vyf")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_yy4ue")
+HSlider/styles/slider = SubResource("StyleBoxLine_x52l8")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_8ksyr")
 TabBar/styles/button_highlight = SubResource("StyleBoxFlat_lov3r")
 TabBar/styles/tab_hovered = SubResource("StyleBoxFlat_8ifxt")
