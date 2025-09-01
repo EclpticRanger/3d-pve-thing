@@ -52,7 +52,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not GlobalVarables.controler_mode:
 		rotate_y(deg_to_rad(-event.relative.x * (GlobalVarables.mouse_sensitivity/1000)))
 		Camera_pivot.rotate_x(deg_to_rad(-event.relative.y * (GlobalVarables.mouse_sensitivity/1000)))
-		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x, deg_to_rad(-45), deg_to_rad(90))
+		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 		# Mouse Direction Control
 	
 
