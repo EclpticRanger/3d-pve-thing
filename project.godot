@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 ControlsMannger="*res://Ui/Setings/controls_mannger.gd"
 GlobalVarables="*res://Global Varables.gd"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
+GoToMainMenu="*res://go to main menu.gd"
 
 [display]
 
@@ -44,6 +45,7 @@ enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg")
 
 folder_colors={
 "res://Assets/": "purple",
+"res://Enermies/": "orange",
 "res://Player/": "red",
 "res://Player/Charter Models/": "orange",
 "res://Ui/": "green",

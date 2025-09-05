@@ -47,6 +47,7 @@ var input_dir: Vector2
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	GlobalVarables.player = self
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not GlobalVarables.controler_mode:
@@ -61,7 +62,7 @@ func _physics_process(delta: float) -> void:
 		var deadzone = 0.1
 		var raw_yaw = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
 		var raw_pitch = Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
-		var sensitivity = GlobalVarables.mouse_sensitivity / -1000.0
+		var sensitivity = GlobalVarables.mouse_sensitivity / -3000.0
 		var yaw_input = raw_yaw * sensitivity if abs(raw_yaw) > deadzone else 0.0
 		var pitch_input = raw_pitch * sensitivity if abs(raw_pitch) > deadzone else 0.0
 		rotate_y(yaw_input)

@@ -496,7 +496,6 @@ grow_vertical = 2
 theme = ExtResource("4_rg2i1")
 
 [node name="0" type="VBoxContainer" parent="PanelContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -505,7 +504,7 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
-text = "Mouse Sensitivity"
+text = "Input Sensitivity"
 
 [node name="Mouse sensativity" type="HSlider" parent="PanelContainer/0"]
 layout_mode = 2
@@ -513,8 +512,7 @@ size_flags_vertical = 1
 theme_override_styles/slider = SubResource("StyleBoxLine_s064r")
 min_value = 1.0
 max_value = 200.0
-step = 2.5
-value = 101.0
+value = 100.0
 
 [node name="Mouse sensativty number" type="Label" parent="PanelContainer/0/Mouse sensativity"]
 layout_mode = 1
@@ -531,6 +529,7 @@ text = "100%"
 script = ExtResource("30_1ec25")
 
 [node name="1" type="VBoxContainer" parent="PanelContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -551,7 +550,6 @@ size_flags_horizontal = 4
 theme = ExtResource("4_rg2i1")
 theme_override_fonts/font = ExtResource("1_fifht")
 theme_override_font_sizes/font_size = 40
-button_pressed = true
 text = " Vsync  
 "
 alignment = 1
@@ -606,7 +604,7 @@ size_flags_vertical = 4
 layout_mode = 2
 theme = ExtResource("4_rg2i1")
 theme_override_font_sizes/font_size = 30
-text = "Master Volume"
+text = "Master"
 horizontal_alignment = 1
 
 [node name="master_volume_slider" type="HSlider" parent="PanelContainer/2"]

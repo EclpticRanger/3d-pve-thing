@@ -39,6 +39,7 @@ func loadsettings():
 		GlobalVarables.mouse_sensitivity = config.get_value("controls", "mouse_sensitivity")
 		GlobalVarables.controler_mode = config.get_value("controls", "controler mode")
 		UpdateSettingsGame()
+		set_values()
 	else:
 		# File doesn't exist or failed to load, create default config
 		config.set_value("visual", "fullscreen", false)
@@ -52,6 +53,17 @@ func loadsettings():
 		config.set_value("controls", "controler mode", false)
 		config.save(save_path)
 		print("New settings config file created")
+
+func set_values():
+	$"PanelContainer/0/Mouse sensativity".value = GlobalVarables.mouse_sensitivity
+	$"PanelContainer/0/Mouse sensativity/Mouse sensativty number".text = str(GlobalVarables.mouse_sensitivity) + "%"
+	$"PanelContainer/1/fullscreen_button".button_pressed = fullscreen
+	$"PanelContainer/1/Vsync".button_pressed = vsync
+	$"PanelContainer/2/master_volume_slider".value = master_volume
+	$"PanelContainer/2/sound_effect_volume_slider2".value = sound_effect_volume
+	$"PanelContainer/2/music_volume_slider".value = music_volume
+	$"PanelContainer/2/player_volume_slider".value = player_volume
+	$"PanelContainer/3/Controler Mode".button_pressed = GlobalVarables.controler_mode
 
 func save_data():
 	var config = ConfigFile.new()
@@ -94,6 +106,7 @@ func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 func UpdateSettingsGame():
 	update_audio_settings()
 	update_video_settings()
+	update_genral_settings()
 
 func update_audio_settings():
 	AudioServer.set_bus_volume_db(0 , master_volume)
