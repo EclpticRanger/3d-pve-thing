@@ -944,7 +944,7 @@ shadow_enabled = true
 omni_range = 83.432
 
 [node name="Player" parent="." instance=ExtResource("1_35834")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 9.54388, 15.6584, -10.4486)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.317784, 1.3017, 0.961971)
 visible = false
 
 [node name="Content" type="Node3D" parent="."]
