@@ -55,15 +55,51 @@ func loadsettings():
 		print("New settings config file created")
 
 func set_values():
-	$"PanelContainer/0/Mouse sensativity".value = GlobalVarables.mouse_sensitivity
-	$"PanelContainer/0/Mouse sensativity/Mouse sensativty number".text = str(GlobalVarables.mouse_sensitivity) + "%"
-	$"PanelContainer/1/fullscreen_button".button_pressed = fullscreen
-	$"PanelContainer/1/Vsync".button_pressed = vsync
-	$"PanelContainer/2/master_volume_slider".value = master_volume
-	$"PanelContainer/2/sound_effect_volume_slider2".value = sound_effect_volume
-	$"PanelContainer/2/music_volume_slider".value = music_volume
-	$"PanelContainer/2/player_volume_slider".value = player_volume
-	$"PanelContainer/3/Controler Mode".button_pressed = GlobalVarables.controler_mode
+	var mouse_slider = get_node_or_null("PanelContainer/0/Mouse sensativity")
+	if mouse_slider:
+		mouse_slider.value = GlobalVarables.mouse_sensitivity
+	else:
+		print("Node not found: PanelContainer/0/Mouse sensativity")
+	var mouse_label = get_node_or_null("PanelContainer/0/Mouse sensativity/Mouse sensativty number")
+	if mouse_label:
+		mouse_label.text = str(GlobalVarables.mouse_sensitivity) + "%"
+	else:
+		print("Node not found: PanelContainer/0/Mouse sensativity/Mouse sensativty number")
+	var fullscreen_btn = get_node_or_null("PanelContainer/1/fullscreen_button")
+	if fullscreen_btn:
+		fullscreen_btn.button_pressed = fullscreen
+	else:
+		print("Node not found: PanelContainer/1/fullscreen_button")
+	var vsync_btn = get_node_or_null("PanelContainer/1/Vsync")
+	if vsync_btn:
+		vsync_btn.button_pressed = vsync
+	else:
+		print("Node not found: PanelContainer/1/Vsync")
+	var master_slider = get_node_or_null("PanelContainer/2/master_volume_slider")
+	if master_slider:
+		master_slider.value = master_volume
+	else:
+		print("Node not found: PanelContainer/2/master_volume_slider")
+	var sfx_slider = get_node_or_null("PanelContainer/2/sound_effect_volume_slider2")
+	if sfx_slider:
+		sfx_slider.value = sound_effect_volume
+	else:
+		print("Node not found: PanelContainer/2/sound_effect_volume_slider2")
+	var music_slider = get_node_or_null("PanelContainer/2/music_volume_slider")
+	if music_slider:
+		music_slider.value = music_volume
+	else:
+		print("Node not found: PanelContainer/2/music_volume_slider")
+	var player_slider = get_node_or_null("PanelContainer/2/player_volume_slider")
+	if player_slider:
+		player_slider.value = player_volume
+	else:
+		print("Node not found: PanelContainer/2/player_volume_slider")
+	var controler_btn = get_node_or_null("PanelContainer/3/Controler Mode")
+	if controler_btn:
+		controler_btn.button_pressed = GlobalVarables.controler_mode
+	else:
+		print("Node not found: PanelContainer/3/Controler Mode")
 
 func save_data():
 	var config = ConfigFile.new()

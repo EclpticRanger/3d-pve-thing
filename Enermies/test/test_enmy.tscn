@@ -20,9 +20,12 @@ mesh = SubResource("CapsuleMesh_u2q5u")
 shape = SubResource("CapsuleShape3D_cp7uq")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 0.1
 debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(1, 0, 0, 1)
+debug_path_custom_point_size = 50.0
+script = ExtResource("1_u2q5u")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
