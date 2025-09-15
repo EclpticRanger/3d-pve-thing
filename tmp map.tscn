@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://deoyx8l1km3di" path="res://Player/Player.tscn" id="1_35834"]
 [ext_resource type="Texture2D" uid="uid://baq46u6760a0i" path="res://Assets/3d modles/KayKit_ResourceBits_1.0_FREE/Assets/gltf/resource_bits_texture.png" id="2_5sd4n"]
 [ext_resource type="PackedScene" uid="uid://c0wi70nu65e0i" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_dirt_large.gltf" id="3_sgcor"]
-[ext_resource type="PackedScene" uid="uid://ih4bh88olh8b" path="res://Enermies/test/test_enmy.tscn" id="4_ii34a"]
+[ext_resource type="PackedScene" uid="uid://ih4bh88olh8b" path="res://Enermies/test/test_enemy.tscn" id="4_ii34a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_35834"]
 sky_top_color = Color(0.310749, 0.451477, 0.664551, 1)

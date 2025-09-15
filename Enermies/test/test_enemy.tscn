@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ih4bh88olh8b"]
+
+[ext_resource type="Script" uid="uid://bpbhdhyfblpqj" path="res://Enermies/test/test_enemy.gd" id="1_u2q5u"]
+[ext_resource type="PackedScene" uid="uid://cxygmtw32yf42" path="res://Assets/3d modles/KayKit_Skeletons_1.0_FREE(1)/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Warrior.glb" id="2_r5rm4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r5rm4"]
+radius = 0.388591
+height = 2.34848
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_u2q5u")
+
+[node name="Skeleton_Warrior" parent="." instance=ExtResource("2_r5rm4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0126019, -0.69315, -0.144044)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(1, 0, 0, 1)
+debug_path_custom_point_size = 50.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.995185, 0, -0.0980171, 0, 1, 0, 0.0980171, 0, 0.995185, 0, 0.464674, 0)
+shape = SubResource("CapsuleShape3D_r5rm4")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
