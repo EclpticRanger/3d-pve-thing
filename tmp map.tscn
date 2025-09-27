@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bwr3b22l66e8y"]
+[gd_scene load_steps=46 format=4 uid="uid://d2nd74oduewbd"]
 
 [ext_resource type="PackedScene" uid="uid://deoyx8l1km3di" path="res://Player/Player.tscn" id="1_35834"]
 [ext_resource type="Texture2D" uid="uid://baq46u6760a0i" path="res://Assets/3d modles/KayKit_ResourceBits_1.0_FREE/Assets/gltf/resource_bits_texture.png" id="2_5sd4n"]

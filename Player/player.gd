@@ -40,10 +40,15 @@ extends CharacterBody3D
 @onready var Camera_pivot: Node3D = $Camera_pivot
 @onready var Camera: Camera3D = $Camera_pivot/Camera3D
 
+
 var speed_modifier: float = 1
 var acceloration_modifier: float = 1
 var jump_inmpulse_modifier: float = 1
 var input_dir: Vector2
+
+# --- Coyote time variables ---
+@export var coyote_time: float = 1
+var coyote_timer: float = 0.0
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -71,16 +76,21 @@ func _physics_process(delta: float) -> void:
 	
 	speed_modifier = Knight_speed_modifier
 	
-	if not is_on_floor():
+	if is_on_floor():
+		coyote_timer = coyote_time
+	else:
+		coyote_timer = max(coyote_timer - delta, 0)
 		velocity.y += gravity * delta
 
-	# Handle jump.
-	if Input.is_action_pressed("jump") and not GlobalVarables.controler_mode and is_on_floor():
+	# Handle jump with coyote time
+	if Input.is_action_pressed("jump") and not GlobalVarables.controler_mode and coyote_timer > 0.0:
 		velocity.y = (BACE_JUMP_INPULSE * jump_inmpulse_modifier)
-		#Handle jump with keybord
-	if Input.is_joy_button_pressed(0, JOY_BUTTON_A) and GlobalVarables.controler_mode and is_on_floor():
+		coyote_timer = 0.0
+		#Handle jump with keyboard
+	if Input.is_joy_button_pressed(0, JOY_BUTTON_A) and GlobalVarables.controler_mode and coyote_timer > 0.0:
 		velocity.y = (BACE_JUMP_INPULSE * jump_inmpulse_modifier)
-		#handle jump with controler
+		coyote_timer = 0.0
+		#Handle jump with controller
 	
 	if GlobalVarables.controler_mode:
 		input_dir = Vector2(Input.get_joy_axis(0, JOY_AXIS_LEFT_X), Input.get_joy_axis(0, JOY_AXIS_LEFT_Y))
