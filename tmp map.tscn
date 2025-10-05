@@ -1,9 +1,8 @@
-[gd_scene load_steps=46 format=4 uid="uid://bwr3b22l66e8y"]
+[gd_scene load_steps=45 format=4 uid="uid://bwr3b22l66e8y"]
 
 [ext_resource type="PackedScene" uid="uid://deoyx8l1km3di" path="res://Player/Player.tscn" id="1_35834"]
 [ext_resource type="Texture2D" uid="uid://baq46u6760a0i" path="res://Assets/3d modles/KayKit_ResourceBits_1.0_FREE/Assets/gltf/resource_bits_texture.png" id="2_5sd4n"]
 [ext_resource type="PackedScene" uid="uid://c0wi70nu65e0i" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_dirt_large.gltf" id="3_sgcor"]
-[ext_resource type="PackedScene" uid="uid://ih4bh88olh8b" path="res://Enermies/test/test_enmy.tscn" id="4_ii34a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_35834"]
 sky_top_color = Color(0.310749, 0.451477, 0.664551, 1)
@@ -691,6 +690,3 @@ shape = SubResource("ConcavePolygonShape3D_35834")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_sgcor")
-
-[node name="Enermy" parent="." instance=ExtResource("4_ii34a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70533, 1.78508)

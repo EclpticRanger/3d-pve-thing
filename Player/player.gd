@@ -37,6 +37,15 @@ extends CharacterBody3D
 @export var Mage_stealth_modifier: float = 1.1
 @export var Mage_defence_modifier: float = 1.3
 
+@onready var knight_anamation_handerler = $"Character Model/Knight/AnimationPlayer"
+@onready var Rouge_anamation_handerler
+@onready var Paladan_anamation_handerler
+@onready var Archer_anamation_handerler
+@onready var Warlock_anamation_handerler
+@onready var Mage_anamation_handerler
+#Charter ids Knight: 0, Rouge: 1, Paladin: 2, Archer: 3, Warlock 4, Mage: 5
+var Character_id = 0
+
 @onready var Camera_pivot: Node3D = $Camera_pivot
 @onready var Camera: Camera3D = $Camera_pivot/Camera3D
 
@@ -45,19 +54,64 @@ var acceloration_modifier: float = 1
 var jump_inmpulse_modifier: float = 1
 var input_dir: Vector2
 
+var Character_speed_Moderfiers = [Knight_speed_modifier, Rouge_speed_modifier, Paladin_speed_modifier, Archer_speed_modifier, Warlock_speed_modifier, Mage_speed_modifier]
+var Character_defance_moderfier = [Knight_defence_modifier, Rouge_defence_modifier, Paladan_defence_modifier, Archer_defence_modifier, Warlock_defence_modifier, Mage_defence_modifier]
+
+func _enter_tree() -> void:
+	set_multiplayer_authority(str(name).to_int())
+
 func _ready() -> void:
+	if not is_multiplayer_authority(): return
+	Camera.current = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GlobalVarables.player = self
 
 func _input(event: InputEvent) -> void:
+	if not is_multiplayer_authority(): return
 	if event is InputEventMouseMotion and not GlobalVarables.controler_mode:
 		rotate_y(deg_to_rad(-event.relative.x * (GlobalVarables.mouse_sensitivity/1000)))
 		Camera_pivot.rotate_x(deg_to_rad(-event.relative.y * (GlobalVarables.mouse_sensitivity/1000)))
-		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x, deg_to_rad(-45), deg_to_rad(90))
+		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 		# Mouse Direction Control
+
+func handle_animation():
 	
+	if (Input.is_action_pressed("sprint") or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER)) and (abs(velocity.x)>0 or abs(velocity.z)>0):
+		if input_dir.y > 0.5:
+			play_animation.rpc("Running_A", 2)
+		elif input_dir.x < -0.5:
+			play_animation.rpc("Running_Strafe_Left", 2)
+		elif input_dir.y > 0.5:
+			play_animation("Running_Strafe_Right", 2)
+		elif input_dir.y > 0.5:
+			play_animation.rpc("Running_A", 2)
+	elif not (Input.is_action_pressed("sprint") or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER)) and (abs(velocity.x)>0 or abs(velocity.z)>0):
+		play_animation.rpc("Walking_A", 1.5)
+	else:
+		play_animation.rpc("Idle", 1)
+
+@rpc("call_local")
+func play_animation(animation: String, Speed: float):
+	
+	if Character_id == 0:
+		knight_anamation_handerler.speed_scale = Speed
+		knight_anamation_handerler.play(animation)
+	elif Character_id == 1:
+		pass
+	elif Character_id == 2:
+		pass
+	elif Character_id == 3:
+		pass
+	elif Character_id == 4:
+		pass
+	elif Character_id == 5:
+		pass
+	else:
+		print("charter id out of range????")
 
 func _physics_process(delta: float) -> void:
+	if not is_multiplayer_authority(): return
+	
 	if GlobalVarables.controler_mode:
 		var deadzone = 0.1
 		var raw_yaw = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
@@ -66,10 +120,15 @@ func _physics_process(delta: float) -> void:
 		var yaw_input = raw_yaw * sensitivity if abs(raw_yaw) > deadzone else 0.0
 		var pitch_input = raw_pitch * sensitivity if abs(raw_pitch) > deadzone else 0.0
 		rotate_y(yaw_input)
-		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x + pitch_input, deg_to_rad(-45), deg_to_rad(90))
+		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x + pitch_input, deg_to_rad(-90), deg_to_rad(90))
 		# Right Sitck Camera Control
 	
-	speed_modifier = Knight_speed_modifier
+	if Input.is_action_pressed("sprint") and not GlobalVarables.controler_mode:
+		speed_modifier = Character_speed_Moderfiers[Character_id] * 1.5
+	elif Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER) and GlobalVarables.controler_mode:
+		speed_modifier = Character_speed_Moderfiers[Character_id] * 1.5
+	else:
+		speed_modifier = Character_speed_Moderfiers[Character_id]
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -78,7 +137,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("jump") and not GlobalVarables.controler_mode and is_on_floor():
 		velocity.y = (BACE_JUMP_INPULSE * jump_inmpulse_modifier)
 		#Handle jump with keybord
-	if Input.is_joy_button_pressed(0, JOY_BUTTON_A) and GlobalVarables.controler_mode and is_on_floor():
+	elif Input.is_joy_button_pressed(0, JOY_BUTTON_A) and GlobalVarables.controler_mode and is_on_floor():
 		velocity.y = (BACE_JUMP_INPULSE * jump_inmpulse_modifier)
 		#handle jump with controler
 	
@@ -98,5 +157,5 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, (BACE_MOVE_SPEED * speed_modifier))
 		velocity.z = move_toward(velocity.z, 0, (BACE_MOVE_SPEED * speed_modifier))
 	#control movement
-
 	move_and_slide()
+	handle_animation()

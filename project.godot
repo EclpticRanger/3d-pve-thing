@@ -21,7 +21,6 @@ config/icon="res://icon.svg"
 ControlsMannger="*res://Ui/Setings/controls_mannger.gd"
 GlobalVarables="*res://Global Varables.gd"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
-GoToMainMenu="*res://go to main menu.gd"
 
 [display]
 
@@ -49,6 +48,7 @@ folder_colors={
 "res://Player/": "red",
 "res://Player/Charter Models/": "orange",
 "res://Ui/": "green",
+"res://Ui/Multiplayer/": "orange",
 "res://Ui/Pause Menue/": "orange",
 "res://Ui/Start Menue/": "purple",
 "res://Ui/Styling/": "blue"
