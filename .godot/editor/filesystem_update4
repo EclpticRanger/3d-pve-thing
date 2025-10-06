@@ -1,0 +1,13 @@
+res://Game Preeload.tscn
+res://game preload.gd
+res://Ui/Start Menue/Main.tscn
+res://tmp map.tscn
+res://Player/Player.tscn
+res://Ui/Multiplayer/LanMultiplayer.tscn
+res://Global Varables.gd
+res://Enermies/test/test_enmy.gd
+res://Player/player.gd
+res://Ui/Multiplayer/Lanmultiplayer.gd
+res://Ui/Setings/setings.gd
+res://Ui/Start Menue/error_mesages.gd
+res://Ui/Start Menue/main_menu_control.gd
