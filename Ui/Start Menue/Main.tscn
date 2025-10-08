@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dci8b2yalyndy" path="res://Ui/Start Menue/main_menu_control.gd" id="1_g7w1i"]
 [ext_resource type="FontFile" uid="uid://puun12xix6xd" path="res://Ui/Styling/Quicksand-SemiBold.ttf" id="2_7d5t6"]
 [ext_resource type="Script" uid="uid://cac087javqkyw" path="res://Ui/Start Menue/camera_3d.gd" id="3_7d5t6"]
-[ext_resource type="Script" uid="uid://bgamm78b0fp2d" path="res://Ui/Start Menue/error_mesages.gd" id="3_7id0k"]
+[ext_resource type="Script" path="res://Ui/Start Menue/error_mesages.gd" id="3_7id0k"]
 [ext_resource type="Shader" uid="uid://dmfub6rm7d77j" path="res://Ui/Start Menue/Water Shader.gdshader" id="4_fa8o7"]
 [ext_resource type="PackedScene" uid="uid://qffbqm22ldmv" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small.gltf" id="5_6c4or"]
 [ext_resource type="PackedScene" uid="uid://dws7hkj3qyis3" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_grate.gltf" id="6_1dlgx"]

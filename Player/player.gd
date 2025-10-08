@@ -58,21 +58,38 @@ var Character_speed_Moderfiers = [Knight_speed_modifier, Rouge_speed_modifier, P
 var Character_defance_moderfier = [Knight_defence_modifier, Rouge_defence_modifier, Paladan_defence_modifier, Archer_defence_modifier, Warlock_defence_modifier, Mage_defence_modifier]
 
 func _enter_tree() -> void:
-	set_multiplayer_authority(str(name).to_int())
+	# In multiplayer, set authority based on node name (peer id). In single player, set to local peer.
+	if get_tree().get_multiplayer().has_multiplayer_peer():
+		if get_tree().get_multiplayer().is_server():
+			set_multiplayer_authority(str(name).to_int())
+		else:
+			set_multiplayer_authority(get_tree().get_multiplayer().get_unique_id())
 
 func _ready() -> void:
-	if not is_multiplayer_authority(): return
+	# Only check authority if in multiplayer, otherwise always run
+	if get_tree().get_multiplayer().has_multiplayer_peer():
+		if not is_multiplayer_authority():
+			return
 	Camera.current = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GlobalVarables.player = self
 
 func _input(event: InputEvent) -> void:
-	if not is_multiplayer_authority(): return
+	if get_tree().get_multiplayer().has_multiplayer_peer():
+		if not is_multiplayer_authority():
+			return
+	# Handle Escape key to go to main menu
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		go_to_main_menu()
+		return
 	if event is InputEventMouseMotion and not GlobalVarables.controler_mode:
 		rotate_y(deg_to_rad(-event.relative.x * (GlobalVarables.mouse_sensitivity/1000)))
 		Camera_pivot.rotate_x(deg_to_rad(-event.relative.y * (GlobalVarables.mouse_sensitivity/1000)))
 		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 		# Mouse Direction Control
+func go_to_main_menu():
+	# TODO: Replace this with your actual main menu scene path
+	get_tree().change_scene_to_file("res://Ui/Start Menue/Main.tscn")
 
 func handle_animation():
 	
@@ -110,7 +127,9 @@ func play_animation(animation: String, Speed: float):
 		print("charter id out of range????")
 
 func _physics_process(delta: float) -> void:
-	if not is_multiplayer_authority(): return
+	if get_tree().get_multiplayer().has_multiplayer_peer():
+		if not is_multiplayer_authority():
+			return
 	
 	if GlobalVarables.controler_mode:
 		var deadzone = 0.1

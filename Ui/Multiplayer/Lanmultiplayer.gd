@@ -1,4 +1,14 @@
 extends Node
+func _exit_tree() -> void:
+	# Clean up multiplayer peer when leaving the scene
+	if enet_peer:
+		enet_peer.close()
+	if multiplayer.multiplayer_peer:
+		multiplayer.multiplayer_peer = null
+	# Optionally, free all player nodes
+	for child in get_children():
+		if child is CharacterBody3D:
+			child.queue_free()
 
 var defult_port: int = 49152
 var Player = preload("res://Player/Player.tscn")
