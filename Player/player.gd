@@ -38,13 +38,13 @@ extends CharacterBody3D
 @export var Mage_defence_modifier: float = 1.3
 
 @onready var knight_anamation_handerler = $"Character Model/Knight/AnimationPlayer"
-@onready var Rouge_anamation_handerler
-@onready var Paladan_anamation_handerler
-@onready var Archer_anamation_handerler
-@onready var Warlock_anamation_handerler
-@onready var Mage_anamation_handerler
+@onready var Rouge_anamation_handerler = $"Character Model/Rogue/AnimationPlayer"
+@onready var Paladan_anamation_handerler = $"Character Model/Paladan/AnimationPlayer"
+@onready var Archer_anamation_handerler = $"Character Model/Archer/AnimationPlayer"
+@onready var Warlock_anamation_handerler = $"Character Model/Warlock/AnimationPlayer"
+@onready var Mage_anamation_handerler = $"Character Model/Mage/AnimationPlayer"
 #Charter ids Knight: 0, Rouge: 1, Paladin: 2, Archer: 3, Warlock 4, Mage: 5
-var Character_id = 0
+var Character_id = 1
 
 @onready var Camera_pivot: Node3D = $Camera_pivot
 @onready var Camera: Camera3D = $Camera_pivot/Camera3D
@@ -57,6 +57,20 @@ var input_dir: Vector2
 var Character_speed_Moderfiers = [Knight_speed_modifier, Rouge_speed_modifier, Paladin_speed_modifier, Archer_speed_modifier, Warlock_speed_modifier, Mage_speed_modifier]
 var Character_defance_moderfier = [Knight_defence_modifier, Rouge_defence_modifier, Paladan_defence_modifier, Archer_defence_modifier, Warlock_defence_modifier, Mage_defence_modifier]
 
+func Character_Showm_update():
+	$"Character Model/Knight".hide()
+	$"Character Model/Rogue".hide()
+	$"Character Model/Paladan".hide()
+	$"Character Model/Archer".hide()
+	$"Character Model/Warlock".hide()
+	$"Character Model/Mage".hide()
+	if Character_id == 0: $"Character Model/Knight".show()
+	elif Character_id == 1: $"Character Model/Rogue".show()
+	elif Character_id == 2: $"Character Model/Paladan".show()
+	elif Character_id == 3: $"Character Model/Archer".show()
+	elif Character_id == 4: $"Character Model/Warlock".show()
+	elif Character_id == 5: $"Character Model/Mage".show()
+	else: get_tree().quit()
 func _enter_tree() -> void:
 	# In multiplayer, set authority based on node name (peer id). In single player, set to local peer.
 	if get_tree().get_multiplayer().has_multiplayer_peer():
@@ -64,20 +78,12 @@ func _enter_tree() -> void:
 			set_multiplayer_authority(str(name).to_int())
 		else:
 			set_multiplayer_authority(get_tree().get_multiplayer().get_unique_id())
-
 func _ready() -> void:
-	# Only check authority if in multiplayer, otherwise always run
-	if get_tree().get_multiplayer().has_multiplayer_peer():
-		if not is_multiplayer_authority():
-			return
 	Camera.current = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GlobalVarables.player = self
-
+	# Only check authority if in multiplayer, otherwise always run
 func _input(event: InputEvent) -> void:
-	if get_tree().get_multiplayer().has_multiplayer_peer():
-		if not is_multiplayer_authority():
-			return
 	# Handle Escape key to go to main menu
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		go_to_main_menu()
@@ -85,52 +91,67 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not GlobalVarables.controler_mode:
 		rotate_y(deg_to_rad(-event.relative.x * (GlobalVarables.mouse_sensitivity/1000)))
 		Camera_pivot.rotate_x(deg_to_rad(-event.relative.y * (GlobalVarables.mouse_sensitivity/1000)))
-		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+		Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x, deg_to_rad(-45), deg_to_rad(90))
 		# Mouse Direction Control
 func go_to_main_menu():
 	# TODO: Replace this with your actual main menu scene path
 	get_tree().change_scene_to_file("res://Ui/Start Menue/Main.tscn")
-
 func handle_animation():
-	
-	if (Input.is_action_pressed("sprint") or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER)) and (abs(velocity.x)>0 or abs(velocity.z)>0):
-		if input_dir.y > 0.5:
-			play_animation.rpc("Running_A", 2)
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		play_animation("Jump_Start", 1.5)
+	elif velocity.y < 0 and is_on_floor():
+		play_animation("Jump_Land", 1.5)
+	elif not is_on_floor():
+		play_animation("Jump_Idle", 1)
+	elif (Input.is_action_pressed("sprint") or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER)) and (abs(velocity.x)>0 or abs(velocity.z)>0):
+		if input_dir.y < -0.5:
+			play_animation("Running_A", 2)
 		elif input_dir.x < -0.5:
-			play_animation.rpc("Running_Strafe_Left", 2)
-		elif input_dir.y > 0.5:
+			play_animation("Running_Strafe_Left", 2)
+		elif input_dir.x > 0.5:
 			play_animation("Running_Strafe_Right", 2)
 		elif input_dir.y > 0.5:
-			play_animation.rpc("Running_A", 2)
+			play_animation("Running_A_Backwords", 2)
 	elif not (Input.is_action_pressed("sprint") or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER)) and (abs(velocity.x)>0 or abs(velocity.z)>0):
-		play_animation.rpc("Walking_A", 1.5)
+		if input_dir.y < -0.5:
+			play_animation("Walking_A", 1.5)
+		elif input_dir.x < -0.5:
+			play_animation("Running_Strafe_Left", 1)
+		elif input_dir.x > 0.5:
+			play_animation("Running_Strafe_Right", 1)
+		elif input_dir.y > 0.5:
+			play_animation("Walking_Backwards", 1.5)
 	else:
-		play_animation.rpc("Idle", 1)
-
-@rpc("call_local")
+		play_animation("Idle", 1)
 func play_animation(animation: String, Speed: float):
 	
-	if Character_id == 0:
+	if Character_id == 0:#Knight
 		knight_anamation_handerler.speed_scale = Speed
-		knight_anamation_handerler.play(animation)
-	elif Character_id == 1:
-		pass
-	elif Character_id == 2:
-		pass
-	elif Character_id == 3:
-		pass
-	elif Character_id == 4:
-		pass
-	elif Character_id == 5:
-		pass
+		if animation == "Running_A_Backwords": knight_anamation_handerler.play_backwards("Running_A")
+		else: knight_anamation_handerler.play(animation)
+	elif Character_id == 1:# Rouge
+		Rouge_anamation_handerler.speed_scale = Speed
+		if animation == "Running_A_Backwords": Rouge_anamation_handerler.play_backwards("Running_A")
+		else: Rouge_anamation_handerler.play(animation)
+	elif Character_id == 2: #Paladin
+		Paladan_anamation_handerler.speed_scale = Speed
+		if animation == "Running_A_Backwords": Paladan_anamation_handerler.play_backwards("Running_A")
+		else: Paladan_anamation_handerler.play(animation)
+	elif Character_id == 3:#Archer
+		Archer_anamation_handerler.speed_scale = Speed
+		if animation == "Running_A_Backwords": Archer_anamation_handerler.play_backwards("Running_A")
+		else: Archer_anamation_handerler.play(animation)
+	elif Character_id == 4:#Warlock
+		Warlock_anamation_handerler.speed_scale = Speed
+		if animation == "Running_A_Backwords": Warlock_anamation_handerler.play_backwards("Running_A")
+		else: Warlock_anamation_handerler.play(animation)
+	elif Character_id == 5:#MAge
+		Mage_anamation_handerler.speed_scale = Speed
+		if animation == "Running_A_Backwords": Mage_anamation_handerler.play_backwards("Running_A")
+		else: Mage_anamation_handerler.play(animation)
 	else:
 		print("charter id out of range????")
-
 func _physics_process(delta: float) -> void:
-	if get_tree().get_multiplayer().has_multiplayer_peer():
-		if not is_multiplayer_authority():
-			return
-	
 	if GlobalVarables.controler_mode:
 		var deadzone = 0.1
 		var raw_yaw = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)

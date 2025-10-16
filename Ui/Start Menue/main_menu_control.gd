@@ -13,12 +13,8 @@ func _on_settings_button_pressed() -> void:
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-
-func _on_singleplayer_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://tmp map.tscn")
-
-
 func _on_host_button_pressed() -> void:
+	GlobalVarables._multiplayer = 1
 	get_tree().change_scene_to_file("res://Ui/Multiplayer/LanMultiplayer.tscn")
 
 func _on_multiplayer_button_pressed() -> void:
@@ -32,6 +28,7 @@ func _on_join_button_lan_pressed() -> void:
 	elif GlobalVarables.port.is_valid_int():
 		GlobalVarables.port = int(GlobalVarables.port)
 		if GlobalVarables.port > 0 and GlobalVarables.port < 65535:
+			GlobalVarables._multiplayer = 2
 			get_tree().change_scene_to_file("res://Ui/Multiplayer/LanMultiplayer.tscn")
 		else: $"Error Mesages".out_of_range()
 	else: $"Error Mesages".invalid_input()

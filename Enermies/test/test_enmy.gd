@@ -4,8 +4,9 @@ var move_speed = 50000
 var dir = Vector3(0, 0, 0)
 var min_range: int = 200
 
-var player = GlobalVarables.player
+@export var Player_path: NodePath
 
+@onready var player = get_node(Player_path)
 @onready var nav_agent := $NavigationAgent3D as NavigationAgent3D
 
 func _physics_process(delta: float) -> void:

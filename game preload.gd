@@ -1,6 +1,6 @@
 extends Node
 
-var settings = load("res://Ui/Setings/setings.gd").new()
+#var settings = load("res://Ui/Setings/setings.gd").new()
 
 
 func _ready() -> void:

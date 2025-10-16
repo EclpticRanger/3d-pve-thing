@@ -105,11 +105,6 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="singleplayer_button" type="Button" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_7d5t6")
-text = "Singleplayer"
-
 [node name="multiplayer_button" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_7d5t6")
@@ -134,6 +129,7 @@ text = "Join LAN Game"
 
 [node name="Port Entrey" type="LineEdit" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
+text = "9999"
 placeholder_text = "Ernter Port Here: Local/Lan Multiplayer"
 alignment = 1
 max_length = 5
@@ -519,7 +515,6 @@ wait_time = 0.2
 one_shot = true
 autostart = true
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/singleplayer_button" to="." method="_on_singleplayer_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/multiplayer_button" to="." method="_on_multiplayer_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/Host Button" to="." method="_on_host_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/Join Button lan" to="." method="_on_join_button_lan_pressed"]
