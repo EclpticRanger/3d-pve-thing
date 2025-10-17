@@ -1,10 +1,13 @@
-[gd_scene load_steps=37 format=4 uid="uid://dqjlsswnflfsh"]
+[gd_scene load_steps=46 format=4 uid="uid://dqjlsswnflfsh"]
 
 [ext_resource type="Script" uid="uid://biq7ss6gt5pks" path="res://Ui/Multiplayer/Lanmultiplayer.gd" id="1_ls63b"]
 [ext_resource type="Texture2D" uid="uid://bt08p0l5jw5f4" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="2_iqnpk"]
 [ext_resource type="ArrayMesh" uid="uid://cyf7ik8jigcu" path="res://Assets/3d modles/Custom/Multicoloured_Crystal.obj" id="3_ag3i8"]
 [ext_resource type="ArrayMesh" uid="uid://cbfcyqy442026" path="res://Assets/3d modles/Custom/Crystal.obj" id="4_pyqij"]
-[ext_resource type="PackedScene" uid="uid://dr5stoockqnk5" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Barbarian.glb" id="5_1x4gx"]
+[ext_resource type="PackedScene" uid="uid://dsma0rikexukm" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Knight.glb" id="5_1x4gx"]
+[ext_resource type="Environment" uid="uid://vr33uht7qnje" path="res://Ui/Multiplayer/vusport envirement.tres" id="5_7mxry"]
+[ext_resource type="Script" uid="uid://brrbp4k2gkn5w" path="res://Ui/Multiplayer/Idel_charter_slecter.gd" id="6_l1ouj"]
+[ext_resource type="PackedScene" uid="uid://cpv57nuurud2" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Rogue_Hooded.glb" id="8_qhqqe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ls63b"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -185,7 +188,25 @@ data = PackedVector3Array(-1.1908, 2.7210999, 0.71029997, -0.9208, -2.1332, 0.73
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0mgvb"]
 data = PackedVector3Array(-1.1908, 2.7210999, 0.71029997, -0.9208, -2.1332, 0.7338, -1.0069, 2.3244998, -0.7168, -1.0069, 2.3244998, -0.7168, -0.9208, -2.1332, 0.7338, -0.7589, -2.1332, -0.69519997, -1.0069, 2.3244998, -0.7168, -0.7589, -2.1332, -0.69519997, 0.39839998, 2.5486999, -0.5841, 0.39839998, 2.5486999, -0.5841, -0.7589, -2.1332, -0.69519997, 0.6588, -2.1332, -0.5615, 0.39839998, 2.5486999, -0.5841, 0.6588, -2.1332, -0.5615, 0.4553, 2.6467, 0.9493, 0.4553, 2.6467, 0.9493, 0.6588, -2.1332, -0.5615, 0.7211, -2.1332, 0.97249997, 0.4553, 2.6467, 0.9493, 0.7211, -2.1332, 0.97249997, -1.1908, 2.7210999, 0.71029997, -1.1908, 2.7210999, 0.71029997, 0.7211, -2.1332, 0.97249997, -0.9208, -2.1332, 0.7338, -1.1908, 2.7210999, 0.71029997, -1.0069, 2.3244998, -0.7168, -0.4023, 4.0126, 0.2086, -0.4023, 4.0126, 0.2086, -1.0069, 2.3244998, -0.7168, -0.4019, 4.0123997, 0.14649999, -0.4019, 4.0123997, 0.14649999, -0.3398, 4.0158, 0.1469, -0.4023, 4.0126, 0.2086, -0.4023, 4.0126, 0.2086, -0.3398, 4.0158, 0.1469, -0.3403, 4.0161, 0.2091, 0.4553, 2.6467, 0.9493, -1.1908, 2.7210999, 0.71029997, -0.3403, 4.0161, 0.2091, -0.3403, 4.0161, 0.2091, -1.1908, 2.7210999, 0.71029997, -0.4023, 4.0126, 0.2086, -1.0069, 2.3244998, -0.7168, 0.39839998, 2.5486999, -0.5841, -0.4019, 4.0123997, 0.14649999, -0.4019, 4.0123997, 0.14649999, 0.39839998, 2.5486999, -0.5841, -0.3398, 4.0158, 0.1469, 0.39839998, 2.5486999, -0.5841, 0.4553, 2.6467, 0.9493, -0.3398, 4.0158, 0.1469, -0.3398, 4.0158, 0.1469, 0.4553, 2.6467, 0.9493, -0.3403, 4.0161, 0.2091, 0.6588, -2.1332, -0.5615, -0.7589, -2.1332, -0.69519997, 0.7211, -2.1332, 0.97249997, 0.7211, -2.1332, 0.97249997, -0.7589, -2.1332, -0.69519997, -0.9208, -2.1332, 0.7338, 0.354, 2.0736, 0.25059998, -0.47489998, -2.1032999, 0.25059998, 0.4285, 1.711, -1.1086, 0.4285, 1.711, -1.1086, -0.47489998, -2.1032999, 0.25059998, -0.33449998, -2.1332, -1.1086, -0.33449998, -2.1332, -1.1086, -0.47489998, -2.1032999, 0.25059998, -0.46879998, -2.1332, 0.13859999, 0.4285, 1.711, -1.1086, -0.33449998, -2.1332, -1.1086, 1.768, 1.5717, -0.9912, 1.768, 1.5717, -0.9912, -0.33449998, -2.1332, -1.1086, 1.0327, -2.1332, -0.9912, 1.768, 1.5717, -0.9912, 1.0327, -2.1332, -0.9912, 1.8501999, 1.6314, 0.46609998, 1.8501999, 1.6314, 0.46609998, 1.0327, -2.1332, -0.9912, 1.1031, -2.1332, 0.46609998, 1.8501999, 1.6314, 0.46609998, 1.1031, -2.1332, 0.46609998, 0.354, 2.0736, 0.25059998, 0.354, 2.0736, 0.25059998, 1.1031, -2.1332, 0.46609998, -0.47489998, -2.1032999, 0.25059998, -0.47489998, -2.1032999, 0.25059998, 1.1031, -2.1332, 0.46609998, -0.37379998, -2.1332, 0.2652, 0.354, 2.0736, 0.25059998, 0.4285, 1.711, -1.1086, 1.3561, 2.9617999, -0.2261, 1.3561, 2.9617999, -0.2261, 0.4285, 1.711, -1.1086, 1.3561, 2.9617999, -0.2852, 1.3561, 2.9617999, -0.2852, 1.4138, 2.9503, -0.2852, 1.3561, 2.9617999, -0.2261, 1.3561, 2.9617999, -0.2261, 1.4138, 2.9503, -0.2852, 1.4138, 2.9503, -0.2261, 1.8501999, 1.6314, 0.46609998, 0.354, 2.0736, 0.25059998, 1.4138, 2.9503, -0.2261, 1.4138, 2.9503, -0.2261, 0.354, 2.0736, 0.25059998, 1.3561, 2.9617999, -0.2261, 0.4285, 1.711, -1.1086, 1.768, 1.5717, -0.9912, 1.3561, 2.9617999, -0.2852, 1.3561, 2.9617999, -0.2852, 1.768, 1.5717, -0.9912, 1.4138, 2.9503, -0.2852, 1.768, 1.5717, -0.9912, 1.8501999, 1.6314, 0.46609998, 1.4138, 2.9503, -0.2852, 1.4138, 2.9503, -0.2852, 1.8501999, 1.6314, 0.46609998, 1.4138, 2.9503, -0.2261, -0.47489998, -2.1032999, 0.25059998, -0.4518, -2.1332, 0.2322, -0.46879998, -2.1332, 0.13859999, -0.37379998, -2.1332, 0.2652, -0.4518, -2.1332, 0.2322, -0.47489998, -2.1032999, 0.25059998, -0.33449998, -2.1332, -1.1086, -0.46879998, -2.1332, 0.13859999, 1.0327, -2.1332, -0.9912, 1.0327, -2.1332, -0.9912, -0.46879998, -2.1332, 0.13859999, 1.1031, -2.1332, 0.46609998, 1.1031, -2.1332, 0.46609998, -0.46879998, -2.1332, 0.13859999, -0.37379998, -2.1332, 0.2652, -0.37379998, -2.1332, 0.2652, -0.46879998, -2.1332, 0.13859999, -0.4518, -2.1332, 0.2322, -1.8750999, 1.3156999, 1.1631, -0.9637, -2.1332, 0.70519996, -1.6934999, 1.2132, -0.0028, -1.6934999, 1.2132, -0.0028, -0.9637, -2.1332, 0.70519996, -0.8093, -2.1332, -0.447, -1.6934999, 1.2132, -0.0028, -0.8093, -2.1332, -0.447, -0.7176, 1.5626999, 0.1431, -0.7176, 1.5626999, 0.1431, -0.8093, -2.1332, -0.447, 0.2082, -1.9411, -0.322, 0.2082, -1.9411, -0.322, -0.8093, -2.1332, -0.447, -0.3281, -2.1332, -0.40219998, -0.7176, 1.5626999, 0.1431, 0.2082, -1.9411, -0.322, -0.68219995, 1.4763, 1.3671, -0.68219995, 1.4763, 1.3671, 0.2082, -1.9411, -0.322, 0.2436, -2.0275, 0.90199995, -0.9637, -2.1332, 0.70519996, -1.8750999, 1.3156999, 1.1631, -0.5413, -2.1332, 0.76769996, -0.5413, -2.1332, 0.76769996, -1.8750999, 1.3156999, 1.1631, 0.2436, -2.0275, 0.90199995, 0.2436, -2.0275, 0.90199995, -1.8750999, 1.3156999, 1.1631, -0.68219995, 1.4763, 1.3671, -0.3281, -2.1332, -0.40219998, 0.0721, -2.1332, -0.14729999, 0.2082, -1.9411, -0.322, -1.8750999, 1.3156999, 1.1631, -1.6934999, 1.2132, -0.0028, -1.5012, 2.4029999, 0.9033, -1.5012, 2.4029999, 0.9033, -1.6934999, 1.2132, -0.0028, -1.5012, 2.4096, 0.854, -1.5012, 2.4096, 0.854, -1.4570999, 2.421, 0.8556, -1.5012, 2.4029999, 0.9033, -1.5012, 2.4029999, 0.9033, -1.4570999, 2.421, 0.8556, -1.4570999, 2.4145, 0.9048, -0.68219995, 1.4763, 1.3671, -1.8750999, 1.3156999, 1.1631, -1.4570999, 2.4145, 0.9048, -1.4570999, 2.4145, 0.9048, -1.8750999, 1.3156999, 1.1631, -1.5012, 2.4029999, 0.9033, -1.6934999, 1.2132, -0.0028, -0.7176, 1.5626999, 0.1431, -1.5012, 2.4096, 0.854, -1.5012, 2.4096, 0.854, -0.7176, 1.5626999, 0.1431, -1.4570999, 2.421, 0.8556, -0.7176, 1.5626999, 0.1431, -0.68219995, 1.4763, 1.3671, -1.4570999, 2.421, 0.8556, -1.4570999, 2.421, 0.8556, -0.68219995, 1.4763, 1.3671, -1.4570999, 2.4145, 0.9048, 0.2082, -1.9411, -0.322, 0.0721, -2.1332, -0.14729999, 0.2436, -2.0275, 0.90199995, 0.2436, -2.0275, 0.90199995, 0.0721, -2.1332, -0.14729999, 0.1488, -2.1332, 0.7624, 0.2436, -2.0275, 0.90199995, 0.1488, -2.1332, 0.7624, -0.5413, -2.1332, 0.76769996, -0.3281, -2.1332, -0.40219998, -0.8093, -2.1332, -0.447, 0.0721, -2.1332, -0.14729999, 0.0721, -2.1332, -0.14729999, -0.8093, -2.1332, -0.447, 0.1488, -2.1332, 0.7624, 0.1488, -2.1332, 0.7624, -0.8093, -2.1332, -0.447, -0.5413, -2.1332, 0.76769996, -0.5413, -2.1332, 0.76769996, -0.8093, -2.1332, -0.447, -0.9637, -2.1332, 0.70519996, -0.5211, 1.8311, 1.8472999, -0.5211, -1.9782, 1.0302, -0.4025, 1.7602999, 0.6889, -0.4025, 1.7602999, 0.6889, -0.5211, -1.9782, 1.0302, -0.4025, -2.049, -0.1282, -0.4025, 1.7602999, 0.6889, -0.4025, -2.049, -0.1282, 0.70449996, 1.8511, 0.8071, 0.70449996, 1.8511, 0.8071, -0.4025, -2.049, -0.1282, 0.70449996, -1.9582, -0.01, 0.7615, -2.1332, 1.1783, 0.7615, 1.6664, 1.9933, 0.7585, -2.1332, 1.114, 0.7585, -2.1332, 1.114, 0.7615, 1.6664, 1.9933, 0.70449996, -1.9582, -0.01, 0.70449996, -1.9582, -0.01, 0.7615, 1.6664, 1.9933, 0.70449996, 1.8511, 0.8071, 0.7615, 1.6664, 1.9933, 0.7615, -2.1332, 1.1783, -0.5211, 1.8311, 1.8472999, -0.5211, 1.8311, 1.8472999, 0.7615, -2.1332, 1.1783, -0.5211, -1.9782, 1.0302, -0.5211, -1.9782, 1.0302, 0.7615, -2.1332, 1.1783, 0.6861, -2.1332, 1.1675999, 0.70449996, -1.9582, -0.01, -0.4025, -2.049, -0.1282, 0.5171, -2.1332, 0.15259999, 0.5171, -2.1332, 0.15259999, -0.4025, -2.049, -0.1282, -0.3044, -2.1332, -0.0121, -0.5211, 1.8311, 1.8472999, -0.4025, 1.7602999, 0.6889, 0.1475, 2.8672, 1.6686, 0.1475, 2.8672, 1.6686, -0.4025, 1.7602999, 0.6889, 0.1475, 2.8774, 1.6209999, 0.1475, 2.8774, 1.6209999, 0.1961, 2.8774, 1.6209999, 0.1475, 2.8672, 1.6686, 0.1475, 2.8672, 1.6686, 0.1961, 2.8774, 1.6209999, 0.1961, 2.8672, 1.6686, 0.7615, 1.6664, 1.9933, -0.5211, 1.8311, 1.8472999, 0.1961, 2.8672, 1.6686, 0.1961, 2.8672, 1.6686, -0.5211, 1.8311, 1.8472999, 0.1475, 2.8672, 1.6686, -0.4025, 1.7602999, 0.6889, 0.70449996, 1.8511, 0.8071, 0.1475, 2.8774, 1.6209999, 0.1475, 2.8774, 1.6209999, 0.70449996, 1.8511, 0.8071, 0.1961, 2.8774, 1.6209999, 0.70449996, 1.8511, 0.8071, 0.7615, 1.6664, 1.9933, 0.1961, 2.8774, 1.6209999, 0.1961, 2.8774, 1.6209999, 0.7615, 1.6664, 1.9933, 0.1961, 2.8672, 1.6686, -0.4025, -2.049, -0.1282, -0.5211, -1.9782, 1.0302, -0.3044, -2.1332, -0.0121, -0.3044, -2.1332, -0.0121, -0.5211, -1.9782, 1.0302, -0.32979998, -2.1332, 0.87109995, 0.70449996, -1.9582, -0.01, 0.5171, -2.1332, 0.15259999, 0.7585, -2.1332, 1.114, 0.6861, -2.1332, 1.1675999, -0.32979998, -2.1332, 0.87109995, -0.5211, -1.9782, 1.0302, 0.7585, -2.1332, 1.114, 0.5171, -2.1332, 0.15259999, 0.7615, -2.1332, 1.1783, 0.7615, -2.1332, 1.1783, 0.5171, -2.1332, 0.15259999, 0.6861, -2.1332, 1.1675999, 0.6861, -2.1332, 1.1675999, 0.5171, -2.1332, 0.15259999, -0.32979998, -2.1332, 0.87109995, -0.32979998, -2.1332, 0.87109995, 0.5171, -2.1332, 0.15259999, -0.3044, -2.1332, -0.0121, -1.5999999, 0.7506, -0.43429998, -0.84099996, -2.1332, 0.1962, -1.3127999, 0.25349998, -1.7866, -1.3127999, 0.25349998, -1.7866, -0.84099996, -2.1332, 0.1962, -0.6847, -2.1332, -1.2648, -1.3127999, 0.25349998, -1.7866, -0.6847, -2.1332, -1.2648, 0.0222, 0.72789997, -1.6847999, 0.0222, 0.72789997, -1.6847999, -0.6847, -2.1332, -1.2648, 0.7752, -2.1332, -1.0593, 0.0222, 0.72789997, -1.6847999, 0.7752, -2.1332, -1.0593, -0.0029, 1.109, -0.18869999, -0.0029, 1.109, -0.18869999, 0.7752, -2.1332, -1.0593, 0.81189996, -1.987, 0.48819998, 0.81189996, -1.987, 0.48819998, 0.7752, -2.1332, -1.0593, 0.82159996, -2.1332, -0.0859, -0.84099996, -2.1332, 0.1962, -1.5999999, 0.7506, -0.43429998, 0.1602, -2.1332, 0.38799998, 0.1602, -2.1332, 0.38799998, -1.5999999, 0.7506, -0.43429998, 0.81189996, -1.987, 0.48819998, 0.81189996, -1.987, 0.48819998, -1.5999999, 0.7506, -0.43429998, -0.0029, 1.109, -0.18869999, -1.5999999, 0.7506, -0.43429998, -1.3127999, 0.25349998, -1.7866, -0.9528, 1.642, -1.0971, -0.9528, 1.642, -1.0971, -1.3127999, 0.25349998, -1.7866, -0.94949996, 1.6294999, -1.1582999, -0.94949996, 1.6294999, -1.1582999, -0.8896, 1.6452999, -1.1582999, -0.9528, 1.642, -1.0971, -0.9528, 1.642, -1.0971, -0.8896, 1.6452999, -1.1582999, -0.8929, 1.6578, -1.0971, -0.0029, 1.109, -0.18869999, -1.5999999, 0.7506, -0.43429998, -0.8929, 1.6578, -1.0971, -0.8929, 1.6578, -1.0971, -1.5999999, 0.7506, -0.43429998, -0.9528, 1.642, -1.0971, -1.3127999, 0.25349998, -1.7866, 0.0222, 0.72789997, -1.6847999, -0.94949996, 1.6294999, -1.1582999, -0.94949996, 1.6294999, -1.1582999, 0.0222, 0.72789997, -1.6847999, -0.8896, 1.6452999, -1.1582999, 0.0222, 0.72789997, -1.6847999, -0.0029, 1.109, -0.18869999, -0.8896, 1.6452999, -1.1582999, -0.8896, 1.6452999, -1.1582999, -0.0029, 1.109, -0.18869999, -0.8929, 1.6578, -1.0971, 0.68659997, -2.1332, 0.35979998, 0.81189996, -1.987, 0.48819998, 0.82159996, -2.1332, -0.0859, 0.81189996, -1.987, 0.48819998, 0.68659997, -2.1332, 0.35979998, 0.1602, -2.1332, 0.38799998, 0.7752, -2.1332, -1.0593, -0.6847, -2.1332, -1.2648, 0.82159996, -2.1332, -0.0859, 0.82159996, -2.1332, -0.0859, -0.6847, -2.1332, -1.2648, 0.68659997, -2.1332, 0.35979998, 0.68659997, -2.1332, 0.35979998, -0.6847, -2.1332, -1.2648, 0.1602, -2.1332, 0.38799998, 0.1602, -2.1332, 0.38799998, -0.6847, -2.1332, -1.2648, -0.84099996, -2.1332, 0.1962)
 
-[sub_resource type="Environment" id="Environment_l1ouj"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_l1ouj"]
+viewport_path = NodePath("CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport")
+
+[sub_resource type="World3D" id="World3D_7mxry"]
+environment = ExtResource("5_7mxry")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1yg3a"]
+viewport_path = NodePath("CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport")
+
+[sub_resource type="World3D" id="World3D_qbfxf"]
+environment = ExtResource("5_7mxry")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qhqqe"]
+viewport_path = NodePath("CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport")
+
+[sub_resource type="Environment" id="Environment_1yg3a"]
+
+[sub_resource type="World3D" id="World3D_wjvgh"]
+environment = SubResource("Environment_1yg3a")
 
 [node name="LocalMultiplayerSetup" type="Node"]
 script = ExtResource("1_ls63b")
@@ -1359,6 +1380,8 @@ _spawnable_scenes = PackedStringArray("uid://deoyx8l1km3di")
 spawn_path = NodePath("..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.5
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -1382,24 +1405,189 @@ offset_right = 1105.0
 offset_bottom = -132.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 100
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="Knight" type="PanelContainer" parent="CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Button" parent="CanvasLayer/Control/HBoxContainer/PanelContainer"]
+[node name="Label" type="Button" parent="CanvasLayer/Control/HBoxContainer/Knight"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 100
-text = "Knight"
+text = "    Knight    "
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Control/HBoxContainer/PanelContainer"]
-own_world_3d = true
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/HBoxContainer/Knight"]
+position = Vector2(281, 270)
+scale = Vector2(1.078125, 1.078125)
+texture = SubResource("ViewportTexture_l1ouj")
 
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Control/HBoxContainer/PanelContainer/SubViewport"]
+[node name="Knight_vueport" type="SubViewport" parent="CanvasLayer/Control/HBoxContainer/Knight"]
+world_3d = SubResource("World3D_7mxry")
+transparent_bg = true
+oversampling = false
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer/Control/HBoxContainer/PanelContainer/SubViewport"]
-environment = SubResource("Environment_l1ouj")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+sky_mode = 1
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Control/HBoxContainer/PanelContainer/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport"]
 
-[node name="Barbarian" parent="CanvasLayer/Control/HBoxContainer/PanelContainer/SubViewport" instance=ExtResource("5_1x4gx")]
+[node name="Knight" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport" instance=ExtResource("5_1x4gx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, -2)
+
+[node name="1H_Sword_Offhand" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport/Knight/Rig/Skeleton3D" index="0"]
+transform = Transform3D(-0.99999887, -1.3219872e-07, -3.750938e-08, -1.3544872e-07, -5.3096744e-07, 0.99999934, -2.1043323e-07, 0.99999934, 6.234487e-07, 0.88313216, 1.0492611, 0.017011093)
+visible = false
+
+[node name="Badge_Shield" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport/Knight/Rig/Skeleton3D" index="1"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+visible = false
+
+[node name="Rectangle_Shield" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport/Knight/Rig/Skeleton3D" index="2"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+visible = false
+
+[node name="Round_Shield" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport/Knight/Rig/Skeleton3D" index="3"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+
+[node name="Spike_Shield" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport/Knight/Rig/Skeleton3D" index="4"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+visible = false
+
+[node name="1H_Sword" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport/Knight/Rig/Skeleton3D" index="5"]
+transform = Transform3D(0.999999, 2.0297999e-07, -4.5275735e-07, -3.932471e-07, -7.9538523e-07, -0.99999946, -1.3220324e-07, 0.99999946, -7.425141e-07, -0.8831323, 1.049261, 0.033308562)
+
+[node name="2H_Sword" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport/Knight/Rig/Skeleton3D" index="6"]
+transform = Transform3D(0.999999, 1.8824655e-07, -4.3907139e-07, -3.7956113e-07, -7.9538523e-07, -0.99999946, -1.1746976e-07, 0.99999946, -7.425141e-07, -0.8831323, 1.049261, 0.033308562)
+visible = false
+
+[node name="Knight_Helmet" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport/Knight/Rig/Skeleton3D" index="7"]
+transform = Transform3D(1, -2.209651e-22, 1.6940659e-21, 2.2096506e-22, 0.99999994, 0, -1.6940659e-21, 3.59e-43, 1, 4.7683716e-07, 1.2158911, -1.0854231e-07)
+visible = false
+
+[node name="Knight_Cape" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport/Knight/Rig/Skeleton3D" index="8"]
+transform = Transform3D(1, 1.2521356e-21, 0, -1.2521355e-21, 0.99999994, 0, 0, 0, 1, 0, 1.2158912, -1.406604e-07)
+
+[node name="AnimationPlayer" parent="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport/Knight" index="1"]
+script = ExtResource("6_l1ouj")
+
+[node name="rouge" type="PanelContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Button" parent="CanvasLayer/Control/HBoxContainer/rouge"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 100
+text = "     Rogue     "
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/HBoxContainer/rouge"]
+position = Vector2(281, 270)
+scale = Vector2(1.078125, 1.078125)
+texture = SubResource("ViewportTexture_1yg3a")
+
+[node name="Rouge_vueport" type="SubViewport" parent="CanvasLayer/Control/HBoxContainer/rouge"]
+world_3d = SubResource("World3D_qbfxf")
+transparent_bg = true
+oversampling = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+sky_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport"]
+
+[node name="Rogue_Hooded" parent="CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport" instance=ExtResource("8_qhqqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, -2)
+
+[node name="Knife_Offhand" parent="CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport/Rogue_Hooded/Rig/Skeleton3D" index="0"]
+transform = Transform3D(-0.99999887, -1.1746519e-07, 2.6063532e-08, -7.1875746e-08, -5.3096744e-07, 0.99999934, -1.9569966e-07, 0.99999934, 6.234487e-07, 0.88313216, 1.0492611, -1.6332857e-05)
+visible = false
+
+[node name="1H_Crossbow" parent="CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport/Rogue_Hooded/Rig/Skeleton3D" index="1"]
+transform = Transform3D(-4.5731025e-07, 4.0059618e-08, -0.999999, -0.99999946, -4.965387e-07, 3.978002e-07, -4.4366757e-07, 0.99999946, -3.071736e-08, -0.7785041, 1.049261, -0.010374511)
+visible = false
+
+[node name="2H_Crossbow" parent="CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport/Rogue_Hooded/Rig/Skeleton3D" index="2"]
+transform = Transform3D(-4.5731025e-07, 4.0059618e-08, -0.999999, -0.99999946, -4.965387e-07, 3.978002e-07, -4.4366757e-07, 0.99999946, -3.071736e-08, -0.7785041, 1.049261, -0.010374511)
+visible = false
+
+[node name="Knife" parent="CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport/Rogue_Hooded/Rig/Skeleton3D" index="3"]
+transform = Transform3D(0.999999, 1.8824655e-07, -4.3907139e-07, -3.7956113e-07, -7.9538523e-07, -0.99999946, -1.1746976e-07, 0.99999946, -7.425141e-07, -0.8831323, 1.049261, -1.605148e-05)
+
+[node name="Throwable" parent="CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport/Rogue_Hooded/Rig/Skeleton3D" index="4"]
+transform = Transform3D(0.999999, 2.0298005e-07, -4.5275732e-07, -3.932471e-07, -6.76176e-07, -0.99999946, -1.3220324e-07, 0.99999946, -6.2330486e-07, -0.8831323, 1.0492609, 0.18022999)
+visible = false
+
+[node name="Rogue_Cape" parent="CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport/Rogue_Hooded/Rig/Skeleton3D" index="5"]
+transform = Transform3D(1, 1.2521356e-21, 0, -1.2521355e-21, 0.99999994, 0, 0, 0, 1, 0, 1.2158737, 0)
+visible = false
+
+[node name="AnimationPlayer" parent="CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport/Rogue_Hooded" index="1"]
+script = ExtResource("6_l1ouj")
+
+[node name="Paladin" type="PanelContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Button" parent="CanvasLayer/Control/HBoxContainer/Paladin"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 100
+text = "    Paladin    "
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/HBoxContainer/Paladin"]
+position = Vector2(281, 270)
+scale = Vector2(1.078125, 1.078125)
+texture = SubResource("ViewportTexture_qhqqe")
+
+[node name="Paladin_vueport" type="SubViewport" parent="CanvasLayer/Control/HBoxContainer/Paladin"]
+world_3d = SubResource("World3D_wjvgh")
+transparent_bg = true
+oversampling = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+sky_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport"]
+
+[node name="Knight" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport" instance=ExtResource("5_1x4gx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, -2)
+
+[node name="1H_Sword_Offhand" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport/Knight/Rig/Skeleton3D" index="0"]
+transform = Transform3D(-0.99999887, -1.3219872e-07, -3.750938e-08, -1.3544872e-07, -5.3096744e-07, 0.99999934, -2.1043323e-07, 0.99999934, 6.234487e-07, 0.88313216, 1.0492611, 0.017011093)
+visible = false
+
+[node name="Badge_Shield" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport/Knight/Rig/Skeleton3D" index="1"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+visible = false
+
+[node name="Rectangle_Shield" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport/Knight/Rig/Skeleton3D" index="2"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+
+[node name="Round_Shield" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport/Knight/Rig/Skeleton3D" index="3"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+visible = false
+
+[node name="Spike_Shield" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport/Knight/Rig/Skeleton3D" index="4"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+visible = false
+
+[node name="1H_Sword" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport/Knight/Rig/Skeleton3D" index="5"]
+transform = Transform3D(0.999999, 2.0297999e-07, -4.5275735e-07, -3.932471e-07, -7.9538523e-07, -0.99999946, -1.3220324e-07, 0.99999946, -7.425141e-07, -0.8831323, 1.049261, 0.033308562)
+visible = false
+
+[node name="2H_Sword" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport/Knight/Rig/Skeleton3D" index="6"]
+transform = Transform3D(0.999999, 1.8824655e-07, -4.3907139e-07, -3.7956113e-07, -7.9538523e-07, -0.99999946, -1.1746976e-07, 0.99999946, -7.425141e-07, -0.8831323, 1.049261, 0.033308562)
+
+[node name="Knight_Helmet" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport/Knight/Rig/Skeleton3D" index="7"]
+transform = Transform3D(1, -2.209651e-22, 1.6940659e-21, 2.2096506e-22, 0.99999994, 0, -1.6940659e-21, 3.59e-43, 1, 4.7683716e-07, 1.2158911, -1.0854231e-07)
+
+[node name="Knight_Cape" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport/Knight/Rig/Skeleton3D" index="8"]
+transform = Transform3D(1, 1.2521356e-21, 0, -1.2521355e-21, 0.99999994, 0, 0, 0, 1, 0, 1.2158912, -1.406604e-07)
+
+[node name="AnimationPlayer" parent="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport/Knight" index="1"]
+script = ExtResource("6_l1ouj")
+
+[editable path="CanvasLayer/Control/HBoxContainer/Knight/Knight_vueport/Knight"]
+[editable path="CanvasLayer/Control/HBoxContainer/rouge/Rouge_vueport/Rogue_Hooded"]
+[editable path="CanvasLayer/Control/HBoxContainer/Paladin/Paladin_vueport/Knight"]
