@@ -199,3 +199,56 @@ func _physics_process(delta: float) -> void:
 	#control movement
 	move_and_slide()
 	handle_animation()
+
+
+# --- Simple health API for enemies (with i-frames & knockback) ---
+var max_health: int = 100
+var health: int = 100
+
+# Invincibility frames after taking damage (seconds)
+var invincibility_time: float = 0.8
+var _i_timer: float = 0.0
+
+func take_damage(amount: int) -> void:
+	# Ignore damage during i-frames
+	if _i_timer > 0:
+		return
+
+	# Apply defence modifier based on current character (if any)
+	var def_mod = 1.0
+	if Character_id >= 0 and Character_id < Character_defance_moderfier.size():
+		def_mod = Character_defance_moderfier[Character_id]
+	var final_damage = int(amount * def_mod)
+	health = max(health - final_damage, 0)
+	print("Player took %d damage (after defence %.2f). Health: %d/%d" % [final_damage, def_mod, health, max_health])
+
+	# Start i-frames
+	_i_timer = invincibility_time
+
+	# Optional visual feedback hook
+	if has_method("show_damage_feedback"):
+		show_damage_feedback()
+
+	if health <= 0:
+		_on_death()
+
+func apply_knockback(vec: Vector3) -> void:
+	# Default: nudge the player's velocity so CharacterBody3D reacts
+	velocity += vec
+
+func _on_death() -> void:
+	print("Player died - implement death handling")
+
+func _process(delta: float) -> void:
+	# Decrement invincibility timer
+	if _i_timer > 0:
+		_i_timer = max(_i_timer - delta, 0)
+
+func show_damage_feedback() -> void:
+	# Minimal hook for visual/audio feedback when taking damage.
+	# Play a local AnimationPlayer "hit" animation if present, else print.
+	var anim = get_node_or_null("AnimationPlayer")
+	if anim and anim.has_animation("hit"):
+		anim.play("hit")
+	else:
+		print("show_damage_feedback called")

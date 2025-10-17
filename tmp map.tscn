@@ -1,8 +1,9 @@
-[gd_scene load_steps=45 format=4 uid="uid://bwr3b22l66e8y"]
+[gd_scene load_steps=46 format=4 uid="uid://bwr3b22l66e8y"]
 
 [ext_resource type="PackedScene" uid="uid://deoyx8l1km3di" path="res://Player/Player.tscn" id="1_35834"]
 [ext_resource type="Texture2D" uid="uid://baq46u6760a0i" path="res://Assets/3d modles/KayKit_ResourceBits_1.0_FREE/Assets/gltf/resource_bits_texture.png" id="2_5sd4n"]
 [ext_resource type="PackedScene" uid="uid://c0wi70nu65e0i" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_dirt_large.gltf" id="3_sgcor"]
+[ext_resource type="PackedScene" uid="uid://bsyn17a2mr82c" path="res://Enermies/test/test_enemy.tscn" id="4_ii34a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_35834"]
 sky_top_color = Color(0.310749, 0.451477, 0.664551, 1)
@@ -371,7 +372,7 @@ size = Vector3(50, 0.2, 50)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_35834"]
 data = PackedVector3Array(-25, 0.1, 25, 25, 0.1, 25, -25, -0.1, 25, 25, 0.1, 25, 25, -0.1, 25, -25, -0.1, 25, 25, 0.1, -25, -25, 0.1, -25, 25, -0.1, -25, -25, 0.1, -25, -25, -0.1, -25, 25, -0.1, -25, 25, 0.1, 25, 25, 0.1, -25, 25, -0.1, 25, 25, 0.1, -25, 25, -0.1, -25, 25, -0.1, 25, -25, 0.1, -25, -25, 0.1, 25, -25, -0.1, -25, -25, 0.1, 25, -25, -0.1, 25, -25, -0.1, -25, 25, 0.1, 25, -25, 0.1, 25, 25, 0.1, -25, -25, 0.1, 25, -25, 0.1, -25, 25, 0.1, -25, -25, -0.1, 25, 25, -0.1, 25, -25, -0.1, -25, 25, -0.1, 25, 25, -0.1, -25, -25, -0.1, -25)
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_sgcor"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_rpkbl"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -689,4 +690,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_35834")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_sgcor")
+navigation_mesh = SubResource("NavigationMesh_rpkbl")
+
+[node name="Enemy" parent="." instance=ExtResource("4_ii34a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6819868, 1.0999985, -3.7706327)
