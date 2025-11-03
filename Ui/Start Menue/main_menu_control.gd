@@ -22,10 +22,8 @@ func _on_multiplayer_button_pressed() -> void:
 	else: multiplayer_menue.show()
 
 func _on_join_button_lan_pressed() -> void:
-	GlobalVarables.port = $"PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/Port Entrey".text
-	if GlobalVarables.port == null:
-		$"Error Mesages".invalid_input()
-	elif GlobalVarables.port.is_valid_int():
+	GlobalVarables.port = int($"PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/Port Entrey".text)
+	if GlobalVarables.port is int:
 		GlobalVarables.port = int(GlobalVarables.port)
 		if GlobalVarables.port > 0 and GlobalVarables.port < 65535:
 			GlobalVarables._multiplayer = 2

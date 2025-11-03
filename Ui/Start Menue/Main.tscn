@@ -129,7 +129,6 @@ text = "Join LAN Game"
 
 [node name="Port Entrey" type="LineEdit" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "9999"
 placeholder_text = "Ernter Port Here: Local/Lan Multiplayer"
 alignment = 1
 max_length = 5

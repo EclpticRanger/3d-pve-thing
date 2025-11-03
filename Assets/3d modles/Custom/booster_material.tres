@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://dvwf4us084cpp"]
+
+[ext_resource type="Shader" uid="uid://dl1glai0orjyp" path="res://Assets/3d modles/Custom/thruster.gdshader" id="1_0inxr"]
+
+[sub_resource type="Gradient" id="Gradient_0inxr"]
+colors = PackedColorArray(0, 0, 0.7137255, 1, 0.7920342, 0.00050749065, 0.7955132, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0inxr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_156b7"]
+noise = SubResource("FastNoiseLite_0inxr")
+color_ramp = SubResource("Gradient_0inxr")
+in_3d_space = true
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_0inxr")
+shader_parameter/main_color = Color(0.71407944, 0.24573022, 0.8507959, 1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_156b7")
+shader_parameter/emission = Color(0.2553606, 0.43737963, 0.90439576, 1)
+shader_parameter/emission_energy = 100.0
+shader_parameter/scroll_speed = 0.5
+shader_parameter/alpha_threshold = 0.2
+shader_parameter/use_threshold = true
+shader_parameter/invert_boost_direction = false
