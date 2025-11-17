@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=4 uid="uid://dqjlsswnflfsh"]
+[gd_scene load_steps=157 format=4 uid="uid://dqjlsswnflfsh"]
 
 [ext_resource type="Script" uid="uid://biq7ss6gt5pks" path="res://Ui/Multiplayer/Lanmultiplayer.gd" id="1_ls63b"]
 [ext_resource type="Texture2D" uid="uid://bt08p0l5jw5f4" path="res://Assets/3d modles/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="2_iqnpk"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c3kgmo4xmnbco" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Rogue.glb" id="9_1yg3a"]
 [ext_resource type="PackedScene" uid="uid://2j8to8xnpkaa" path="res://Assets/3d modles/KayKit_Skeletons_1.0_FREE/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Mage.glb" id="10_wjvgh"]
 [ext_resource type="Texture2D" uid="uid://cmwgnchvc575e" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Mage_mage_texture.png" id="13_fosa0"]
+[ext_resource type="PackedScene" uid="uid://bt4xv2fe0y08e" path="res://mob/mob.tscn" id="14_osb1u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ls63b"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -33348,13 +33349,16 @@ text = "Select"
 [node name="Allways open UI" type="CanvasLayer" parent="."]
 
 [node name="Port Display" type="Label" parent="Allways open UI"]
-offset_left = 8.0
-offset_top = 1384.0
-offset_right = 187.0
-offset_bottom = 1433.0
+offset_left = 6.0
+offset_top = 901.0
+offset_right = 185.0
+offset_bottom = 950.0
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 35
 text = " Port:"
+
+[node name="Mob" parent="." instance=ExtResource("14_osb1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 0)
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/Knight/Knight" to="CanvasLayer/Control/VBoxContainer" method="_on_knight_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/rouge/Rouge" to="CanvasLayer/Control/VBoxContainer" method="_on_rouge_pressed"]

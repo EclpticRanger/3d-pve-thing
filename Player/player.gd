@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 @export_group("Movement")
 @export var gravity: int = -20
@@ -58,6 +58,11 @@ var input_dir: Vector2
 var health = 10
 var stamina = 300
 var stamina_used: bool = false
+var attack_animating = false
+
+var mage_fireball = preload("res://Player/attacks/mage/fireball.tscn")
+var archer_arrow = preload("res://Player/attacks/Archer/arrow.tscn")
+var instance
 
 const stamina_max = 300
 
@@ -67,6 +72,7 @@ var Character_defance_moderfier = [Knight_defence_modifier, Rouge_defence_modifi
 func Character_Showm_update():
 	$"Character Model/Knight".hide()
 	$"Character Model/Knight/Rig/Skeleton3D/Knight_Head".hide()
+	$"CanvasLayer/Node2D/Character Icons/Knight".hide()
 	$"Character Model/Rogue".hide()
 	$"Character Model/Rogue/Rig/Skeleton3D/Rogue_Head_Hooded".hide()
 	$"CanvasLayer/Node2D/Character Icons/Rouge".hide()
@@ -83,10 +89,12 @@ func Character_Showm_update():
 	$"Character Model/Warlock/Rig/Skeleton3D/Skeleton_Mage_Jaw".hide()
 	$"Character Model/Warlock/Rig/Skeleton3D/head/Skeleton_Mage_Hat".hide()
 	$"Character Model/Mage".hide()
+	$"CanvasLayer/Node2D/Character Icons/Mage".hide()
 	$"Character Model/Mage/Rig/Skeleton3D/Mage_Head".hide()
 	$"Character Model/Mage/Rig/Skeleton3D/Mage_Hat/Mage_Hat".hide()
 	if Character_id == 0: 
 		$"Character Model/Knight".show()
+		$"CanvasLayer/Node2D/Character Icons/Knight".show()
 	elif Character_id == 1: 
 		$"Character Model/Rogue".show()
 		$"CanvasLayer/Node2D/Character Icons/Rouge".show()
@@ -100,6 +108,7 @@ func Character_Showm_update():
 		$"Character Model/Warlock".show()
 	elif Character_id == 5: 
 		$"Character Model/Mage".show()
+		$"CanvasLayer/Node2D/Character Icons/Mage".show()
 	else: get_tree().quit()
 
 func _enter_tree() -> void:
@@ -130,32 +139,33 @@ func go_to_main_menu():
 	get_tree().change_scene_to_file("res://Ui/Start Menue/Main.tscn")
 
 func handle_animation():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		play_animation("Jump_Start", 1.5)
-	elif velocity.y < 0 and is_on_floor():
-		play_animation("Jump_Land", 1.5)
-	elif not is_on_floor():
-		play_animation("Jump_Idle", 1)
-	elif (Input.is_action_pressed("sprint") or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER)) and (abs(velocity.x)>0 or abs(velocity.z)>0):
-		if input_dir.y < -0.5:
-			play_animation("Running_A", 2)
-		elif input_dir.x < -0.5:
-			play_animation("Running_Strafe_Left", 2)
-		elif input_dir.x > 0.5:
-			play_animation("Running_Strafe_Right", 2)
-		elif input_dir.y > 0.5:
-			play_animation("Running_A_Backwords", 2)
-	elif not (Input.is_action_pressed("sprint") or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER)) and (abs(velocity.x)>0 or abs(velocity.z)>0):
-		if input_dir.y < -0.5:
-			play_animation("Walking_A", 1.5)
-		elif input_dir.x < -0.5:
-			play_animation("Running_Strafe_Left", 1)
-		elif input_dir.x > 0.5:
-			play_animation("Running_Strafe_Right", 1)
-		elif input_dir.y > 0.5:
-			play_animation("Walking_Backwards", 1.5)
-	else:
-		play_animation("Idle", 1)
+	if not attack_animating:
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			play_animation("Jump_Start", 1.5)
+		elif velocity.y < 0 and is_on_floor():
+			play_animation("Jump_Land", 1.5)
+		elif not is_on_floor():
+			play_animation("Jump_Idle", 1)
+		elif (Input.is_action_pressed("sprint") or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER)) and (abs(velocity.x)>0 or abs(velocity.z)>0):
+			if input_dir.y < -0.5:
+				play_animation("Running_A", 2)
+			elif input_dir.x < -0.5:
+				play_animation("Running_Strafe_Left", 2)
+			elif input_dir.x > 0.5:
+				play_animation("Running_Strafe_Right", 2)
+			elif input_dir.y > 0.5:
+				play_animation("Running_A_Backwords", 2)
+		elif not (Input.is_action_pressed("sprint") or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER)) and (abs(velocity.x)>0 or abs(velocity.z)>0):
+			if input_dir.y < -0.5:
+				play_animation("Walking_A", 1.5)
+			elif input_dir.x < -0.5:
+				play_animation("Running_Strafe_Left", 1)
+			elif input_dir.x > 0.5:
+				play_animation("Running_Strafe_Right", 1)
+			elif input_dir.y > 0.5:
+				play_animation("Walking_Backwards", 1.5)
+		else:
+			play_animation("Idle", 1)
 
 func play_animation(animation: String, Speed: float):
 	if Character_id == 0:#Knight
@@ -199,18 +209,7 @@ func _physics_process(delta: float) -> void:
 			var pitch_input = raw_pitch * sensitivity if abs(raw_pitch) > deadzone else 0.0
 			rotate_y(yaw_input)
 			Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x + pitch_input, deg_to_rad(-90), deg_to_rad(90))
-			# Right Sitck Camera Control
-	
-		if Input.is_action_pressed("sprint") and not GlobalVarables.controler_mode and stamina > 10:
-			speed_modifier = Character_speed_Moderfiers[Character_id] * 1.5
-			stamina -= 10 * delta
-			stamina_used = true
-		elif Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER) and GlobalVarables.controler_modeand and stamina > 10:
-			speed_modifier = Character_speed_Moderfiers[Character_id] * 1.5
-			stamina -= 10 * delta
-			stamina_used = true
-		else:
-			speed_modifier = Character_speed_Moderfiers[Character_id]
+			# Right Sitck Camera Contros
 	
 		if not is_on_floor():
 			velocity.y += gravity * delta
@@ -237,6 +236,21 @@ func _physics_process(delta: float) -> void:
 		else:
 			input_dir = Input.get_vector("left", "right", "forward", "back")
 			#get move input with keybord
+			
+		if Input.is_action_pressed("sprint") and not GlobalVarables.controler_mode and stamina > 10:
+			speed_modifier = Character_speed_Moderfiers[Character_id] * 1.5
+			if (input_dir.x > 0.1 or input_dir.x < -0.1) or (input_dir.y > 0.1 or input_dir.y < -0.1):
+				stamina -= 15 * delta
+				stamina_used = true
+			
+		elif Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER) and GlobalVarables.controler_modeand and stamina > 10:
+			speed_modifier = Character_speed_Moderfiers[Character_id] * 1.5
+			if (input_dir.x > 0.1 or input_dir.x < -0.1) or (input_dir.y > 0.1 or input_dir.y < -0.1):
+				stamina -= 15 * delta
+				stamina_used = true
+		else:
+			speed_modifier = Character_speed_Moderfiers[Character_id]
+		
 		if input_dir.length() > 0.1:
 			var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 			velocity.x = direction.x * (BACE_MOVE_SPEED * speed_modifier)
@@ -253,23 +267,16 @@ func _physics_process(delta: float) -> void:
 			else:
 				stamina += 15*delta
 		_update_stamina()
+		_attack_1()
 	handle_animation()
 
 func _update_health():
-	print(health)
 	if health == 10: Healthbar.play("Full 10")
-	elif health == 9: Healthbar.play("9")
-	elif health == 8: Healthbar.play("8")
-	elif health == 7: Healthbar.play("7")
-	elif health == 6: Healthbar.play("6")
-	elif health == 5: Healthbar.play("5")
-	elif health == 4: Healthbar.play("4")
-	elif health == 3: Healthbar.play("3")
-	elif health == 2: Healthbar.play("2")
-	elif health == 1: Healthbar.play("1")
 	elif health == 0: 
 		Healthbar.play("0 Empty")
 		death()
+	elif health < 10 and health > 0:
+		Healthbar.play(str(health))
 	elif health > 10: 
 		health = 10
 		_update_health()
@@ -287,3 +294,53 @@ func _update_stamina():
 	if stamina >= 300: _Staminabar.play("Full 30")
 	elif stamina <10*1.1: _Staminabar.play("0 Empty")
 	else: _Staminabar.play(str(int(floor(stamina/10))))
+
+func _attack_1():
+	if Input.is_action_just_pressed("attack") and not attack_animating:
+		if Character_id == 0:
+			knight_anamation_handerler.play("1H_Melee_Attack_Slice_Diagonal")
+			$"Node/Knight/Knight attack".start()
+			$"Character Model/Knight/Rig/Skeleton3D/2H_Sword/Area3D".monitorable = true
+			attack_animating = true
+		if Character_id == 1:
+			Rouge_anamation_handerler.play("1H_Melee_Attack_Slice_Diagonal")
+			$"Node/Rouge/Rouge attack".start()
+			$"Character Model/Rogue/Rig/Skeleton3D/Knife/Knife/Area3D".monitorable = true
+			attack_animating = true
+		elif Character_id == 3 and stamina > 10:
+			play_animation("1H_Ranged_Shoot", 2)
+			instance = archer_arrow.instantiate()
+			instance.position = Camera.global_position
+			instance.transform.basis = Camera.global_transform.basis
+			attack_animating = true
+			$"Node/Archer/Archer attack".start()
+			_attack_1_range()
+			stamina -= 10
+		elif Character_id == 5 and stamina > 10:
+			play_animation("Spellcast_Shoot", 2)
+			instance = mage_fireball.instantiate()
+			instance.position = Camera.global_position
+			instance.transform.basis = Camera.global_transform.basis
+			attack_animating = true
+			$"Node/Mage/Mage attack".start()
+			_attack_1_range()
+			stamina -= 10
+
+@rpc("any_peer")
+func _attack_1_range():
+	if Character_id == 3:
+		get_parent().add_child(instance)
+	if  Character_id == 5:
+		get_parent().add_child(instance)
+		
+
+func _on_knight_attack_timeout() -> void:
+	attack_animating = false
+	$"Character Model/Knight/Rig/Skeleton3D/2H_Sword/Area3D".monitorable = false
+func _on_rouge_attack_timeout() -> void:
+	attack_animating = false
+	$"Character Model/Rogue/Rig/Skeleton3D/Knife/Knife/Area3D".monitorable = false
+func _on_mage_attack_timeout() -> void:
+	attack_animating = false
+func _on_archer_attack_timeout() -> void:
+	attack_animating = false

@@ -1,7 +1,7 @@
 extends Node
 
 var defult_port: int = 49152
-var Player = preload("res://Player/Player.tscn")
+var Player_ = preload("res://Player/Player.tscn")
 
 func _ready() -> void:
 	if GlobalVarables.port == 0:
@@ -45,6 +45,6 @@ func Join(_port: int):
 	multiplayer.multiplayer_peer = enet_peer
 
 func add_player(peer_id):
-	var player = Player.instantiate()
+	var player = Player_.instantiate()
 	player.name = str(peer_id)
 	add_child(player)
