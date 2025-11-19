@@ -2,47 +2,42 @@ extends Node
 
 var defult_port: int = 49152
 var Player_ = preload("res://Player/Player.tscn")
+var peer = NodeTunnelPeer.new()
 
 func _ready() -> void:
+	multiplayer.multiplayer_peer = peer
+	$Node2D/Label2.show()
+	peer.connect_to_relay("relay.nodetunnel.io", 9998)
+	await peer.relay_connected
+	$Node2D/Label2.hide()
 	if GlobalVarables.port == 0:
 		Host()
-	elif GlobalVarables.port is int:
-		if GlobalVarables.port > 0 and GlobalVarables.port < 65535:
-			Join(GlobalVarables.port)
-		else: print("Port out of range")
+	elif GlobalVarables.port is String or GlobalVarables.port is int:
+		Join(GlobalVarables.port)
 	else: print("Port Invalid input")
-
-func port_check(lan_port: int):
-	var check = null
-	while check != OK:
-		var peer = ENetMultiplayerPeer.new()
-		check = peer.create_server(lan_port)
-		if check != OK:
-			peer.close()
-			if lan_port < 65535: # prevent infinite loop
-				lan_port += 1
-			else:
-				get_tree().quit()
-		else:
-			peer.close()
-			return lan_port
-
-var enet_peer = ENetMultiplayerPeer.new()
+	
 func Host():
-	GlobalVarables.port = port_check(defult_port)
-	$"Allways open UI/Port Display".show()
-	$"Allways open UI/Port Display".text = " Port: " + str(GlobalVarables.port)
-	enet_peer.create_server(GlobalVarables.port)
-	multiplayer.multiplayer_peer = enet_peer
+	$Node2D/Label3.show()
+	peer.host()
+	await peer.hosting
+	$Node2D/Label3.hide()
+	$Node2D.hide()
+	$"Allways open UI/Pear Display".show()
+	$"Allways open UI/Pear Display".text = "  Peer id: " + str(peer.online_id)
+	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(add_player)
 	
-	add_player(multiplayer.get_unique_id())
+	add_player(peer.get_unique_id())
 
 func Join(_port: int):
-	enet_peer.create_client("localHost", GlobalVarables.port)
-	$"Allways open UI/Port Display".show()
-	$"Allways open UI/Port Display".text = " Port: " + str(GlobalVarables.port)	
-	multiplayer.multiplayer_peer = enet_peer
+	$Node2D/Label4.show()
+	peer.join(GlobalVarables.port)
+	await peer.joined
+	$Node2D/Label4.hide()
+	$Node2D.hide()
+	$"Allways open UI/Pear Display".show()
+	$"Allways open UI/Pear Display".text = "  Peer id: " + str(peer.online_id)
+	multiplayer.multiplayer_peer = peer
 
 func add_player(peer_id):
 	var player = Player_.instantiate()

@@ -61,6 +61,7 @@ var stamina_used: bool = false
 var attack_animating = false
 
 var mage_fireball = preload("res://Player/attacks/mage/fireball.tscn")
+var warlock_Acidball = preload("res://Player/attacks/Warlock/Acidball.tscn")
 var archer_arrow = preload("res://Player/attacks/Archer/arrow.tscn")
 var instance
 
@@ -84,10 +85,7 @@ func Character_Showm_update():
 	$"Character Model/Archer/Rig/Skeleton3D/Rogue_Head".hide()
 	$"CanvasLayer/Node2D/Character Icons/Archer".hide()
 	$"Character Model/Warlock".hide()
-	$"Character Model/Warlock/Rig/Skeleton3D/Skeleton_Mage_Skull".hide()
-	$"Character Model/Warlock/Rig/Skeleton3D/Skeleton_Mage_Eyes".hide()
-	$"Character Model/Warlock/Rig/Skeleton3D/Skeleton_Mage_Jaw".hide()
-	$"Character Model/Warlock/Rig/Skeleton3D/head/Skeleton_Mage_Hat".hide()
+	$"Character Model/Warlock/Rig/Skeleton3D/Mage_Head".hide()
 	$"Character Model/Mage".hide()
 	$"CanvasLayer/Node2D/Character Icons/Mage".hide()
 	$"Character Model/Mage/Rig/Skeleton3D/Mage_Head".hide()
@@ -299,13 +297,13 @@ func _attack_1():
 	if Input.is_action_just_pressed("attack") and not attack_animating:
 		if Character_id == 0:
 			knight_anamation_handerler.play("1H_Melee_Attack_Slice_Diagonal")
+			$"Character Model/Knight/Rig/Skeleton3D/2H_Sword/RayCast3D".enabled = true
 			$"Node/Knight/Knight attack".start()
-			$"Character Model/Knight/Rig/Skeleton3D/2H_Sword/Area3D".monitorable = true
 			attack_animating = true
 		if Character_id == 1:
 			Rouge_anamation_handerler.play("1H_Melee_Attack_Slice_Diagonal")
+			$"Character Model/Rogue/Rig/Skeleton3D/Knife/Knife/RayCast3D".enabled = true
 			$"Node/Rouge/Rouge attack".start()
-			$"Character Model/Rogue/Rig/Skeleton3D/Knife/Knife/Area3D".monitorable = true
 			attack_animating = true
 		elif Character_id == 3 and stamina > 10:
 			play_animation("1H_Ranged_Shoot", 2)
@@ -314,33 +312,41 @@ func _attack_1():
 			instance.transform.basis = Camera.global_transform.basis
 			attack_animating = true
 			$"Node/Archer/Archer attack".start()
-			_attack_1_range()
+			get_parent().add_child(instance)
 			stamina -= 10
-		elif Character_id == 5 and stamina > 10:
+		elif Character_id == 4 and stamina > 10:
 			play_animation("Spellcast_Shoot", 2)
-			instance = mage_fireball.instantiate()
+			instance = warlock_Acidball.instantiate()
 			instance.position = Camera.global_position
 			instance.transform.basis = Camera.global_transform.basis
 			attack_animating = true
 			$"Node/Mage/Mage attack".start()
-			_attack_1_range()
+			get_parent().add_child(instance)
 			stamina -= 10
+		elif Character_id == 5 and stamina > 10:
+			play_animation("Spellcast_Shoot", 2)
+			attack_animating = true
+			$"Node/Mage/Mage attack".start()
+			stamina -= 10
+			rpc_id(0, "ranged_rpc", 5, Camera.transform)
 
 @rpc("any_peer")
-func _attack_1_range():
-	if Character_id == 3:
-		get_parent().add_child(instance)
-	if  Character_id == 5:
-		get_parent().add_child(instance)
+func ranged_rpc(char_id: int, cam_transform: Transform3D):
+	if char_id == 5:
+		var instanc = mage_fireball.instantiate()
+		instanc.transform = cam_transform
+		get_parent().add_child(instanc)
 		
 
 func _on_knight_attack_timeout() -> void:
 	attack_animating = false
-	$"Character Model/Knight/Rig/Skeleton3D/2H_Sword/Area3D".monitorable = false
+	$"Character Model/Knight/Rig/Skeleton3D/2H_Sword/RayCast3D".enabled = false
 func _on_rouge_attack_timeout() -> void:
 	attack_animating = false
-	$"Character Model/Rogue/Rig/Skeleton3D/Knife/Knife/Area3D".monitorable = false
+	$"Character Model/Rogue/Rig/Skeleton3D/Knife/Knife/RayCast3D".enabled = false
 func _on_mage_attack_timeout() -> void:
 	attack_animating = false
 func _on_archer_attack_timeout() -> void:
+	attack_animating = false
+func _on_warlock_attack_timeout() -> void:
 	attack_animating = false
