@@ -1,4 +1,4 @@
-[gd_scene load_steps=318 format=4 uid="uid://t0meqagmtwou"]
+[gd_scene load_steps=319 format=4 uid="uid://t0meqagmtwou"]
 
 [ext_resource type="Texture2D" uid="uid://co20mffxbtov4" path="res://Map/grass texture/Grass005_2K-JPG_Color.jpg" id="1_yrold"]
 [ext_resource type="Texture2D" uid="uid://ceoqh5jv37nku" path="res://Map/grass texture/Grass005_2K-JPG_NormalGL.jpg" id="2_w0ki1"]
@@ -810,7 +810,10 @@ roughnessTexture = ExtResource("9_8sq76")
 [sub_resource type="TextureSetsResource" id="TextureSetsResource_el6gt"]
 textureSets = Array[TextureSetResource]([SubResource("TextureSetResource_chsl1"), SubResource("TextureSetResource_fgu0b"), SubResource("TextureSetResource_uqxx8")])
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aplbj"]
+
 [sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_ndt3n"]
+noiseTexture = SubResource("NoiseTexture2D_aplbj")
 randomYRotation = true
 objectScenes = Array[PackedScene]([ExtResource("13_aqmgf"), ExtResource("14_2rd5w"), ExtResource("15_cv6xg"), ExtResource("16_wjsft"), ExtResource("17_htfeg"), ExtResource("18_xcs16"), ExtResource("19_76033"), ExtResource("20_sgkbv"), ExtResource("21_uf218"), ExtResource("22_rkghw"), ExtResource("23_ostwl"), ExtResource("24_o3mpk"), ExtResource("25_agexb"), ExtResource("26_m536u")])
 
