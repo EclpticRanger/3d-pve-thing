@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://celc1s5vfw1vw"
+path="res://.godot/imported/tree-columnar.obj-f9f2037556fe0dcaf707656749e39c0d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree-columnar.obj-f9f2037556fe0dcaf707656749e39c0d.mesh"]
+
+source_file="res://Assets/3d modles/tree_pack_v_0_1/dist/obj_mtl/tree-columnar.obj"
+dest_files=["res://.godot/imported/tree-columnar.obj-f9f2037556fe0dcaf707656749e39c0d.mesh", "res://.godot/imported/tree-columnar.obj-f9f2037556fe0dcaf707656749e39c0d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

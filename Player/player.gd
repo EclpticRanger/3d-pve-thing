@@ -1,4 +1,5 @@
-class_name Player extends CharacterBody3D
+class_name playerer # this is purposly mispelled
+extends CharacterBody3D 
 
 @export_group("Movement")
 @export var gravity: int = -20
@@ -7,6 +8,7 @@ class_name Player extends CharacterBody3D
 @export var Bace_ACCELORATION: float = 10
 @export var BACE_JUMP_INPULSE: float = 7.5
 @export var turn_speed := 12.0
+@export var nav_type = "player"
 
 #Speed modifier is 1 * modifier * modifier... Max 2.5
 #Stealth modifier is detchtable distance / (modifier * modifier) Max 2
@@ -111,11 +113,11 @@ func Character_Showm_update():
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(str(name).to_int())
+	if is_multiplayer_authority(): GlobalVarables.player = self
 
 func _ready() -> void:
 	if not is_multiplayer_authority(): return
 	Camera.current = true
-	GlobalVarables.player = self
 	Healthbar.play("Full 10")
 	# Only check authority if in multiplayer, otherwise always run
 
@@ -282,7 +284,9 @@ func _update_health():
 	else: get_tree().quit()
 	
 func death():
-	get_tree().quit()
+	global_position = Vector3.ZERO
+	health = 10
+	_update_health()
 
 func _on_damage(_area: Area3D) -> void:
 	health -= 1
@@ -328,15 +332,10 @@ func _attack_1():
 			attack_animating = true
 			$"Node/Mage/Mage attack".start()
 			stamina -= 10
-			rpc_id(0, "ranged_rpc", 5, Camera.transform)
-
-@rpc("any_peer")
-func ranged_rpc(char_id: int, cam_transform: Transform3D):
-	if char_id == 5:
-		var instanc = mage_fireball.instantiate()
-		instanc.transform = cam_transform
-		get_parent().add_child(instanc)
-		
+			instance = mage_fireball.instantiate()
+			instance.position = Camera.global_position
+			instance.transform.basis = Camera.global_transform.basis
+			get_parent().add_child(instance)
 
 func _on_knight_attack_timeout() -> void:
 	attack_animating = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cpr08o84hbsm6"]
+[gd_scene load_steps=32 format=3 uid="uid://cpr08o84hbsm6"]
 
 [ext_resource type="Script" uid="uid://dspyadri2mdpq" path="res://Player/attacks/mage/fireball.gd" id="1_eyoi3"]
 [ext_resource type="Shader" uid="uid://cgpfc6eba27ip" path="res://Assets/Shaders/Fire_Project/Fire_Drop_Shader.gdshader" id="1_khc20"]
@@ -152,14 +152,6 @@ material = SubResource("StandardMaterial3D_ijbhw")
 sections = 2
 curve = SubResource("Curve_v3hqh")
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_eyoi3"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath(".:rotation")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000001, 0, 0, 0)
 script = ExtResource("1_eyoi3")
@@ -206,8 +198,5 @@ draw_pass_1 = SubResource("RibbonTrailMesh_h2jv8")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_eyoi3")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -104,7 +104,7 @@ layout_mode = 2
 
 [node name="Host Button" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Host"
+text = "Host LAN Game"
 
 [node name="Join Button lan" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -112,18 +112,20 @@ text = "Join LAN Game"
 
 [node name="Port Entrey" type="LineEdit" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-placeholder_text = "Ernter Port Here: Local/Lan Multiplayer"
+placeholder_text = "Enter Port Here: Local/Lan Multiplayer"
 alignment = 1
 
+[node name="Host Button online" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Host Online Game"
+
 [node name="Join Button Online" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 text = "Join Online Game"
 
 [node name="Join Code Entry" type="LineEdit" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
-placeholder_text = "Ernter Join Code Here: Online Multiplayer"
+placeholder_text = "Enter Join Code Here: Online Multiplayer"
 alignment = 1
 
 [node name="settings_button" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -465,6 +467,8 @@ text = "Loading"
 [connection signal="pressed" from="PanelContainer/VBoxContainer/multiplayer_button" to="." method="_on_multiplayer_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/Host Button" to="." method="_on_host_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/Join Button lan" to="." method="_on_join_button_lan_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/Host Button online" to="." method="_on_host_button_online_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/Join Button Online" to="." method="_on_join_button_online_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]
 [connection signal="timeout" from="Waterfall sound effect/Timer" to="Waterfall sound effect" method="_on_timer_timeout"]

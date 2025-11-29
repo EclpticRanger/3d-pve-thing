@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cjlauuocyb70r"
+path="res://.godot/imported/tree-spreading.obj-e4809e69b10ec44230369a3b2cccea6f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree-spreading.obj-e4809e69b10ec44230369a3b2cccea6f.mesh"]
+
+source_file="res://Assets/3d modles/tree_pack_v_0_1/dist/obj_mtl/tree-spreading.obj"
+dest_files=["res://.godot/imported/tree-spreading.obj-e4809e69b10ec44230369a3b2cccea6f.mesh", "res://.godot/imported/tree-spreading.obj-e4809e69b10ec44230369a3b2cccea6f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

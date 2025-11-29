@@ -2,44 +2,52 @@ extends Node
 
 var defult_port: int = 49152
 var Player_ = preload("res://Player/Player.tscn")
-var peer = NodeTunnelPeer.new()
+var peer = ENetMultiplayerPeer.new()
 
 func _ready() -> void:
-	multiplayer.multiplayer_peer = peer
-	$Node2D/Label2.show()
-	peer.connect_to_relay("relay.nodetunnel.io", 9998)
-	await peer.relay_connected
-	$Node2D/Label2.hide()
-	if GlobalVarables.port == 0:
-		Host()
-	elif GlobalVarables.port is String or GlobalVarables.port is int:
+	if GlobalVarables.port is int:
 		Join(GlobalVarables.port)
+	elif GlobalVarables.port == "host":
+		Host()
 	else: print("Port Invalid input")
 	
 func Host():
-	$Node2D/Label3.show()
-	peer.host()
-	await peer.hosting
-	$Node2D/Label3.hide()
+	peer.create_server(defult_port)
+	multiplayer.multiplayer_peer = peer
 	$Node2D.hide()
 	$"Allways open UI/Pear Display".show()
-	$"Allways open UI/Pear Display".text = "  Peer id: " + str(peer.online_id)
+	GlobalVarables.port = defult_port
+	DisplayServer.clipboard_set(str(GlobalVarables.port))
+	$"Allways open UI/Pear Display".text = "  Peer id: " + str(GlobalVarables.port)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(add_player)
 	
 	add_player(peer.get_unique_id())
 
-func Join(_port: int):
-	$Node2D/Label4.show()
-	peer.join(GlobalVarables.port)
-	await peer.joined
-	$Node2D/Label4.hide()
+func Join(_port):
+	peer.create_client("localhost", _port)
+	multiplayer.multiplayer_peer = peer
 	$Node2D.hide()
 	$"Allways open UI/Pear Display".show()
-	$"Allways open UI/Pear Display".text = "  Peer id: " + str(peer.online_id)
+	$"Allways open UI/Pear Display".text = "  Peer id: " + str(GlobalVarables.port)
 	multiplayer.multiplayer_peer = peer
 
 func add_player(peer_id):
 	var player = Player_.instantiate()
 	player.name = str(peer_id)
 	add_child(player)
+
+var mobs = preload("res://mob/mob.tscn")
+var Momber_spawns_per:int = 1
+var mobs_spawned: int = 0
+
+func _on_timer_timeout() -> void:
+	if mobs_spawned < 20:
+		for i in range(Momber_spawns_per):
+			print("mob spawn")
+			var Mob = mobs.instantiate()
+			add_child(Mob)
+			mobs_spawned += 1
+
+func _on_more_mob_timer_timeout() -> void:
+	Momber_spawns_per += 1
