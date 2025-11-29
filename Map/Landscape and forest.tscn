@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bpwyc4mbq5wmh" path="res://Map/Snow texture/Snow010A_2K-JPG_Color.jpg" id="7_5ul7k"]
 [ext_resource type="Texture2D" uid="uid://cpgshnyokyced" path="res://Map/Snow texture/Snow010A_2K-JPG_NormalDX.jpg" id="8_2ecnw"]
 [ext_resource type="Texture2D" uid="uid://buay25apxyj80" path="res://Map/Snow texture/Snow010A_2K-JPG_Roughness.jpg" id="9_8sq76"]
+[ext_resource type="Texture2D" uid="uid://du6wvsgb3lcu5" path="res://Map/noiseTexture.png" id="10_1iy1a"]
 [ext_resource type="PackedScene" uid="uid://bev07des8gcrn" path="res://Assets/KayKit_Forest_Nature_Pack_1.0_FREE/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/fbx/Tree_1_A_Color1.fbx" id="13_aqmgf"]
 [ext_resource type="PackedScene" uid="uid://t1poab7ji73d" path="res://Assets/KayKit_Forest_Nature_Pack_1.0_FREE/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/fbx/Tree_1_B_Color1.fbx" id="14_2rd5w"]
 [ext_resource type="PackedScene" uid="uid://dwt2sm4ojlumd" path="res://Assets/KayKit_Forest_Nature_Pack_1.0_FREE/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/fbx/Tree_1_C_Color1.fbx" id="15_cv6xg"]
@@ -810,10 +811,10 @@ roughnessTexture = ExtResource("9_8sq76")
 [sub_resource type="TextureSetsResource" id="TextureSetsResource_el6gt"]
 textureSets = Array[TextureSetResource]([SubResource("TextureSetResource_chsl1"), SubResource("TextureSetResource_fgu0b"), SubResource("TextureSetResource_uqxx8")])
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aplbj"]
-
 [sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_ndt3n"]
-noiseTexture = SubResource("NoiseTexture2D_aplbj")
+objectFrequency = 0
+randomRange = 10.0
+noiseTexture = ExtResource("10_1iy1a")
 randomYRotation = true
 objectScenes = Array[PackedScene]([ExtResource("13_aqmgf"), ExtResource("14_2rd5w"), ExtResource("15_cv6xg"), ExtResource("16_wjsft"), ExtResource("17_htfeg"), ExtResource("18_xcs16"), ExtResource("19_76033"), ExtResource("20_sgkbv"), ExtResource("21_uf218"), ExtResource("22_rkghw"), ExtResource("23_ostwl"), ExtResource("24_o3mpk"), ExtResource("25_agexb"), ExtResource("26_m536u")])
 
