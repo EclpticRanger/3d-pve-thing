@@ -7,10 +7,11 @@ var BACE_MOVE_SPEED: float = 5
 var target = null
 var attacking: bool = false
 var last_frame_attack_state: bool = false
+var last_death_count: int = 0
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 
-var rng = RandomNumberGenerator.new()
+
 
 func _ready() -> void:
 	# Only server should run pathfinding/physics for this mob
@@ -18,9 +19,14 @@ func _ready() -> void:
 		set_physics_process(false)
 	else:
 		set_physics_process(true)
-		global_position = Vector3(rng.randf_range(10, 10), 1, rng.randf_range(10, 10))
+		
+		var rng = RandomNumberGenerator.new()
+		randomize()
+		global_position = Vector3(rng.randf_range(10, -10), 1, rng.randf_range(10, -10))
 		while get_slide_collision_count() > 0:
-			global_position = Vector3(rng.randf_range(10, 10), 1, rng.randf_range(10, 10))
+			rng = RandomNumberGenerator.new()
+			randomize()
+			global_position = Vector3(rng.randf_range(10, -10), 1, rng.randf_range(10, -10))
 
 func _physics_process(delta: float) -> void:
 	if not multiplayer.is_server():
@@ -39,7 +45,10 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector3.ZERO
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
+	if last_death_count != GlobalVarables.deaths:
+		queue_free()
+	last_death_count = GlobalVarables.deaths
+	print(last_death_count, GlobalVarables.deaths)
 	move_and_slide()
 
 func _on_detection_area_body_entered(body: Node3D) -> void:
@@ -64,3 +73,6 @@ func _on_attacking_area_body_entered(body: Node3D) -> void:
 	if body.get("nav_type") == "player":
 		$Model/AnimationPlayer.play("Unarmed_Melee_Attack_Punch_A")
 		
+
+func _on_dammage_reseving_area_area_exited(_area: Area3D) -> void:
+	queue_free()

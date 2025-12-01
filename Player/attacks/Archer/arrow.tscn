@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://bygc3fglj4j4r"]
+[gd_scene load_steps=7 format=4 uid="uid://bygc3fglj4j4r"]
 
-[ext_resource type="Script" uid="uid://bfg1hm5r1vqgc" path="res://Player/attacks/Archer/arrow.gd" id="1_xorwh"]
+[ext_resource type="Script" uid="uid://dspyadri2mdpq" path="res://Player/attacks/mage/fireball.gd" id="1_xorwh"]
 [ext_resource type="Texture2D" uid="uid://foe06neqpc56" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Assets/gltf/rogue_texture.png" id="2_uj8ud"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fh0u5"]
@@ -43,6 +43,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3o4ts")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xorwh"]
+size = Vector3(0.58843994, 0.586853, 1.6577148)
+
 [node name="Arrow" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 script = ExtResource("1_xorwh")
@@ -52,11 +55,15 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 mesh = SubResource("ArrayMesh_3s75n")
 skeleton = NodePath("")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -0.32796448)
-collision_mask = 16385
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16384
+collision_mask = 16385
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019683843, 0.016021732, -0.32885742)
+shape = SubResource("BoxShape3D_xorwh")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

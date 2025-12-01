@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=4 uid="uid://dqjlsswnflfsh"]
+[gd_scene load_steps=126 format=4 uid="uid://dqjlsswnflfsh"]
 
 [ext_resource type="Script" uid="uid://biq7ss6gt5pks" path="res://Ui/Multiplayer/Nodetunnelmultiplayer.gd" id="1_ls63b"]
 [ext_resource type="Theme" uid="uid://bl7f7ipg81bfs" path="res://Ui/Styling/Theam.tres" id="2_w8qia"]
@@ -8,10 +8,9 @@
 [ext_resource type="Script" uid="uid://brrbp4k2gkn5w" path="res://Ui/Multiplayer/Idel_charter_slecter.gd" id="6_l1ouj"]
 [ext_resource type="PackedScene" uid="uid://cpv57nuurud2" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Rogue_Hooded.glb" id="8_qhqqe"]
 [ext_resource type="PackedScene" uid="uid://c3kgmo4xmnbco" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Rogue.glb" id="9_1yg3a"]
-[ext_resource type="PackedScene" uid="uid://t0meqagmtwou" path="res://Map/Landscape and forest.tscn" id="12_m7hhi"]
 [ext_resource type="PackedScene" uid="uid://cfsf1pcqblev0" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Mage.glb" id="12_osb1u"]
+[ext_resource type="PackedScene" uid="uid://cwjx83r86fptg" path="res://Ui/Multiplayer/Main map.tscn" id="13_dbhd1"]
 [ext_resource type="Texture2D" uid="uid://cmwgnchvc575e" path="res://Assets/3d modles/KayKit_Adventurers_1.0_FREE(2)/KayKit_Adventurers_1.0_FREE/Characters/gltf/Mage_mage_texture.png" id="13_fosa0"]
-[ext_resource type="PackedScene" uid="uid://bt4xv2fe0y08e" path="res://mob/mob.tscn" id="14_osb1u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ls63b"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -31229,9 +31228,6 @@ _data = {
 &"Walking_C": SubResource("Animation_av0jt")
 }
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_dla8w"]
-geometry_collision_mask = 4294901761
-
 [node name="LocalMultiplayerSetup" type="Node"]
 script = ExtResource("1_ls63b")
 
@@ -32094,13 +32090,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 35
 text = " Peer id:"
 
-[node name="Mob" parent="." instance=ExtResource("14_osb1u")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3, 2, 0)
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_dla8w")
-
-[node name="map" parent="NavigationRegion3D" instance=ExtResource("12_m7hhi")]
+[node name="NavigationRegion3D2" parent="." instance=ExtResource("13_dbhd1")]
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/Knight/Knight" to="CanvasLayer/Control/VBoxContainer" method="_on_knight_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/rouge/Rouge" to="CanvasLayer/Control/VBoxContainer" method="_on_rouge_pressed"]

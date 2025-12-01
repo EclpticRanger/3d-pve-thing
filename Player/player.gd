@@ -286,6 +286,7 @@ func _update_health():
 func death():
 	global_position = Vector3.ZERO
 	health = 10
+	GlobalVarables.deaths += 1
 	_update_health()
 
 func _on_damage(_area: Area3D) -> void:
@@ -301,13 +302,18 @@ func _attack_1():
 	if Input.is_action_just_pressed("attack") and not attack_animating:
 		if Character_id == 0:
 			knight_anamation_handerler.play("1H_Melee_Attack_Slice_Diagonal")
-			$"Character Model/Knight/Rig/Skeleton3D/2H_Sword/RayCast3D".enabled = true
+			$"Character Model/Knight/Rig/Skeleton3D/2H_Sword/Area3D".monitorable = true
 			$"Node/Knight/Knight attack".start()
 			attack_animating = true
 		if Character_id == 1:
 			Rouge_anamation_handerler.play("1H_Melee_Attack_Slice_Diagonal")
-			$"Character Model/Rogue/Rig/Skeleton3D/Knife/Knife/RayCast3D".enabled = true
+			$"Character Model/Rogue/Rig/Skeleton3D/Knife/Area3D".monitorable = true
 			$"Node/Rouge/Rouge attack".start()
+			attack_animating = true
+		if Character_id == 3:
+			Rouge_anamation_handerler.play("1H_Melee_Attack_Slice_Diagonal")
+			$"Character Model/Paladan/Rig/Skeleton3D/2H_Sword/Area3D".monitorable = true
+			$"Node/Palidin/paladin attack".start()
 			attack_animating = true
 		elif Character_id == 3 and stamina > 10:
 			play_animation("1H_Ranged_Shoot", 2)
@@ -339,13 +345,16 @@ func _attack_1():
 
 func _on_knight_attack_timeout() -> void:
 	attack_animating = false
-	$"Character Model/Knight/Rig/Skeleton3D/2H_Sword/RayCast3D".enabled = false
+	$"Character Model/Knight/Rig/Skeleton3D/2H_Sword/Area3D".monitorable = false
 func _on_rouge_attack_timeout() -> void:
 	attack_animating = false
-	$"Character Model/Rogue/Rig/Skeleton3D/Knife/Knife/RayCast3D".enabled = false
+	$"Character Model/Rogue/Rig/Skeleton3D/Knife/Area3D".monitorable = false
 func _on_mage_attack_timeout() -> void:
 	attack_animating = false
 func _on_archer_attack_timeout() -> void:
 	attack_animating = false
 func _on_warlock_attack_timeout() -> void:
 	attack_animating = false
+func _on_paladin_attack_timeout() -> void:
+	attack_animating = false
+	$"Character Model/Paladan/Rig/Skeleton3D/2H_Sword/Area3D".monitorable = false

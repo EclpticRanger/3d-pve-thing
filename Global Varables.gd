@@ -5,3 +5,4 @@ var controler_mode = false
 var player_state = false
 var player = null
 var port = "host"
+var deaths: int = 0
