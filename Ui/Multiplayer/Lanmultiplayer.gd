@@ -3,7 +3,7 @@ extends Node
 var defult_port: int = 49152
 var Player_ = preload("res://Player/Player.tscn")
 var peer = ENetMultiplayerPeer.new()
-var spawns:int  = 0
+
 
 func _ready() -> void:
 	if GlobalVarables.port is int:
@@ -12,8 +12,8 @@ func _ready() -> void:
 		Host()
 	else: print("Port Invalid input")
 
-func port_check(defult_port):
-	var port: int = defult_port
+func port_check(efult_port):
+	var port: int = efult_port
 	var max_attempts: int = 10
 	
 	for i in range(max_attempts):
@@ -45,7 +45,7 @@ func Host():
 	add_player(peer.get_unique_id())
 
 func Join(_port):
-	peer.create_client("localhost", _port)
+	peer.create_client(GlobalVarables.ip, _port)
 	multiplayer.multiplayer_peer = peer
 	$Node2D.hide()
 	$"Allways open UI/Pear Display".show()
@@ -53,31 +53,22 @@ func Join(_port):
 	multiplayer.multiplayer_peer = peer
 
 func add_player(peer_id):
+	if has_node(str(peer_id)):  # Check if player already exists
+		return
 	var player = Player_.instantiate()
 	player.name = str(peer_id)
 	add_child(player)
 
 var mobs = preload("res://mob/mob.tscn")
-var Momber_spawns_per:int = 1
-
-
-func next_frame_spawn():
-	spawns -= 1
-	var Mob = mobs.instantiate()
-	add_child(Mob, true)
 
 func _on_timer_timeout() -> void:
-	if Momber_spawns_per > 9:
-		Momber_spawns_per = 9
-	for i in range(Momber_spawns_per):
+	if not multiplayer.is_server(): return
+	if GlobalVarables.Momber_spawns_per > 9:
+		GlobalVarables.Momber_spawns_per = 9
+	for i in range(GlobalVarables.Momber_spawns_per):
 		print("mob spawn")
 		var Mob = mobs.instantiate()
 		add_child(Mob, true)
-		spawns =  Momber_spawns_per -1
-
-func  _process(_delta: float) -> void:
-	if spawns > 1:
-		next_frame_spawn()
 
 func _on_more_mob_timer_timeout() -> void:
-	Momber_spawns_per += 1
+	GlobalVarables.Momber_spawns_per += 1

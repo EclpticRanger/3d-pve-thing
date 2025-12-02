@@ -2,7 +2,7 @@ class_name mob
 extends CharacterBody3D
 
 
-var gravity: int = -20
+var gravity: int = -80
 var BACE_MOVE_SPEED: float = 5
 var target = null
 var attacking: bool = false
@@ -32,7 +32,8 @@ func _physics_process(delta: float) -> void:
 	if not multiplayer.is_server():
 		return
 	
-	if target != null:	
+	if target != null:
+		$Model/AnimationPlayer.play("Running_A")
 		navigation_agent_3d.target_position = target.global_transform.origin
 		var current_pos = global_transform.origin
 		var next_pos = navigation_agent_3d.get_next_path_position()
@@ -43,14 +44,12 @@ func _physics_process(delta: float) -> void:
 		velocity = direction * BACE_MOVE_SPEED
 	else: 
 		velocity = Vector3.ZERO
-	if not is_on_floor():
-		velocity.y += gravity * delta
-	if last_death_count != GlobalVarables.deaths:
-		queue_free()
-	last_death_count = GlobalVarables.deaths
-	print(last_death_count, GlobalVarables.deaths)
+		$Model/AnimationPlayer.play("Idle")
+	velocity.y += gravity * delta
+	if GlobalVarables.deaths:
+		deleate()
 	move_and_slide()
-
+	
 func _on_detection_area_body_entered(body: Node3D) -> void:
 	if not multiplayer.is_server():
 		return
@@ -75,4 +74,10 @@ func _on_attacking_area_body_entered(body: Node3D) -> void:
 		
 
 func _on_dammage_reseving_area_area_exited(_area: Area3D) -> void:
-	queue_free()
+	deleate()
+
+@rpc("any_peer")
+func deleate():
+	if is_multiplayer_authority():
+		queue_free()
+	else: return

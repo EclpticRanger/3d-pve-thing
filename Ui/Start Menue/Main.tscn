@@ -110,6 +110,11 @@ text = "Host LAN Game"
 layout_mode = 2
 text = "Join LAN Game"
 
+[node name="ip entry" type="LineEdit" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter Ip Here: Local/Lan Multiplayer"
+alignment = 1
+
 [node name="Port Entrey" type="LineEdit" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 placeholder_text = "Enter Port Here: Local/Lan Multiplayer"
