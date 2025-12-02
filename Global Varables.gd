@@ -5,4 +5,6 @@ var controler_mode = false
 var player_state = false
 var player = null
 var port = "host"
-var deaths: int = 0
+var deaths: bool = false
+var Momber_spawns_per:int = 1
+var ip

@@ -23,6 +23,7 @@ func _on_multiplayer_button_pressed() -> void:
 
 func _on_join_button_lan_pressed() -> void:
 	GlobalVarables.port = int($"PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/Port Entrey".text)
+	GlobalVarables.ip = $"PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/ip entry".text
 	$Node2D.show()
 	get_tree().change_scene_to_file("res://Ui/Multiplayer/lanMultiplayer.tscn")
 

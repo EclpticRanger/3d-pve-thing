@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=4 uid="uid://dkyywgh4cfkco"]
+[gd_scene load_steps=123 format=4 uid="uid://siykaxb1u7wr"]
 
 [ext_resource type="Script" uid="uid://chsht6amj2xxq" path="res://Ui/Multiplayer/lanmultiplayer.gd" id="1_mlysp"]
 [ext_resource type="Theme" uid="uid://bl7f7ipg81bfs" path="res://Ui/Styling/Theam.tres" id="2_240fu"]
@@ -31221,7 +31221,6 @@ script = ExtResource("1_mlysp")
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("uid://deoyx8l1km3di", "uid://bt4xv2fe0y08e")
 spawn_path = NodePath("..")
-spawn_limit = 40
 
 [node name="Node2D" type="Node2D" parent="."]
 

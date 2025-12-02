@@ -66,6 +66,7 @@ var mage_fireball = preload("res://Player/attacks/mage/fireball.tscn")
 var warlock_Acidball = preload("res://Player/attacks/Warlock/Acidball.tscn")
 var archer_arrow = preload("res://Player/attacks/Archer/arrow.tscn")
 var instance
+var death_satate: bool = false
 
 const stamina_max = 300
 
@@ -125,18 +126,11 @@ func _input(event: InputEvent) -> void:
 	if not is_multiplayer_authority(): return
 	# Handle Escape key to go to main menu
 	if GlobalVarables.player_state:
-		if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-			go_to_main_menu()
-			return
 		if event is InputEventMouseMotion and not GlobalVarables.controler_mode:
 			rotate_y(deg_to_rad(-event.relative.x * (GlobalVarables.mouse_sensitivity/1000)))
 			Camera_pivot.rotate_x(deg_to_rad(-event.relative.y * (GlobalVarables.mouse_sensitivity/1000)))
 			Camera_pivot.rotation.x = clamp(Camera_pivot.rotation.x, deg_to_rad(-45), deg_to_rad(90))
 		# Mouse Direction Control
-
-func go_to_main_menu():
-	# TODO: Replace this with your actual main menu scene path
-	get_tree().change_scene_to_file("res://Ui/Start Menue/Main.tscn")
 
 func handle_animation():
 	if not attack_animating:
@@ -268,6 +262,11 @@ func _physics_process(delta: float) -> void:
 				stamina += 15*delta
 		_update_stamina()
 		_attack_1()
+		if GlobalVarables.deaths:
+			if death_satate:
+				GlobalVarables.deaths = false
+				death_satate = false
+			else: death_satate = true
 	handle_animation()
 
 func _update_health():
@@ -286,8 +285,10 @@ func _update_health():
 func death():
 	global_position = Vector3.ZERO
 	health = 10
-	GlobalVarables.deaths += 1
+	GlobalVarables.deaths = true
+	GlobalVarables.Momber_spawns_per = 1
 	_update_health()
+	
 
 func _on_damage(_area: Area3D) -> void:
 	health -= 1

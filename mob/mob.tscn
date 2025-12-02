@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=4 uid="uid://bt4xv2fe0y08e"]
+[gd_scene load_steps=120 format=4 uid="uid://bt4xv2fe0y08e"]
 
 [ext_resource type="Script" uid="uid://de03ynremr6f4" path="res://mob/mob.gd" id="1_pirjb"]
 [ext_resource type="Texture2D" uid="uid://cxxogar12n3uc" path="res://Assets/3d modles/KayKit_Skeletons_1.0_FREE/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Rogue_skeleton_texture.png" id="2_mixeo"]
@@ -70020,8 +70020,11 @@ properties/2/path = NodePath("Model/AnimationPlayer:current_animation")
 properties/2/spawn = true
 properties/2/replication_mode = 1
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_mixeo"]
+radius = 20.0
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_6jlfs"]
-radius = 30.0
+radius = 500.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pirjb"]
 radius = 1.5
@@ -70038,8 +70041,6 @@ script = ExtResource("1_pirjb")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 target_desired_distance = 1.5
-debug_enabled = true
-debug_path_custom_color = Color(0.8898851, 0.18456694, 0, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123291016, 0)
@@ -70399,9 +70400,19 @@ libraries = {
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_7qly7")
 
+[node name="Reasingment areea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 255
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Reasingment areea"]
+shape = SubResource("SphereShape3D_mixeo")
+debug_color = Color(0.8901961, 0.32941177, 0, 1)
+
 [node name="Detection area" type="Area3D" parent="."]
 collision_layer = 0
 collision_mask = 255
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Detection area"]
 shape = SubResource("SphereShape3D_6jlfs")
