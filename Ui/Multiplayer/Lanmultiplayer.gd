@@ -35,10 +35,10 @@ func Host():
 	peer.create_server(port_check(defult_port))
 	multiplayer.multiplayer_peer = peer
 	$Node2D.hide()
-	$"Allways open UI/Pear Display".show()
+	#$"Allways open UI/Pear Display".show()
 	GlobalVarables.port = defult_port
 	DisplayServer.clipboard_set(str(GlobalVarables.port))
-	$"Allways open UI/Pear Display".text = "  Peer id: " + str(GlobalVarables.port)
+	#$"Allways open UI/Pear Display".text = "  Peer id: " + str(GlobalVarables.port)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(add_player)
 	
@@ -48,8 +48,8 @@ func Join(_port):
 	peer.create_client(GlobalVarables.ip, _port)
 	multiplayer.multiplayer_peer = peer
 	$Node2D.hide()
-	$"Allways open UI/Pear Display".show()
-	$"Allways open UI/Pear Display".text = "  Peer id: " + str(GlobalVarables.port)
+	#$"Allways open UI/Pear Display".show()
+	#$"Allways open UI/Pear Display".text = "  Peer id: " + str(GlobalVarables.port)
 	multiplayer.multiplayer_peer = peer
 
 func add_player(peer_id):

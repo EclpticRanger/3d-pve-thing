@@ -1,6 +1,6 @@
-[gd_scene load_steps=123 format=4 uid="uid://siykaxb1u7wr"]
+[gd_scene load_steps=123 format=4 uid="uid://bjtg31brcbet1"]
 
-[ext_resource type="Script" uid="uid://chsht6amj2xxq" path="res://Ui/Multiplayer/lanmultiplayer.gd" id="1_mlysp"]
+[ext_resource type="Script" uid="uid://chsht6amj2xxq" path="res://Ui/Multiplayer/Lanmultiplayer.gd" id="1_mlysp"]
 [ext_resource type="Theme" uid="uid://bl7f7ipg81bfs" path="res://Ui/Styling/Theam.tres" id="2_240fu"]
 [ext_resource type="Script" uid="uid://d2wmwl6sdy7p8" path="res://Ui/Multiplayer/Charter selecter control.gd" id="7_b41kt"]
 [ext_resource type="Environment" uid="uid://vr33uht7qnje" path="res://Ui/Multiplayer/vusport envirement.tres" id="8_y5eh2"]
@@ -31223,6 +31223,7 @@ _spawnable_scenes = PackedStringArray("uid://deoyx8l1km3di", "uid://bt4xv2fe0y08
 spawn_path = NodePath("..")
 
 [node name="Node2D" type="Node2D" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Node2D"]
 offset_right = 2601.0
@@ -31270,7 +31271,7 @@ script = ExtResource("7_b41kt")
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 70
-text = "Select a Charter"
+text = "Select a Chtacter"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -32042,11 +32043,11 @@ text = " Peer id:"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="Spawn timer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 2.0
 autostart = true
 
 [node name="More mob timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 autostart = true
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/Knight/Knight" to="CanvasLayer/Control/VBoxContainer" method="_on_knight_pressed"]
